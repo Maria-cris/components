@@ -2,7 +2,7 @@
   "devDependencies": {
     "lerna": "^6.6.1"
   },
-  "name": "@lottus23/core",
+  "name": "@lottus-ed/core",
   "workspaces": [
     "packages/*"
   ]

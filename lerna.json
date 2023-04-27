@@ -1,8 +1,6 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "useWorkspaces": true,
   "stream": true,
   "version": "2.0.2",
@@ -10,11 +8,7 @@
   "command": {
     "publish": {
       "npmClient": "npm",
-      "allowBranch": [
-        "main",
-        "develope"
-      ],
-      "registry": "https://registry.npmjs.org/*",
+      "allowBranch": ["main", "develope"],
       "conventionalCommits": true
     }
   }

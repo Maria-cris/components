@@ -1,6 +1,6 @@
 {
   "name": "@lottus-ed/components",
-  "version": "3.0.0",
+  "version": "3.2.0",
   "private": false,
   "files": [
     "dist"
@@ -80,5 +80,6 @@
     "storybook": "^7.0.7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "webpack": "^5.81.0"
-  }
+  },
+  "gitHead": "f11c298397b912c88278f0255f499376af62f08c"
 }

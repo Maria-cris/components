@@ -1,5 +1,14 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "useWorkspaces": true,
-  "version": "0.3.0"
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "allowBranch": ["main", "develope"],
+      "registry": "https://registry.npmjs.org/"
+    }
+  },
+  "version": "independient",
+  "npmClient": "npm",
+  "useWorkspaces": true
 }

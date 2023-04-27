@@ -3,7 +3,7 @@
   "packages": ["packages/*"],
   "useWorkspaces": true,
   "stream": true,
-  "version": "independient",
+  "version": "1.0.0",
   "npmClient": "npm",
   "command": {
     "publish": {

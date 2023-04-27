@@ -1,6 +1,6 @@
 {
   "name": "@lottus-ed/components",
-  "version": "3.2.1",
+  "version": "3.3.1",
   "private": true,
   "files": [
     "dist"

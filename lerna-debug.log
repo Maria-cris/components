@@ -1,8 +1,0 @@
-26 error TypeError: Invalid Version: independient
-26 error     at new SemVer (C:\Users\Maria Sanchez\Documents\library\lottus23\node_modules\semver\classes\semver.js:38:13)
-26 error     at compare (C:\Users\Maria Sanchez\Documents\library\lottus23\node_modules\semver\functions\compare.js:3:32)
-26 error     at Object.lt (C:\Users\Maria Sanchez\Documents\library\lottus23\node_modules\semver\functions\lt.js:2:29)
-26 error     at VersionCommand.setGlobalVersionFloor (C:\Users\Maria Sanchez\Documents\library\lottus23\node_modules\lerna\dist\cli.js:6433:38)
-26 error     at C:\Users\Maria Sanchez\Documents\library\lottus23\node_modules\lerna\dist\cli.js:6408:41
-26 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-26 error     at async Promise.all (index 0)

@@ -1,21 +1,8 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
+  "version": "0.1.0",
+  "npmClient": "yarn",
   "useWorkspaces": true,
-  "stream": true,
-  "version": "independient",
-  "npmClient": "npm",
-  "command": {
-    "publish": {
-      "npmClient": "npm",
-      "allowBranch": [
-        "main",
-        "develope"
-      ],
-      "registry": "https://registry.npmjs.org/*",
-      "conventionalCommits": true
-    }
-  }
+  "stream": true
 }

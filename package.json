@@ -569,5 +569,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Maria Cristina Sanchez",
+  "private": false,
   "license": "ISC"
 }

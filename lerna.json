@@ -1,19 +1,14 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "npmClient": "npm",
-      "allowBranch": [
-        "main",
-        "develope"
-      ],
+      "allowBranch": ["main", "develope"],
       "registry": "https://registry.npmjs.org/"
     }
   },
-  "version": "2.1.0",
+  "version": "2.2.0",
   "npmClient": "npm",
   "useWorkspaces": true
 }

@@ -1,23 +1,23 @@
 {
   "name": "@lottus-ed/components",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "private": false,
   "files": [
     "dist"
   ],
   "main": "dist/index.js",
   "dependencies": {
-    "classnames": "^2.3.2",
-    "postcss": "^8.4.23",
-    "prop-types": "^15.8.1",
-    "storybook": "^7.0.7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.2",
+    "postcss": "^8.4.23",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "storybook": "^7.0.7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "web-vitals": "^2.1.4"
   },
   "publishConfig": {

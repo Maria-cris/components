@@ -1,5 +1,4 @@
 import Icon from "./Icon.js";
-import "../../index.css";
 export default {
   title: "Icon",
   component: Icon,

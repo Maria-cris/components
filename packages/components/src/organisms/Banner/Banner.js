@@ -79,7 +79,7 @@ const Banner = ({
   );
 };
 Banner.propTypes = {
-  imageUrl: PropTypes.string,
+  imageUrl: PropTypes.string.isRequired,
   ratio: PropTypes.string,
   overlay: PropTypes.string,
   title: PropTypes.string,

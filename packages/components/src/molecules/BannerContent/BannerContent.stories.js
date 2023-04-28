@@ -1,5 +1,4 @@
 import BannerContent from "./BannerContent.js";
-import "../../index.css";
 export default {
   title: "BannerContent",
   component: BannerContent,

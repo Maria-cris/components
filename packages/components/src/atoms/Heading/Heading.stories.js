@@ -1,5 +1,4 @@
 import Heading from "./Heading.js";
-import "../../index.css";
 export default {
   title: "Heading",
   component: Heading,

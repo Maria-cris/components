@@ -1,5 +1,4 @@
 import Aspect from "./Aspect.js";
-import "../../index.css";
 export default {
   title: "Aspect",
   component: Aspect,

@@ -1,5 +1,4 @@
 import Button from "./Button.js";
-import "../../index.css";
 export default {
   title: "Button",
   component: Button,

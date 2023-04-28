@@ -85,7 +85,8 @@ var BannerContent = function BannerContent(_ref) {
           label: btn === null || btn === void 0 ? void 0 : btn.label,
           type: "primary",
           size: "xsm",
-          isExpand: true
+          isExpand: true,
+          onClick: btn === null || btn === void 0 ? void 0 : btn.onClick
         })
       }) : ""]
     })]

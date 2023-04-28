@@ -1,5 +1,4 @@
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
       principal: ["Nunito Sans"],
@@ -41,7 +40,5 @@ export default {
       },
       success: { 100: "", 200: "", 300: "", 400: "", 500: "" },
     },
-    extend: {},
   },
-  plugins: [],
 };

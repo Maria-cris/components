@@ -45,6 +45,12 @@ Object.defineProperty(exports, "TextLink", {
     return _TextLink.default;
   }
 });
+Object.defineProperty(exports, "tailwindBase", {
+  enumerable: true,
+  get: function get() {
+    return _tailwindBase.default;
+  }
+});
 var _Aspect = _interopRequireDefault(require("./atoms/Aspect"));
 var _Button = _interopRequireDefault(require("./atoms/Button/Button.js"));
 var _Heading = _interopRequireDefault(require("./atoms/Heading"));
@@ -52,4 +58,5 @@ var _Icon = _interopRequireDefault(require("./atoms/Icon"));
 var _TextLink = _interopRequireDefault(require("./atoms/TextLink"));
 var _BannerContent = _interopRequireDefault(require("./molecules/BannerContent"));
 var _Banner = _interopRequireDefault(require("./organisms/Banner/Banner.js"));
+var _tailwindBase = _interopRequireDefault(require("./tailwind-base/tailwindBase"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

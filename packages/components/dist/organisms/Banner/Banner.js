@@ -4,27 +4,38 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _Aspect = _interopRequireDefault(require("../../atoms/Aspect/Aspect"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-require("../../index.css");
-var _classesHelper = require("../../helpers/classesHelper");
+var _Aspect = _interopRequireDefault(require("../../atoms/Aspect/Aspect"));
 var _BannerContent = _interopRequireDefault(require("../../molecules/BannerContent/BannerContent"));
+var _classesHelper = require("../../helpers/classesHelper");
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var bannerImageStyles = {
+  objectFit: "cover",
+  filter: "brightness(0.5)"
+};
+var defaultValues = {
+  ratio: "1/2",
+  overlay: "normal",
+  variant: false,
+  size: "lg",
+  position: "left-top"
+};
 var Banner = function Banner(_ref) {
   var imageUrl = _ref.imageUrl,
-    ratio = _ref.ratio,
-    overlay = _ref.overlay,
+    _ref$ratio = _ref.ratio,
+    ratio = _ref$ratio === void 0 ? defaultValues.ratio : _ref$ratio,
+    _ref$overlay = _ref.overlay,
+    overlay = _ref$overlay === void 0 ? defaultValues.overlay : _ref$overlay,
     title = _ref.title,
     text = _ref.text,
-    variant = _ref.variant,
+    _ref$variant = _ref.variant,
+    variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
     btn = _ref.btn,
-    size = _ref.size,
-    position = _ref.position;
-  var bannerImageStyles = {
-    objectFit: "cover",
-    filter: "brightness(0.5)"
-  };
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? defaultValues.size : _ref$size,
+    _ref$position = _ref.position,
+    position = _ref$position === void 0 ? defaultValues.position : _ref$position;
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       className: "hidden xl:block lg:block md:block  ",
@@ -80,7 +91,7 @@ var Banner = function Banner(_ref) {
   });
 };
 Banner.propTypes = {
-  imageUrl: _propTypes.default.string,
+  imageUrl: _propTypes.default.string.isRequired,
   ratio: _propTypes.default.string,
   overlay: _propTypes.default.string,
   title: _propTypes.default.string,
@@ -90,9 +101,6 @@ Banner.propTypes = {
   size: _propTypes.default.string,
   position: _propTypes.default.string
 };
-Banner.defaultProps = {
-  variant: "normal",
-  overlay: "no"
-};
+Banner.defaultProps = defaultValues;
 var _default = Banner;
 exports.default = _default;

@@ -85,6 +85,7 @@ const BannerContent = ({
               type="primary"
               size="xsm"
               isExpand={true}
+              onClick={btn?.onClick}
             />
           </div>
         ) : (

@@ -4,11 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _classnames = _interopRequireDefault(require("classnames"));
 var _Heading = _interopRequireDefault(require("../../atoms/Heading/Heading"));
 var _Button = _interopRequireDefault(require("../../atoms/Button/Button"));
-var _propTypes = _interopRequireDefault(require("prop-types"));
-var _classnames2 = _interopRequireDefault(require("classnames"));
-require("../../index.css");
 var _classesHelper = require("../../helpers/classesHelper");
 var _textHelper = require("../../helpers/textHelper");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -17,22 +16,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var defaultValues = {
+  variant: false,
+  size: "lg",
+  position: "left-top"
+};
 var BannerContent = function BannerContent(_ref) {
-  var _classnames;
+  var _cn;
   var title = _ref.title,
     text = _ref.text,
     btn = _ref.btn,
-    variant = _ref.variant,
-    size = _ref.size,
-    position = _ref.position;
-  var textColor = (0, _classnames2.default)("pb-4 font-secondary", (_classnames = {}, _defineProperty(_classnames, "text-neutral-100", variant), _defineProperty(_classnames, "text-neutral-800", !variant), _classnames));
+    _ref$variant = _ref.variant,
+    variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? defaultValues.size : _ref$size,
+    _ref$position = _ref.position,
+    position = _ref$position === void 0 ? defaultValues.position : _ref$position;
+  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", variant), _defineProperty(_cn, "text-neutral-800", !variant), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       id: "banner-content",
-      className: (0, _classesHelper.getClassBannerContainer)(position),
+      className: (0, _classesHelper.getPositionContainerText)(position),
       children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
         style: {
-          maxWidth: size === "large" ? "600px" : size === "medium" ? "450px" : "410px"
+          maxWidth: size === "lg" ? "600px" : size === "md" ? "450px" : "410px"
         },
         children: [title ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: textColor,
@@ -52,7 +59,7 @@ var BannerContent = function BannerContent(_ref) {
             id: btn === null || btn === void 0 ? void 0 : btn.id,
             label: btn === null || btn === void 0 ? void 0 : btn.label,
             type: variant ? "outlined" : "primary",
-            size: "medium"
+            size: size === "lg" ? "md" : size === "md" ? "sm" : "xsm"
           })
         }) : ""]
       })
@@ -92,8 +99,6 @@ BannerContent.propTypes = {
   size: _propTypes.default.string,
   position: _propTypes.default.string
 };
-BannerContent.defaultProps = {
-  variant: "normal"
-};
+BannerContent.defaultProps = defaultValues;
 var _default = BannerContent;
 exports.default = _default;

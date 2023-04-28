@@ -5,7 +5,6 @@ import cn from "classnames";
 export const getClassBannerImage = (overlay) => {
   const classesBannerImg = cn("w-full h-full", {
     ["opacity-50"]: overlay === "light",
-    ["brightness-50"]: overlay === "dark",
   });
   return classesBannerImg;
 };

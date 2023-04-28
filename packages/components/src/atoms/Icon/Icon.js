@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "../../index.css";
 
 const Icon = ({ iconName }) => {
   return <span className="font-icons">{iconName}</span>;

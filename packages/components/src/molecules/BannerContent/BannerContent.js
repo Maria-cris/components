@@ -1,31 +1,38 @@
+import PropTypes from "prop-types";
+import cn from "classnames";
 import Heading from "../../atoms/Heading/Heading";
 import Button from "../../atoms/Button/Button";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "../../index.css";
 import {
-  getClassBannerContainer,
+  getPositionContainerText,
   getClassBannerPositionButton,
 } from "../../helpers/classesHelper";
-
 import { getTextCount } from "../../helpers/textHelper";
 
-const BannerContent = ({ title, text, btn, variant, size, position }) => {
-  const textColor = classnames("pb-4 font-secondary", {
+const defaultValues = {
+  variant: false,
+  size: "lg",
+  position: "left-top",
+};
+
+const BannerContent = ({
+  title,
+  text,
+  btn,
+  variant = defaultValues.variant,
+  size = defaultValues.size,
+  position = defaultValues.position,
+}) => {
+  const textColor = cn("pb-4 font-secondary", {
     ["text-neutral-100"]: variant,
     ["text-neutral-800"]: !variant,
   });
   return (
     <div>
-      <div id="banner-content" className={getClassBannerContainer(position)}>
+      <div id="banner-content" className={getPositionContainerText(position)}>
         <div
           style={{
             maxWidth:
-              size === "large"
-                ? "600px"
-                : size === "medium"
-                ? "450px"
-                : "410px",
+              size === "lg" ? "600px" : size === "md" ? "450px" : "410px",
           }}
         >
           {title ? (
@@ -52,7 +59,7 @@ const BannerContent = ({ title, text, btn, variant, size, position }) => {
                 id={btn?.id}
                 label={btn?.label}
                 type={variant ? "outlined" : "primary"}
-                size="medium"
+                size={size === "lg" ? "md" : size === "md" ? "sm" : "xsm"}
               />
             </div>
           ) : (
@@ -97,8 +104,6 @@ BannerContent.propTypes = {
   position: PropTypes.string,
 };
 
-BannerContent.defaultProps = {
-  variant: "normal",
-};
+BannerContent.defaultProps = defaultValues;
 
 export default BannerContent;

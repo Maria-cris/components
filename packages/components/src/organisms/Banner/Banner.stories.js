@@ -3,6 +3,7 @@ import "../../index.css";
 export default {
   title: "Banner",
   component: Banner,
+  tags: ["autodocs"],
   args: {
     imageUrl: "https://wallpapercave.com/wp/wp2599594.jpg",
     title: "Demo Banner",

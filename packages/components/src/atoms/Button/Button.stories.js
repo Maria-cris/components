@@ -3,11 +3,15 @@ import "../../index.css";
 export default {
   title: "Button",
   component: Button,
+  tags: ["autodocs"],
   args: {
     id: "button",
     label: "Demo Button",
     type: "primary",
-    size: "small",
+    size: "sm",
+    disabled: false,
+    isExpand: false,
+    icon: "",
   },
 };
 

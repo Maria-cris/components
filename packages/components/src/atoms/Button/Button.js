@@ -1,44 +1,83 @@
 import PropTypes from "prop-types";
-import "../../index.css";
-import classnames from "classnames";
+import cn from "classnames";
 import Icon from "../Icon";
 
+const defaultValues = {
+  id: "btn",
+  size: "sm",
+  disabled: false,
+  isExpand: false,
+  type: "primary",
+  icon: "",
+};
+const sizes = {
+  xsm: cn("px-4 py-3"),
+  sm: cn("py-4 px-8"),
+  md: cn("py-5 px-9 text-lg"),
+  lg: cn("py-6 px-12 text-lg"),
+};
+const sizeIcon = {
+  sm: cn("p-1.5 w-8 h-8"),
+  md: cn("p-3.5 w-12 h-12"),
+  lg: cn("p-4 w-15 h-15"),
+};
+
+const variants = {
+  primary: cn(
+    "bg-primary-500 hover:bg-primary-400 active:bg-primary-600",
+    "text-neutral-100",
+    "focus:border-2 border-primary-700"
+  ),
+  secondary: cn(
+    "bg-neutral-200 hover:bg-neutral-100 active:bg-neutral-300",
+    "text-netral-800",
+    "focus:border-2 border-neutral-300"
+  ),
+  outlined: cn(
+    "bg-transparent hover:bg-neutral-100 active:bg-neutral-100 focus:bg-neutral-500",
+    "text-primary-500",
+    "border border-primary-500 focus:border-2"
+  ),
+  negative: cn(
+    "bg-transparent hover:bg-neutral-100 active:bg-neutral-100 focus:bg-neutral-500",
+    "text-neutral-100 hover:text-neutral-900",
+    "border-2 border-neutral-100 focus:border-2 "
+  ),
+};
+const commonClasses = cn(
+  "cursor-pointer",
+  "flex",
+  "relative",
+  "rounded",
+  "min-w-40 max-w-full",
+  "font-bold",
+  "items-center justify-center"
+);
+const isDisabled = cn(
+  "cursor-not-allowed",
+  "bg-neutral-200",
+  "text-neutral-100",
+  commonClasses
+);
+
 const Button = ({
-  id,
+  id = defaultValues.id,
   label,
-  type,
-  size,
-  isExpand,
-  disabled,
-  icon,
+  type = defaultValues.type,
+  size = defaultValues.size,
+  isExpand = false,
+  disabled = false,
+  icon = defaultValues.icon,
   onClick,
 }) => {
-  const buttonClasses = classnames(
-    "cursor-pointer relative rounded min-w-40 max-w-full font-bold flex items-center justify-center",
-    {
-      ["bg-primary-500 text-neutral-100 hover:bg-primary-400 active:bg-primary-600 focus:border-2 border-primary-700"]:
-        type === "primary" && !disabled,
-      ["cursor-not-allowed bg-neutral-200 text-neutral-100"]:
-        type === "primary" && disabled,
-      ["bg-neutral-200 text-netral-800 hover:bg-netral-100 active:bg-neutral-300 focus:border-2 border-neutral-300"]:
-        type === "secondary",
-      ["cursor-not-allowed bg-neutral-100 text-neutral-500"]:
-        type === "secondary" && disabled,
-      ["bg-transparent text-primary-500 border border-primary-500 hover:bg-neutral-100 active:bg-neutral-100 focus:bg-neutral-500 focus:border-2"]:
-        type === "outlined",
-      ["cursor-not-allowed bg-neutral-200 text-neutral-200 border border-neutral-300"]:
-        type === "outlined" && disabled,
-      ["bg-transparent text-neutral-100 border-2 border-neutral-100 hover:bg-neutral-100 active:bg-neutral-100 focus:bg-neutral-500 focus:border-2 hover:text-neutral-900 "]:
-        type === "negative",
-      ["py-4 px-8 text-base"]: size === "small",
-      ["px-4 py-3"]: size === "xsm",
-      ["py-5 px-9 text-lg"]: size === "medium",
-      ["py-6 px-12 text-lg"]: size === "large",
-      ["min-w-full flex justify-center"]: isExpand,
-    }
-  );
+  const buttonClasses = cn(commonClasses, {
+    [[sizes[size]]]: true,
+    [[variants[type]]]: !disabled,
+    ["min-w-full flex justify-center"]: isExpand,
+    [isDisabled]: disabled,
+  });
   return (
-    <button id={id} className={buttonClasses} type="button" onClick={onclick}>
+    <button id={id} className={buttonClasses} type="button" onClick={onClick}>
       {icon ? (
         <span>
           <Icon iconName={icon} /> {" " + label}
@@ -54,14 +93,11 @@ Button.propTypes = {
   isExpand: PropTypes.bool,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  type: PropTypes.string,
-  size: PropTypes.string,
+  type: PropTypes.oneOf("primary", "secondary", "outlined", "negative"),
+  size: PropTypes.oneOf("xsm", "sm", "md", "lg"),
   icon: PropTypes.string,
 };
 
-Button.defaultProps = {
-  disabled: false,
-  isExpand: false,
-};
+Button.defaultProps = defaultValues;
 
 export default Button;

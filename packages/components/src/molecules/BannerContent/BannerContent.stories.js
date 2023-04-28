@@ -3,6 +3,7 @@ import "../../index.css";
 export default {
   title: "BannerContent",
   component: BannerContent,
+  tags: ["autodocs"],
   args: {
     title: "Demo BannerContent",
     text: "Demo BannerContent",

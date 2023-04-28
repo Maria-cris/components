@@ -3,6 +3,7 @@ import "../../index.css";
 export default {
   title: "Icon",
   component: Icon,
+  tags: ["autodocs"],
   args: {
     iconName: "home",
   },

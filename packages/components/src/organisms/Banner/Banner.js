@@ -1,25 +1,29 @@
-import Aspect from "../../atoms/Aspect/Aspect";
 import PropTypes from "prop-types";
-import "../../index.css";
-import { getClassBannerImage } from "../../helpers/classesHelper";
+import Aspect from "../../atoms/Aspect/Aspect";
 import BannerContent from "../../molecules/BannerContent/BannerContent";
-
+import { getClassBannerImage } from "../../helpers/classesHelper";
+const bannerImageStyles = {
+  objectFit: "cover",
+  filter: "brightness(0.5)",
+};
+const defaultValues = {
+  ratio: "1/2",
+  overlay: "normal",
+  variant: false,
+  size: "lg",
+  position: "left-top",
+};
 const Banner = ({
   imageUrl,
-  ratio,
-  overlay,
+  ratio = defaultValues.ratio,
+  overlay = defaultValues.overlay,
   title,
   text,
-  variant,
+  variant = defaultValues.variant,
   btn,
-  size,
-  position,
+  size = defaultValues.size,
+  position = defaultValues.position,
 }) => {
-  const bannerImageStyles = {
-    objectFit: "cover",
-    filter: "brightness(0.5)",
-  };
-
   return (
     <div>
       <div className="hidden xl:block lg:block md:block  ">
@@ -85,8 +89,5 @@ Banner.propTypes = {
   size: PropTypes.string,
   position: PropTypes.string,
 };
-Banner.defaultProps = {
-  variant: "normal",
-  overlay: "no",
-};
+Banner.defaultProps = defaultValues;
 export default Banner;

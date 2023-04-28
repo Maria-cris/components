@@ -3,6 +3,7 @@ import "../../index.css";
 export default {
   title: "Heading",
   component: Heading,
+  tags: ["autodocs"],
   args: {
     title: "Demo Heading",
     type: "h-1",

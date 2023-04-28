@@ -3,6 +3,7 @@ import "../../index.css";
 export default {
   title: "Aspect",
   component: Aspect,
+  tags: ["autodocs"],
   args: {
     ratio: "7/2",
   },

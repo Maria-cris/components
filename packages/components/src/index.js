@@ -1,2 +1,3 @@
 import Button from "./atoms/Button/Button.js";
-export { Button };
+import Banner from "./organisms/Banner/Banner.js";
+export { Button, Banner };

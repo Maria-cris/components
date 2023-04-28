@@ -13,8 +13,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 /* Classes*/
 
 var getClassBannerImage = function getClassBannerImage(overlay) {
-  var _cn;
-  var classesBannerImg = (0, _classnames.default)("w-full h-full", (_cn = {}, _defineProperty(_cn, "opacity-50", overlay === "light"), _defineProperty(_cn, "brightness-50", overlay === "dark"), _cn));
+  var classesBannerImg = (0, _classnames.default)("w-full h-full", _defineProperty({}, "opacity-50", overlay === "light"));
   return classesBannerImg;
 };
 exports.getClassBannerImage = getClassBannerImage;

@@ -39,9 +39,9 @@ const Heading = ({
 
 Heading.propTypes = {
   title: PropTypes.string,
-  type: PropTypes.string,
-  font: PropTypes.string,
-  variant: PropTypes.string,
+  type: PropTypes.oneOf(["h-1", "h-2", "h-3", "h-4", "h-5", "h-6"]),
+  font: PropTypes.oneOf(["principal", "secondary"]),
+  variant: PropTypes.oneOf(["normal", "primary", "negative"]),
 };
 
 Heading.defaultProps = defaultValues;

@@ -101,8 +101,18 @@ BannerContent.propTypes = {
   text: PropTypes.string,
   btn: PropTypes.object,
   variant: PropTypes.bool,
-  size: PropTypes.string,
-  position: PropTypes.string,
+  size: PropTypes.oneOf(["lg", "md", "sm"]),
+  position: PropTypes.oneOf([
+    "left-top",
+    "left-middle",
+    "left-bottom",
+    "center-top",
+    "center-middle",
+    "center-bottom",
+    "right-top",
+    "right-middle",
+    "right-bottom",
+  ]),
 };
 
 BannerContent.defaultProps = defaultValues;

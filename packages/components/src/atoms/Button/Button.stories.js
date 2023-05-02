@@ -11,6 +11,17 @@ export default {
     disabled: false,
     isExpand: false,
     icon: "",
+    onClick: () => {},
+  },
+  argTypes: {
+    type: {
+      options: ["primary", "secondary", "outlined", "negative"],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["xsm", "sm", "md", "lg"],
+      control: { type: "select" },
+    },
   },
 };
 

@@ -93,13 +93,13 @@ var Banner = function Banner(_ref) {
 Banner.propTypes = {
   imageUrl: _propTypes.default.string.isRequired,
   ratio: _propTypes.default.string,
-  overlay: _propTypes.default.string,
+  overlay: _propTypes.default.oneOf(["dark", "light", "no-overlay"]),
   title: _propTypes.default.string,
   text: _propTypes.default.string,
   variant: _propTypes.default.bool,
   btn: _propTypes.default.object,
-  size: _propTypes.default.string,
-  position: _propTypes.default.string
+  size: _propTypes.default.oneOf(["lg", "md", "sm"]),
+  position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"])
 };
 Banner.defaultProps = defaultValues;
 var _default = Banner;

@@ -50,9 +50,9 @@ var Heading = function Heading(_ref) {
 };
 Heading.propTypes = {
   title: _propTypes.default.string,
-  type: _propTypes.default.string,
-  font: _propTypes.default.string,
-  variant: _propTypes.default.string
+  type: _propTypes.default.oneOf(["h-1", "h-2", "h-3", "h-4", "h-5", "h-6"]),
+  font: _propTypes.default.oneOf(["principal", "secondary"]),
+  variant: _propTypes.default.oneOf(["normal", "primary", "negative"])
 };
 Heading.defaultProps = defaultValues;
 var _default = Heading;

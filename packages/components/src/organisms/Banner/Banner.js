@@ -81,13 +81,23 @@ const Banner = ({
 Banner.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   ratio: PropTypes.string,
-  overlay: PropTypes.string,
+  overlay: PropTypes.oneOf(["dark", "light", "no-overlay"]),
   title: PropTypes.string,
   text: PropTypes.string,
   variant: PropTypes.bool,
   btn: PropTypes.object,
-  size: PropTypes.string,
-  position: PropTypes.string,
+  size: PropTypes.oneOf(["lg", "md", "sm"]),
+  position: PropTypes.oneOf([
+    "left-top",
+    "left-middle",
+    "left-bottom",
+    "center-top",
+    "center-middle",
+    "center-bottom",
+    "right-top",
+    "right-middle",
+    "right-bottom",
+  ]),
 };
 Banner.defaultProps = defaultValues;
 export default Banner;

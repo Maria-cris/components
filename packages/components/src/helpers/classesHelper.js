@@ -47,3 +47,49 @@ export const getClassBannerPositionButton = (potition) => {
   });
   return classesBannerImg;
 };
+
+export const getClassItem = (principal, active) => {
+  const classItem = cn("flex flex-1 flex-nowrap align-middle  ", {
+    ["font-bold"]: principal,
+    ["underline"]: active,
+    ["pl-2  py-4"]: !principal,
+    ["bg-neutral-900 text-neutral-100"]: active && !principal,
+  });
+  return classItem;
+};
+
+const classesSubMenu = cn(
+  "flex absolute flex-row flex-1",
+  "shadow shadow-lg",
+  "font-normal",
+  "bg-neutral-100",
+  "w-full h-14 lg:h-auto xl:h-auto 2xl:h-auto",
+  "invisible lg:visible",
+  "pl-2",
+  "border-t border-neutral-300"
+);
+export const getclassSubMenu = (submenu) => {
+  const classSubMenu = cn(classesSubMenu, { ["hidden"]: submenu });
+  return classSubMenu;
+};
+
+export const getClassItemMobContainer = (active, principal) => {
+  const classItemMobContainer = cn("flex", {
+    ["bg-neutral-900 text-neutral-100"]: active,
+    ["flex-1"]: principal,
+    ["justify-between items-center p-1 border-b border-neutral-300 cursor-pointer"]:
+      !principal,
+  });
+  return classItemMobContainer;
+};
+
+const commonClassesItems = cn(
+  "px-3 py-1 cursor-pointer  border-l  border-neutral-300 hover:bg-neutral-300 hover:text-neutral-900 "
+);
+
+export const getClassIconMobContainer = (active) => {
+  const classIconMobContainer = cn(commonClassesItems, {
+    ["bg-neutral-900 text-neutral-100"]: active,
+  });
+  return classIconMobContainer;
+};

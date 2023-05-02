@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
       principal: ["Nunito Sans"],
@@ -51,9 +50,7 @@ var _default = {
         400: "",
         500: ""
       }
-    },
-    extend: {}
-  },
-  plugins: []
+    }
+  }
 };
 exports.default = _default;

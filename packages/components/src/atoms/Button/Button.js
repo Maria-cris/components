@@ -16,11 +16,11 @@ const sizes = {
   md: cn("py-5 px-9 text-lg"),
   lg: cn("py-6 px-12 text-lg"),
 };
-const sizeIcon = {
-  sm: cn("p-1.5 w-8 h-8"),
-  md: cn("p-3.5 w-12 h-12"),
-  lg: cn("p-4 w-15 h-15"),
-};
+// const sizeIcon = {
+//   sm: cn("p-1.5 w-8 h-8"),
+//   md: cn("p-3.5 w-12 h-12"),
+//   lg: cn("p-4 w-15 h-15"),
+// };
 
 const variants = {
   primary: cn(
@@ -89,12 +89,13 @@ const Button = ({
   );
 };
 Button.propTypes = {
+  id: PropTypes.string,
   disabled: PropTypes.bool,
   isExpand: PropTypes.bool,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  type: PropTypes.oneOf("primary", "secondary", "outlined", "negative"),
-  size: PropTypes.oneOf("xsm", "sm", "md", "lg"),
+  type: PropTypes.oneOf(["primary", "secondary", "outlined", "negative"]),
+  size: PropTypes.oneOf(["xsm", "sm", "md", "lg"]),
   icon: PropTypes.string,
 };
 

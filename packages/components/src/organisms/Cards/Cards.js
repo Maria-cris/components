@@ -7,7 +7,7 @@ import { myhref } from "../../helpers/myrefHelper.js";
 
 const types = {
   horizontal: "w-3/5",
-  vertical: "h-full",
+  vertical: "h-fit",
 };
 
 const display = {
@@ -121,7 +121,7 @@ Cards.propTypes = {
   subtitle: PropTypes.string,
   text: PropTypes.string,
   link: PropTypes.object,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(["vertical", "horizontal"]),
 };
 Cards.defaultProps = defaultValues;
 export default Cards;

@@ -11,6 +11,12 @@ export default {
     type: "horizontal",
     link: { label: "Ver más", route: "https://jonsuh.com/hamburgers/" },
   },
+  argTypes: {
+    type: {
+      options: ["vertical", "horizontal"],
+      control: { type: "radio" },
+    },
+  },
 };
 
 const Template = (args) => <Cards {...args} />;

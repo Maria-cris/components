@@ -16,6 +16,30 @@ export default {
     },
     position: "left-top",
   },
+  argTypes: {
+    size: {
+      options: ["lg", "md", "sm"],
+      control: { type: "select" },
+    },
+    overlay: {
+      options: ["dark", "light", ""],
+      control: { type: "radio" },
+    },
+    position: {
+      options: [
+        "left-top",
+        "left-middle",
+        "left-bottom",
+        "center-top",
+        "center-middle",
+        "center-bottom",
+        "right-top",
+        "right-middle",
+        "right-bottom",
+      ],
+      control: { type: "select" },
+    },
+  },
 };
 
 const Template = (args) => <Banner {...args} />;

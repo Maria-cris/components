@@ -27,11 +27,12 @@ var sizes = {
   md: (0, _classnames.default)("py-5 px-9 text-lg"),
   lg: (0, _classnames.default)("py-6 px-12 text-lg")
 };
-var sizeIcon = {
-  sm: (0, _classnames.default)("p-1.5 w-8 h-8"),
-  md: (0, _classnames.default)("p-3.5 w-12 h-12"),
-  lg: (0, _classnames.default)("p-4 w-15 h-15")
-};
+// const sizeIcon = {
+//   sm: cn("p-1.5 w-8 h-8"),
+//   md: cn("p-3.5 w-12 h-12"),
+//   lg: cn("p-4 w-15 h-15"),
+// };
+
 var variants = {
   primary: (0, _classnames.default)("bg-primary-500 hover:bg-primary-400 active:bg-primary-600", "text-neutral-100", "focus:border-2 border-primary-700"),
   secondary: (0, _classnames.default)("bg-neutral-200 hover:bg-neutral-100 active:bg-neutral-300", "text-netral-800", "focus:border-2 border-neutral-300"),
@@ -72,12 +73,13 @@ var Button = function Button(_ref) {
   });
 };
 Button.propTypes = {
+  id: _propTypes.default.string,
   disabled: _propTypes.default.bool,
   isExpand: _propTypes.default.bool,
   label: _propTypes.default.string,
   onClick: _propTypes.default.func,
-  type: _propTypes.default.oneOf("primary", "secondary", "outlined", "negative"),
-  size: _propTypes.default.oneOf("xsm", "sm", "md", "lg"),
+  type: _propTypes.default.oneOf(["primary", "secondary", "outlined", "negative"]),
+  size: _propTypes.default.oneOf(["xsm", "sm", "md", "lg"]),
   icon: _propTypes.default.string
 };
 Button.defaultProps = defaultValues;

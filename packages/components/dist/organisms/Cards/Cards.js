@@ -18,7 +18,7 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var types = {
   horizontal: "w-3/5",
-  vertical: "h-full"
+  vertical: "h-fit"
 };
 var display = {
   horizontal: "flex-row",
@@ -118,7 +118,7 @@ Cards.propTypes = {
   subtitle: _propTypes.default.string,
   text: _propTypes.default.string,
   link: _propTypes.default.object,
-  type: _propTypes.default.string
+  type: _propTypes.default.oneOf(["vertical", "horizontal"])
 };
 Cards.defaultProps = defaultValues;
 var _default = Cards;

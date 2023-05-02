@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import react, { useState, useEffect } from "react";
 
 export const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState("down");

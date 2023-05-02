@@ -93,3 +93,28 @@ export const getClassIconMobContainer = (active) => {
   });
   return classIconMobContainer;
 };
+
+export const getPositionSliderContainerText = (potition) => {
+  const commonClasses = cn(
+    "absolute py-10 px-32",
+    "top-0  left-0",
+    "w-full h-full",
+    "hidden md:flex "
+  );
+  const positions = {
+    "center-top": "justify-center items-start text-center",
+    "center-middle": "justify-center items-center text-center",
+    "center-bottom": "justify-center items-end text-center",
+    "left-top": "justify-start items-start text-left",
+    "left-middle": "justify-start items-center text-left",
+    "left-bottom": "justify-start items-end text-left",
+    "right-top": "justify-end items-start text-right",
+    "right-middle": "justify-end items-center text-right",
+    "right-bottom": "justify-end items-end text-right",
+  };
+
+  const classesBannerImg = cn(commonClasses, {
+    [[positions[potition]]]: true,
+  });
+  return classesBannerImg;
+};

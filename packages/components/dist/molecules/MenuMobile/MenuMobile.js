@@ -40,24 +40,27 @@ var MenuMobile = function MenuMobile(_ref) {
     _useState2 = _slicedToArray(_useState, 2),
     index = _useState2[0],
     setIndex = _useState2[1];
-  // const [type, setType] = useState(submenuM ? inactive : active);
-  // const [sub, setSub] = useState(inactive);
-
+  var _useState3 = (0, _react.useState)(submenuM ? inactive : active),
+    _useState4 = _slicedToArray(_useState3, 2),
+    type = _useState4[0],
+    setType = _useState4[1];
+  var _useState5 = (0, _react.useState)(inactive),
+    _useState6 = _slicedToArray(_useState5, 2),
+    sub = _useState6[0],
+    setSub = _useState6[1];
   var handleArrowMore = function handleArrowMore(index) {
-    //   setType(inactive);
-    //   setSub(active);
+    setType(inactive);
+    setSub(active);
     setIndex(index);
   };
-  // const handleArrowLess = () => {
-  //   setType(active);
-  //   setSub(inactive);
-  // };
-  var type = "principal";
-  var sub = "";
+  var handleArrowLess = function handleArrowLess() {
+    setType(active);
+    setSub(inactive);
+  };
   var ClassesMenuContainer = (0, _classnames.default)(" w-full bg-neutral-100 container overscroll-contain h-[90%] px-2");
-  var ClassesItemsContainer = (0, _classnames.default)("w-full flex flex-col justify-between py-1 z-20  border-t border-neutral-300");
+  var ClassesItemsContainer = (0, _classnames.default)("w-full flex flex-col  py-1 z-20  border-t border-neutral-300");
   var classesItems = (0, _classnames.default)("flex justify-between items-center p-1 h-full border-b border-neutral-300 cursor-pointer");
-  var classesSubMenuContainer = (0, _classnames.default)("w-full flex flex-col justify-between py-1 z-20 overscroll-contain h-[90%] scrollbar");
+  var classesSubMenuContainer = (0, _classnames.default)("w-full flex flex-col py-1 z-20 overscroll-contain h-[90%] ");
   var classesReverse = (0, _classnames.default)("flex justify-end items-center p-1 border-b border-t w-full border-neutral-300 cursor-pointer flex-row-reverse");
   var ClassesMenuMobContainer = (0, _classnames.default)("w-d:hidden w-full h-full", "bg-neutral-100", "border-t border-neutral-300", "p-2", "flex absolute flex-col overflow-y-auto overscrol-contain", _defineProperty({}, "left-0 -top-1", !submenuM));
   var navClasses = {
@@ -67,7 +70,7 @@ var MenuMobile = function MenuMobile(_ref) {
   };
   var MenuMobStyles = (_MenuMobStyles = {
     msOverflowStyle: "none" /* IE and Edge */
-  }, _defineProperty(_MenuMobStyles, "msOverflowStyle", "none"), _defineProperty(_MenuMobStyles, "transform", type === "principal" ? "translate3d(0, 0, 0)" : "translate3d(-100%, 0, 0)"), _defineProperty(_MenuMobStyles, "transition", "transform 0.5s, opacity 0.1s"), _MenuMobStyles);
+  }, _defineProperty(_MenuMobStyles, "msOverflowStyle", "none"), _defineProperty(_MenuMobStyles, "transform", type === "principal" ? "translate3d(0, 0, 0)" : "translate3d(-110%, 0, 0)"), _defineProperty(_MenuMobStyles, "transition", "transform 0.5s, opacity 0.1s"), _MenuMobStyles);
   var commonClassesMenuMob = (0, _classnames.default)("h-full w-full", "overflow-y-scroll lg:hidden block overscroll-contain", "pr-2");
   var classesSubMenuMob = (0, _classnames.default)("w-full h-full top-0 left-0 absolute", "overflow-auto lg:hidden flex overscroll-contain");
   var stylesSubMenuMob = (_stylesSubMenuMob = {
@@ -148,6 +151,9 @@ var MenuMobile = function MenuMobile(_ref) {
           style: stylesSubMenuMob,
           children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
             className: classesSubMenuContainer,
+            style: _defineProperty({
+              msOverflowStyle: "none"
+            }, "msOverflowStyle", "none"),
             children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
               className: classesReverse,
               children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_TextLink.default, {
@@ -155,9 +161,10 @@ var MenuMobile = function MenuMobile(_ref) {
                 href: itemsData[index].route
               }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
                 id: "iconGo",
-                className: "px-2 py-1 cursor-pointer flex items-center"
-                // onClick={() => handleArrowLess()}
-                ,
+                className: "px-2 py-1 cursor-pointer flex items-center",
+                onClick: function onClick() {
+                  return handleArrowLess();
+                },
                 children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
                   iconName: iconExpandLess
                 })

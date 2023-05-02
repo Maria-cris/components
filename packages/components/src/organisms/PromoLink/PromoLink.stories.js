@@ -4,7 +4,7 @@ export default {
   component: PromoLink,
   tags: ["autodocs"],
   args: {
-    route: "https://wallpapercave.com/wp/wp2599594.jpg",
+    route: "https://www.caffeineinformer.com/death-by-caffeine",
     text: "Demo PromoLink",
   },
 };

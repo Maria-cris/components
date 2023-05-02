@@ -1,11 +1,12 @@
 {
   "name": "@lottus-ed/components",
   "version": "4.3.1",
+  "main": "dist/index.js",
+  "license": "MIT",
   "private": false,
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -13,7 +14,6 @@
     "classnames": "^2.3.2",
     "postcss": "^8.4.23",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
     "react-lottie-player": "^1.5.4",
     "react-scripts": "5.0.1",
     "storybook": "^7.0.7",
@@ -79,6 +79,7 @@
     "autoprefixer": "^10.4.14",
     "babel-plugin-named-exports-order": "^0.0.2",
     "classnames": "^2.3.2",
+    "react": "^18.2.0",
     "postcss": "^8.4.23",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.7",

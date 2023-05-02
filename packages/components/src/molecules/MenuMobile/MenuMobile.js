@@ -19,33 +19,31 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
   const iconExpandLess = "arrow_back_ios";
 
   const [index, setIndex] = useState(0);
-  // const [type, setType] = useState(submenuM ? inactive : active);
-  // const [sub, setSub] = useState(inactive);
+  const [type, setType] = useState(submenuM ? inactive : active);
+  const [sub, setSub] = useState(inactive);
 
   const handleArrowMore = (index) => {
-    //   setType(inactive);
-    //   setSub(active);
+    setType(inactive);
+    setSub(active);
     setIndex(index);
   };
-  // const handleArrowLess = () => {
-  //   setType(active);
-  //   setSub(inactive);
-  // };
-  const type = "principal";
-  const sub = "";
+  const handleArrowLess = () => {
+    setType(active);
+    setSub(inactive);
+  };
 
   const ClassesMenuContainer = cn(
     " w-full bg-neutral-100 container overscroll-contain h-[90%] px-2"
   );
   const ClassesItemsContainer = cn(
-    "w-full flex flex-col justify-between py-1 z-20  border-t border-neutral-300"
+    "w-full flex flex-col  py-1 z-20  border-t border-neutral-300"
   );
 
   const classesItems = cn(
     "flex justify-between items-center p-1 h-full border-b border-neutral-300 cursor-pointer"
   );
   const classesSubMenuContainer = cn(
-    "w-full flex flex-col justify-between py-1 z-20 overscroll-contain h-[90%] scrollbar"
+    "w-full flex flex-col py-1 z-20 overscroll-contain h-[90%] "
   );
   const classesReverse = cn(
     "flex justify-end items-center p-1 border-b border-t w-full border-neutral-300 cursor-pointer flex-row-reverse"
@@ -72,7 +70,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     transform:
       type === "principal"
         ? "translate3d(0, 0, 0)"
-        : "translate3d(-100%, 0, 0)",
+        : "translate3d(-110%, 0, 0)",
     transition: "transform 0.5s, opacity 0.1s",
   };
   const commonClassesMenuMob = cn(
@@ -155,7 +153,10 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
             className={classesSubMenuMob}
             style={stylesSubMenuMob}
           >
-            <div className={classesSubMenuContainer}>
+            <div
+              className={classesSubMenuContainer}
+              style={{ msOverflowStyle: "none", msOverflowStyle: "none" }}
+            >
               <div className={classesReverse}>
                 <TextLink
                   text={itemsData[index].label}
@@ -164,7 +165,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
                 <div
                   id="iconGo"
                   className="px-2 py-1 cursor-pointer flex items-center"
-                  // onClick={() => handleArrowLess()}
+                  onClick={() => handleArrowLess()}
                 >
                   <Icon iconName={iconExpandLess} />
                 </div>

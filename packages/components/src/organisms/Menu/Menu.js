@@ -10,7 +10,7 @@ import Icon from "../../atoms/Icon/Icon";
 import Button from "../../atoms/Button";
 
 const classesHeader = cn(
-  "flex flex-1 invisible lg:visible min-[320px]:hidden",
+  "flex flex-1 hidden lg:flex min-[320px]:hidden",
   "p-1",
   "h-14 lg:h-auto",
   "shadow-lg",
@@ -120,7 +120,7 @@ const Menu = ({ data, languages, btn }) => {
     }
   };
   //classes
-  const classLanguages = cn(classesLanguages, { ["hidden"]: !languages });
+  const classLanguages = cn(classesLanguages, { ["invisible"]: !languages });
 
   return (
     <div
@@ -155,7 +155,7 @@ const Menu = ({ data, languages, btn }) => {
           </div>
           <div className="flex flex-1 flex-row w-full">
             <nav id="Menu" className={classesNavContainer}>
-              <ul className="flex space-x-5">
+              <ul className="flex space-x-5 whitespace-nowrap">
                 {data.menus.map((element, itemIndex) => {
                   if (element.items.length) {
                     return (
@@ -200,10 +200,10 @@ const Menu = ({ data, languages, btn }) => {
             </div>
             <div id="btn" className={classButton}>
               <Button
-                label={data.btn?.label}
+                label={btn?.label}
                 size="xsm"
                 type="primary"
-                onClick={data?.btn?.onClick}
+                onClick={btn?.onClick}
               />
             </div>
           </div>

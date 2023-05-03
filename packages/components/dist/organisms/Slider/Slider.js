@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = require("react");
+var _propTypes = _interopRequireDefault(require("prop-types"));
 var _textHelper = require("../../helpers/textHelper");
 var _classnames = _interopRequireDefault(require("classnames"));
 var _react2 = require("swiper/react");
@@ -142,6 +143,9 @@ var Slider = function Slider(_ref) {
       })
     })]
   });
+};
+Slider.propTypes = {
+  slides: _propTypes.default.object
 };
 var _default = Slider;
 exports.default = _default;

@@ -38,6 +38,7 @@ var SliderContent = function SliderContent(_ref) {
       id: "slider-content",
       className: (0, _classesHelper.getPositionSliderContainerText)(position),
       children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "w-1/2",
         children: [title ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: textColor,
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Heading.default, {

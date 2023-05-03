@@ -33,6 +33,12 @@ Object.defineProperty(exports, "Cards", {
     return _Cards.default;
   }
 });
+Object.defineProperty(exports, "Carrusel", {
+  enumerable: true,
+  get: function get() {
+    return _Carrusel.default;
+  }
+});
 Object.defineProperty(exports, "Heading", {
   enumerable: true,
   get: function get() {
@@ -57,6 +63,12 @@ Object.defineProperty(exports, "MenuMobile", {
     return _MenuMobile.default;
   }
 });
+Object.defineProperty(exports, "Slider", {
+  enumerable: true,
+  get: function get() {
+    return _Slider.default;
+  }
+});
 Object.defineProperty(exports, "TextLink", {
   enumerable: true,
   get: function get() {
@@ -79,5 +91,7 @@ var _Banner = _interopRequireDefault(require("./organisms/Banner/Banner.js"));
 var _Cards = _interopRequireDefault(require("./organisms/Cards"));
 var _MenuMobile = _interopRequireDefault(require("./molecules/MenuMobile"));
 var _Menu = _interopRequireDefault(require("./organisms/Menu"));
+var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));
+var _Carrusel = _interopRequireDefault(require("./organisms/Carrusel/Carrusel"));
 var _tailwindBase = _interopRequireDefault(require("./tailwind-base/tailwindBase"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

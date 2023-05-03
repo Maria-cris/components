@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = require("react");
+var _propTypes = _interopRequireDefault(require("prop-types"));
 var _classnames = _interopRequireDefault(require("classnames"));
 var _useScrollDirection = require("../../hooks/useScrollDirection");
 var _classesHelper = require("../../helpers/classesHelper");
@@ -271,6 +272,11 @@ var Menu = function Menu(_ref) {
       })
     })]
   });
+};
+Menu.propTypes = {
+  data: _propTypes.default.object,
+  languages: _propTypes.default.bool,
+  btn: _propTypes.default.object
 };
 var _default = Menu;
 exports.default = _default;

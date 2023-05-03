@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import cn from "classnames";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
 import { getClassItem, getclassSubMenu } from "../../helpers/classesHelper";
@@ -279,6 +280,11 @@ const Menu = ({ data, languages, btn }) => {
       </div>
     </div>
   );
+};
+Menu.propTypes = {
+  data: PropTypes.object,
+  languages: PropTypes.bool,
+  btn: PropTypes.object,
 };
 
 export default Menu;

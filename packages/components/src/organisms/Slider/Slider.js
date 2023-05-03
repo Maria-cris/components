@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import PropTypes from "prop-types";
 import { getTextCount } from "../../helpers/textHelper";
 import cn from "classnames";
 
@@ -154,6 +155,9 @@ const Slider = ({ slides }) => {
       </section>
     </div>
   );
+};
+Slider.propTypes = {
+  slides: PropTypes.object,
 };
 
 export default Slider;

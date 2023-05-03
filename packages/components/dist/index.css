@@ -4,3 +4,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@layer components {
+  .ccIndicators {
+    @apply absolute bottom-0 flex w-full justify-center pb-12;
+  }
+}
+@layer components {
+  .ccBullets {
+    @apply cursor-pointer block mr-2 w-4 h-4 rounded-[50%] bg-neutral-600;
+  }
+}
+@layer components {
+  .ccBulletsActive {
+    @apply rounded-[60px] w-8;
+  }
+}
+@layer components {
+  .slides {
+    @apply relative flex w-full h-full;
+  }
+}

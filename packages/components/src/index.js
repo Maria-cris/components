@@ -8,6 +8,8 @@ import Banner from "./organisms/Banner/Banner.js";
 import Cards from "./organisms/Cards";
 import MenuMobile from "./molecules/MenuMobile";
 import Menu from "./organisms/Menu";
+import Slider from "./organisms/Slider/Slider";
+import Carrusel from "./organisms/Carrusel/Carrusel";
 import tailwindBase from "./tailwind-base/tailwindBase";
 
 export {
@@ -22,4 +24,6 @@ export {
   tailwindBase,
   Menu,
   Cards,
+  Slider,
+  Carrusel,
 };

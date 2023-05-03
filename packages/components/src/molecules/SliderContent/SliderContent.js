@@ -32,7 +32,7 @@ const SliderContent = ({
         id="slider-content"
         className={getPositionSliderContainerText(position)}
       >
-        <div>
+        <div className="w-1/2">
           {title ? (
             <div className={textColor}>
               <Heading

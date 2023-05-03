@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getclassSubMenu = exports.getPositionContainerText = exports.getClassItemMobContainer = exports.getClassItem = exports.getClassIconMobContainer = exports.getClassBannerPositionButton = exports.getClassBannerImage = void 0;
+exports.getclassSubMenu = exports.getPositionSliderContainerText = exports.getPositionContainerText = exports.getClassItemMobContainer = exports.getClassItem = exports.getClassIconMobContainer = exports.getClassBannerPositionButton = exports.getClassBannerImage = void 0;
 var _classnames = _interopRequireDefault(require("classnames"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -64,3 +64,20 @@ var getClassIconMobContainer = function getClassIconMobContainer(active) {
   return classIconMobContainer;
 };
 exports.getClassIconMobContainer = getClassIconMobContainer;
+var getPositionSliderContainerText = function getPositionSliderContainerText(potition) {
+  var commonClasses = (0, _classnames.default)("absolute py-10 px-32", "top-0  left-0", "w-full h-full", "hidden md:flex ");
+  var positions = {
+    "center-top": "justify-center items-start text-center",
+    "center-middle": "justify-center items-center text-center",
+    "center-bottom": "justify-center items-end text-center",
+    "left-top": "justify-start items-start text-left",
+    "left-middle": "justify-start items-center text-left",
+    "left-bottom": "justify-start items-end text-left",
+    "right-top": "justify-end items-start text-right",
+    "right-middle": "justify-end items-center text-right",
+    "right-bottom": "justify-end items-end text-right"
+  };
+  var classesBannerImg = (0, _classnames.default)(commonClasses, _defineProperty({}, [positions[potition]], true));
+  return classesBannerImg;
+};
+exports.getPositionSliderContainerText = getPositionSliderContainerText;

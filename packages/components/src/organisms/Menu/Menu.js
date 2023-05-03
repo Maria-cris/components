@@ -120,7 +120,10 @@ const Menu = ({ data, languages, btn }) => {
     }
   };
   //classes
-  const classLanguages = cn(classesLanguages, { ["invisible"]: !languages });
+  const classLanguages = cn(
+    " flex relative flex-1 flex-start text-primary-500 font-bold font-principal",
+    { ["invisible"]: !languages }
+  );
 
   return (
     <div
@@ -133,8 +136,8 @@ const Menu = ({ data, languages, btn }) => {
         </div>
         <div className="flex flex-1 flex-col ">
           <div className="flex flex-row flex-1 w-full">
-            <div id="Languages" className={classLanguages}>
-              <div className=" flex relative flex-1 flex-start text-primary-500 font-bold font-principal">
+            <div id="Languages" className={classesLanguages}>
+              <div className={classLanguages}>
                 <span className="border-r  border-neutral-300 pr-2  ">
                   <a>ES</a>
                 </span>
@@ -155,7 +158,7 @@ const Menu = ({ data, languages, btn }) => {
           </div>
           <div className="flex flex-1 flex-row w-full">
             <nav id="Menu" className={classesNavContainer}>
-              <ul className="flex space-x-5 whitespace-nowrap">
+              <ul className="flex space-x-5 whitespace-nowrap border-top border-neutral-300">
                 {data.menus.map((element, itemIndex) => {
                   if (element.items.length) {
                     return (

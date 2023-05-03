@@ -15,6 +15,7 @@
     "react-lottie-player": "^1.5.4",
     "react-scripts": "5.0.1",
     "storybook": "^7.0.7",
+    "swiper": "^9.2.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "web-vitals": "^2.1.4"
   },
@@ -84,5 +85,5 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "webpack": "^5.81.0"
   },
-  "gitHead": "f11c298397b912c88278f0255f499376af62f08c"
+  "gitHead": "cd4ba343fbf374f4e276c7000fb0328a386fe66e"
 }

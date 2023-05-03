@@ -84,7 +84,7 @@ var Menu = function Menu(_ref) {
     }
   };
   //classes
-  var classLanguages = (0, _classnames.default)(classesLanguages, _defineProperty({}, "invisible", !languages));
+  var classLanguages = (0, _classnames.default)(" flex relative flex-1 flex-start text-primary-500 font-bold font-principal", _defineProperty({}, "invisible", !languages));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     className: "sticky top-0 z-20 bg-white transition duration-100",
     style: {
@@ -107,9 +107,9 @@ var Menu = function Menu(_ref) {
           className: "flex flex-row flex-1 w-full",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
             id: "Languages",
-            className: classLanguages,
+            className: classesLanguages,
             children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-              className: " flex relative flex-1 flex-start text-primary-500 font-bold font-principal",
+              className: classLanguages,
               children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
                 className: "border-r  border-neutral-300 pr-2  ",
                 children: /*#__PURE__*/(0, _jsxRuntime.jsx)("a", {
@@ -146,7 +146,7 @@ var Menu = function Menu(_ref) {
             id: "Menu",
             className: classesNavContainer,
             children: /*#__PURE__*/(0, _jsxRuntime.jsx)("ul", {
-              className: "flex space-x-5 whitespace-nowrap",
+              className: "flex space-x-5 whitespace-nowrap border-top border-neutral-300",
               children: data.menus.map(function (element, itemIndex) {
                 if (element.items.length) {
                   return /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {

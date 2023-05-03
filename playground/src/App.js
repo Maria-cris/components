@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { MenuMobile } from "@lottus-ed/components";
+import { MenuMobile } from "../../packages/components/src/molecules/MenuMobile/index.js";
 import { Cards } from "@lottus-ed/components";
 import { Button } from "@lottus-ed/components";
 import { useState } from "react";
@@ -72,11 +72,11 @@ function App() {
   ];
   return (
     <div className="App">
-      {/* <MenuMobile
+      <MenuMobile
         itemsData={itemsData}
         sub={false}
         btn={{ id: "btn", label: "Pedir información", type: "primary" }}
-      /> */}
+      />
       {/* <Cards
         title="cards"
         text="text"

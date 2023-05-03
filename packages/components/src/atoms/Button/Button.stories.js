@@ -15,7 +15,7 @@ export default {
   },
   argTypes: {
     type: {
-      options: ["primary", "secondary", "outlined", "negative"],
+      options: ["primary", "outlined", "text"],
       control: { type: "select" },
     },
     size: {

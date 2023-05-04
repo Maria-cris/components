@@ -77,7 +77,7 @@ export const getClassItemMobContainer = (active, principal) => {
   const classItemMobContainer = cn("flex", {
     ["bg-neutral-900 text-neutral-100"]: active,
     ["flex-1"]: principal,
-    ["justify-between items-center p-1 border-b border-neutral-300 cursor-pointer"]:
+    ["justify-between items-center h-full p-1 border-b border-neutral-300 cursor-pointer"]:
       !principal,
   });
   return classItemMobContainer;

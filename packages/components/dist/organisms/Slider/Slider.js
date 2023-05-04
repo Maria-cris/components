@@ -145,7 +145,7 @@ var Slider = function Slider(_ref) {
   });
 };
 Slider.propTypes = {
-  slides: _propTypes.default.object
+  slides: _propTypes.default.array
 };
 var _default = Slider;
 exports.default = _default;

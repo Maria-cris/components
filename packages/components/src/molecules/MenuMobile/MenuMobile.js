@@ -19,7 +19,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
   const iconExpandLess = "arrow_back_ios";
 
   const [index, setIndex] = useState(0);
-  const [type, setType] = useState(submenuM ? inactive : active);
+  const [type, setType] = useState(active);
   const [sub, setSub] = useState(inactive);
 
   const handleArrowMore = (index) => {
@@ -49,10 +49,10 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     "flex justify-end items-center p-1 border-b border-t w-full border-neutral-300 cursor-pointer flex-row-reverse"
   );
   const ClassesMenuMobContainer = cn(
-    "w-d:hidden w-full h-full",
+    "w-d:hidden w-full ",
     "bg-neutral-100",
     "border-t border-neutral-300",
-    "p-2",
+    "p-2 top-10",
     "flex absolute flex-col overflow-y-auto overscrol-contain",
     " transition  ease-in-out delay-150 ",
     {
@@ -66,7 +66,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
 
   const MenuMobStyles = {
     inactive: {
-      transform: "translate3d(-150%,0,0)",
+      transform: "translate3d(0,0,0)",
       msOverflowStyle: "none" /* IE and Edge */,
       msOverflowStyle: "none",
     },
@@ -85,7 +85,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     "-translate-x-full transition  ease-in-out delay-150"
   );
   const classesSubMenuMob = cn(
-    "w-full h-full top-0 left-0 absolute",
+    "w-full h-full top-0 left-0 absolute bg-neutral-100",
     "overflow-auto lg:hidden flex overscroll-contain"
   );
   const stylesSubMenuMob = {
@@ -136,7 +136,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
                       className={getClassItemMobContainer(item.active, false)}
                     >
                       <div
-                        className="flex-1"
+                        className="flex flex-1"
                         onClick={() => myhref(item.route)}
                       >
                         <TextLink text={item.label} href={item.route} />

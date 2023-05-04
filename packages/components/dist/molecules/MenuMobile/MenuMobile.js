@@ -26,7 +26,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var MenuMobile = function MenuMobile(_ref) {
-  var _MenuMobStyles, _stylesSubMenuMob;
+  var _stylesSubMenuMob;
   var _ref$submenuM = _ref.submenuM,
     submenuM = _ref$submenuM === void 0 ? false : _ref$submenuM,
     itemsData = _ref.itemsData,
@@ -34,7 +34,7 @@ var MenuMobile = function MenuMobile(_ref) {
   // expand icon state
   var iconExpandMore = "arrow_forward_ios";
   var active = "principal";
-  var inactive = "";
+  var inactive = "inactive";
   var iconExpandLess = "arrow_back_ios";
   var _useState = (0, _react.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
@@ -57,21 +57,29 @@ var MenuMobile = function MenuMobile(_ref) {
     setType(active);
     setSub(inactive);
   };
-  var ClassesMenuContainer = (0, _classnames.default)(" w-full bg-neutral-100 container overscroll-contain h-[90%] px-2");
+  var ClassesMenuContainer = (0, _classnames.default)(" w-full bg-neutral-100 container overscroll-contain h-[90%] px-2 overflow-hidden");
   var ClassesItemsContainer = (0, _classnames.default)("w-full flex flex-col  py-1 z-20  border-t border-neutral-300");
   var classesItems = (0, _classnames.default)("flex justify-between items-center p-1 h-full border-b border-neutral-300 cursor-pointer");
   var classesSubMenuContainer = (0, _classnames.default)("w-full flex flex-col py-1 z-20 overscroll-contain h-[90%] ");
   var classesReverse = (0, _classnames.default)("flex justify-end items-center p-1 border-b border-t w-full border-neutral-300 cursor-pointer flex-row-reverse");
-  var ClassesMenuMobContainer = (0, _classnames.default)("w-d:hidden w-full h-full", "bg-neutral-100", "border-t border-neutral-300", "p-2", "flex absolute flex-col overflow-y-auto overscrol-contain", _defineProperty({}, "left-0 -top-1", !submenuM));
+  var ClassesMenuMobContainer = (0, _classnames.default)("w-d:hidden w-full h-full", "bg-neutral-100", "border-t border-neutral-300", "p-2", "flex absolute flex-col overflow-y-auto overscrol-contain", " transition  ease-in-out delay-150 ", _defineProperty({}, "left-0 top-4", !submenuM));
   var navClasses = {
-    transform: submenuM ? "translate3d(-150%, 0, 0)" : "translate3d(0, 0, 0)",
-    transition: "transform 0.5s, opacity 0.5s",
+    transform: !submenuM ? "translate3d(0, 0, 0)" : "translate3d(-150%, 0, 0)",
     opacity: "1"
   };
-  var MenuMobStyles = (_MenuMobStyles = {
-    msOverflowStyle: "none" /* IE and Edge */
-  }, _defineProperty(_MenuMobStyles, "msOverflowStyle", "none"), _defineProperty(_MenuMobStyles, "transform", type === "principal" ? "translate3d(0, 0, 0)" : "translate3d(-110%, 0, 0)"), _defineProperty(_MenuMobStyles, "transition", "transform 0.5s, opacity 0.1s"), _MenuMobStyles);
-  var commonClassesMenuMob = (0, _classnames.default)("h-full w-full", "overflow-y-scroll lg:hidden block overscroll-contain", "pr-2");
+  var MenuMobStyles = {
+    inactive: _defineProperty({
+      transform: "translate3d(-150%,0,0)",
+      msOverflowStyle: "none" /* IE and Edge */
+    }, "msOverflowStyle", "none"),
+    principal: _defineProperty({
+      transform: "translate3d(0, 0, 0)",
+      position: "absolute",
+      opacity: "1",
+      msOverflowStyle: "none" /* IE and Edge */
+    }, "msOverflowStyle", "none")
+  };
+  var commonClassesMenuMob = (0, _classnames.default)("h-80 w-full", "overflow-y-scroll lg:hidden flex overscroll-contain", "pr-2", "-translate-x-full transition  ease-in-out delay-150");
   var classesSubMenuMob = (0, _classnames.default)("w-full h-full top-0 left-0 absolute", "overflow-auto lg:hidden flex overscroll-contain");
   var stylesSubMenuMob = (_stylesSubMenuMob = {
     msOverflowStyle: "none" /* IE and Edge */
@@ -88,7 +96,7 @@ var MenuMobile = function MenuMobile(_ref) {
         children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           id: "MenuOptions",
           className: commonClassesMenuMob,
-          style: MenuMobStyles,
+          style: MenuMobStyles[type],
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
             id: "itemsContainer",
             className: ClassesItemsContainer,
@@ -216,7 +224,7 @@ var MenuMobile = function MenuMobile(_ref) {
           })
         }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
           id: "info",
-          className: "  lg:hidden bg-neutral-100 flex flex-1 flex-col w-full",
+          className: " absolute bottom-0 lg:hidden bg-neutral-100 flex flex-1 flex-col w-full",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
             className: "py-2 px-2",
             children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {

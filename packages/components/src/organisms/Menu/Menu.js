@@ -68,7 +68,7 @@ const classButton = cn(
 );
 
 const classesHeaderMobile = cn(
-  "flex absolute lg:hidden",
+  "flex absolute lg:hidden z-20",
   "px-1 py-1",
   "shadow",
   "top-0",
@@ -275,9 +275,7 @@ const Menu = ({ data, languages, btn }) => {
           </div>
         </div>
       </header>
-      <div id="MenuMob" className="relative w-full">
-        <MenuMobile submenuM={submenuM} itemsData={data.menuMobile} btn={btn} />
-      </div>
+      <MenuMobile submenuM={submenuM} itemsData={data.menuMobile} btn={btn} />
     </div>
   );
 };

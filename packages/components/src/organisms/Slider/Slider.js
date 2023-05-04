@@ -157,7 +157,7 @@ const Slider = ({ slides }) => {
   );
 };
 Slider.propTypes = {
-  slides: PropTypes.object,
+  slides: PropTypes.array,
 };
 
 export default Slider;

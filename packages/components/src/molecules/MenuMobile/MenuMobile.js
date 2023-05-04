@@ -15,7 +15,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
   // expand icon state
   const iconExpandMore = "arrow_forward_ios";
   const active = "principal";
-  const inactive = "";
+  const inactive = "inactive";
   const iconExpandLess = "arrow_back_ios";
 
   const [index, setIndex] = useState(0);
@@ -33,7 +33,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
   };
 
   const ClassesMenuContainer = cn(
-    " w-full bg-neutral-100 container overscroll-contain h-[90%] px-2"
+    " w-full bg-neutral-100 container overscroll-contain h-[90%] px-2 overflow-hidden"
   );
   const ClassesItemsContainer = cn(
     "w-full flex flex-col  py-1 z-20  border-t border-neutral-300"
@@ -54,29 +54,35 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     "border-t border-neutral-300",
     "p-2",
     "flex absolute flex-col overflow-y-auto overscrol-contain",
+    " transition  ease-in-out delay-150 ",
     {
-      ["left-0 -top-1"]: !submenuM,
+      ["left-0 top-4"]: !submenuM,
     }
   );
   const navClasses = {
-    transform: submenuM ? "translate3d(-150%, 0, 0)" : "translate3d(0, 0, 0)",
-    transition: "transform 0.5s, opacity 0.5s",
+    transform: !submenuM ? "translate3d(0, 0, 0)" : "translate3d(-150%, 0, 0)",
     opacity: "1",
   };
 
   const MenuMobStyles = {
-    msOverflowStyle: "none" /* IE and Edge */,
-    msOverflowStyle: "none",
-    transform:
-      type === "principal"
-        ? "translate3d(0, 0, 0)"
-        : "translate3d(-110%, 0, 0)",
-    transition: "transform 0.5s, opacity 0.1s",
+    inactive: {
+      transform: "translate3d(-150%,0,0)",
+      msOverflowStyle: "none" /* IE and Edge */,
+      msOverflowStyle: "none",
+    },
+    principal: {
+      transform: "translate3d(0, 0, 0)",
+      position: "absolute",
+      opacity: "1",
+      msOverflowStyle: "none" /* IE and Edge */,
+      msOverflowStyle: "none",
+    },
   };
   const commonClassesMenuMob = cn(
-    "h-full w-full",
-    "overflow-y-scroll lg:hidden block overscroll-contain",
-    "pr-2"
+    "h-80 w-full",
+    "overflow-y-scroll lg:hidden flex overscroll-contain",
+    "pr-2",
+    "-translate-x-full transition  ease-in-out delay-150"
   );
   const classesSubMenuMob = cn(
     "w-full h-full top-0 left-0 absolute",
@@ -97,7 +103,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
           <div
             id="MenuOptions"
             className={commonClassesMenuMob}
-            style={MenuMobStyles}
+            style={MenuMobStyles[type]}
           >
             <div id="itemsContainer" className={ClassesItemsContainer}>
               {itemsData.map((item, itemIndex) => {
@@ -227,7 +233,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
 
           <div
             id="info"
-            className="  lg:hidden bg-neutral-100 flex flex-1 flex-col w-full"
+            className=" absolute bottom-0 lg:hidden bg-neutral-100 flex flex-1 flex-col w-full"
           >
             <div className="py-2 px-2">
               <Button

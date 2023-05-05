@@ -12,6 +12,7 @@ const defaultValues = {
   variant: false,
   size: "lg",
   position: "left-top",
+  className: "",
 };
 
 const SliderContent = ({
@@ -21,13 +22,14 @@ const SliderContent = ({
   variant = defaultValues.variant,
   size = defaultValues.size,
   position = defaultValues.position,
+  className = defaultValues.className,
 }) => {
   const textColor = cn("pb-4 font-secondary", {
     ["text-neutral-100"]: variant,
     ["text-neutral-800"]: !variant,
   });
   return (
-    <div>
+    <div className={className}>
       <div
         id="slider-content"
         className={getPositionSliderContainerText(position)}
@@ -60,7 +62,8 @@ const SliderContent = ({
               <Button
                 id={btn?.id}
                 label={btn?.label}
-                type={variant ? "outlined" : "primary"}
+                iconName={btn?.iconName}
+                variant={variant ? "outlined" : "primary"}
                 size={size === "lg" ? "md" : size === "md" ? "sm" : "xsm"}
               />
             </div>
@@ -84,9 +87,10 @@ const SliderContent = ({
             <Button
               id={btn?.id}
               label={btn?.label}
-              type="primary"
+              variant="primary"
               size="xsm"
-              isExpand={true}
+              iconName={btn?.iconName}
+              className="min-w-full flex justify-center"
               onClick={btn?.onClick}
             />
           </div>
@@ -115,6 +119,7 @@ SliderContent.propTypes = {
     "right-middle",
     "right-bottom",
   ]),
+  className: PropTypes.string,
 };
 
 SliderContent.defaultProps = defaultValues;

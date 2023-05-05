@@ -1,3 +1,4 @@
+import Heading from "../Heading/Heading.js";
 import Button from "./Button.js";
 export default {
   title: "Button",
@@ -6,15 +7,25 @@ export default {
   args: {
     id: "button",
     label: "Demo Button",
-    type: "primary",
+    variant: "primary",
     size: "sm",
     disabled: false,
-    isExpand: false,
-    icon: "",
+    iconName: "",
     onClick: () => {},
+    className: "",
+  },
+  args2: {
+    id: "button",
+    label: "Demo Button",
+    variant: "primary",
+    size: "sm",
+    disabled: false,
+    iconName: "",
+    onClick: () => {},
+    className: "w-full",
   },
   argTypes: {
-    type: {
+    variant: {
       options: ["primary", "outlined", "text"],
       control: { type: "select" },
     },
@@ -26,7 +37,22 @@ export default {
 };
 
 const Template = (args) => <Button {...args} />;
+const ButtonExpand = (args2) => (
+  <div className="w-full">
+    <div className="py-4 w-full">
+      <Heading
+        title="To expand the button you just need to add the classname= w-full"
+        font="principal"
+        type="h-5"
+      />
+    </div>
+    <div className="w-full">
+      <Button {...args2} />
+    </div>
+  </div>
+);
 
 const Standard = Template.bind({});
+const Expand = ButtonExpand.bind({});
 
-export { Standard };
+export { Standard, Expand };

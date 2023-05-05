@@ -1,13 +1,18 @@
 import PropTypes from "prop-types";
+import cn from "classnames";
 
-const Icon = ({ iconName }) => {
-  return <span className="font-icons">{iconName}</span>;
+const defaultValues = {
+  className: "",
+};
+const Icon = ({ iconName, className = defaultValues.className }) => {
+  return <span className={cn("font-icons", className)}>{iconName}</span>;
 };
 
 Icon.propTypes = {
   iconName: PropTypes.string,
+  className: PropTypes.string,
 };
 Icon.defaultProps = {
-  iconName: "home",
+  className: "",
 };
 export default Icon;

@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { MenuMobile } from "../../packages/components/src/molecules/MenuMobile/index.js";
-import { Cards } from "@lottus-ed/components";
+import { Card } from "@lottus-ed/components";
 import { Button } from "@lottus-ed/components";
 import { useState } from "react";
 
@@ -77,8 +77,8 @@ function App() {
         sub={false}
         btn={{ id: "btn", label: "Pedir información", type: "primary" }}
       />
-      {/* <Cards
-        title="cards"
+      {/* <Card
+        title="Card"
         text="text"
         imageUrl="https://wallpapercave.com/wp/wp2599594.jpg"
       /> */}

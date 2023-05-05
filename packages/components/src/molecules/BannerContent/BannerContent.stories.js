@@ -6,18 +6,24 @@ export default {
   args: {
     title: "Demo BannerContent",
     text: "Demo BannerContent",
+    contentVariant: "dark",
     btn: {
       id: "banner-button",
       label: "button",
-      type: "primary",
+      variant: "primary",
       size: "xsm",
     },
     position: "left-top",
+    className: "",
   },
   argTypes: {
     size: {
       options: ["lg", "md", "sm"],
       control: { type: "select" },
+    },
+    contentVariant: {
+      options: ["light", "dark"],
+      control: { type: "radio" },
     },
     position: {
       options: [

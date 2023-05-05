@@ -54,7 +54,7 @@ var getclassSubMenu = function getclassSubMenu(submenu) {
 exports.getclassSubMenu = getclassSubMenu;
 var getClassItemMobContainer = function getClassItemMobContainer(active, principal) {
   var _cn6;
-  var classItemMobContainer = (0, _classnames.default)("flex", (_cn6 = {}, _defineProperty(_cn6, "bg-neutral-900 text-neutral-100", active), _defineProperty(_cn6, "flex-1", principal), _defineProperty(_cn6, "justify-between items-center p-1 border-b border-neutral-300 cursor-pointer", !principal), _cn6));
+  var classItemMobContainer = (0, _classnames.default)("flex", (_cn6 = {}, _defineProperty(_cn6, "bg-neutral-900 text-neutral-100", active), _defineProperty(_cn6, "flex-1", principal), _defineProperty(_cn6, "justify-between items-center h-full p-1 border-b border-neutral-300 cursor-pointer", !principal), _cn6));
   return classItemMobContainer;
 };
 exports.getClassItemMobContainer = getClassItemMobContainer;

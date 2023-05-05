@@ -9,17 +9,22 @@ export default {
     text: "Demo Banner",
     ratio: "4/3",
     overlay: "dark",
-    variant: "negative",
+    contentVariant: "dark",
     btn: {
       id: "banner-button",
       label: "button",
     },
     position: "left-top",
+    className: "",
   },
   argTypes: {
     size: {
       options: ["lg", "md", "sm"],
       control: { type: "select" },
+    },
+    contentVariant: {
+      options: ["light", "dark"],
+      control: { type: "radio" },
     },
     overlay: {
       options: ["dark", "light", ""],

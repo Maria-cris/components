@@ -97,8 +97,17 @@ const classesSearchMobile = cn(
   "items-center justify-center",
   "cursor-pointer "
 );
+const defaultValues = {
+  languages: false,
+  className: "",
+};
 
-const Menu = ({ data, languages, btn }) => {
+const Menu = ({
+  data,
+  languages = defaultValues.languages,
+  btn,
+  className = defaultValues.className,
+}) => {
   //hooks
   const [submenu, setmenu] = useState(true);
   const [submenuIn, setmenuIn] = useState(false);
@@ -106,6 +115,7 @@ const Menu = ({ data, languages, btn }) => {
   const [index, setitem] = useState(0);
   const [IconOpen, setIconOpen] = useState(false);
   const [iconClose, setIconClose] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   //function handlers
   const handleOnclickMenu = () => {
@@ -128,7 +138,9 @@ const Menu = ({ data, languages, btn }) => {
 
   return (
     <div
-      className="sticky top-0 z-20 bg-white transition duration-100"
+      className={`sticky ${
+        scrollDirection === "down" && !IconOpen ? "-top-40" : "top-0"
+      } z-20 bg-white transition duration-100`}
       style={{ background: "#fff" }}
     >
       <header id="NavbarDesk" className={classesHeader}>
@@ -206,7 +218,8 @@ const Menu = ({ data, languages, btn }) => {
               <Button
                 label={btn?.label}
                 size="xsm"
-                type="primary"
+                variant="primary"
+                iconName={btn?.iconName}
                 onClick={btn?.onClick}
               />
             </div>
@@ -263,11 +276,7 @@ const Menu = ({ data, languages, btn }) => {
           </div>
         </div>
         <div id="Logo" className={classesLogoMobile}>
-          <img
-            src={data.logotype.src}
-            alt="logo"
-            className="w-[90px] h-10 aspect-square"
-          />
+          <img src={data.logotype.src} alt="logo" className="w-[90px] h-10 " />
         </div>
         <div id="search" className={classesSearchContainer}>
           <div className={classesSearchMobile}>
@@ -283,6 +292,8 @@ Menu.propTypes = {
   data: PropTypes.object,
   languages: PropTypes.bool,
   btn: PropTypes.object,
+  className: PropTypes.string,
 };
+Menu.defaultProps = defaultValues;
 
 export default Menu;

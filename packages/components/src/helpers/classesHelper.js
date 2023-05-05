@@ -2,12 +2,6 @@ import cn from "classnames";
 
 /* Classes*/
 
-export const getClassBannerImage = (overlay) => {
-  const classesBannerImg = cn("w-full h-full", {
-    ["opacity-50"]: overlay === "light",
-  });
-  return classesBannerImg;
-};
 export const getPositionContainerText = (potition) => {
   const commonClasses = cn(
     "absolute p-10",
@@ -77,7 +71,7 @@ export const getClassItemMobContainer = (active, principal) => {
   const classItemMobContainer = cn("flex", {
     ["bg-neutral-900 text-neutral-100"]: active,
     ["flex-1"]: principal,
-    ["justify-between items-center h-full p-1 border-b border-neutral-300 cursor-pointer"]:
+    ["justify-between items-center p-1 border-b border-neutral-300 cursor-pointer"]:
       !principal,
   });
   return classItemMobContainer;

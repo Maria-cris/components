@@ -6,6 +6,7 @@ export default {
   args: {
     route: "https://www.caffeineinformer.com/death-by-caffeine",
     text: "Demo PromoLink",
+    className: "",
   },
 };
 

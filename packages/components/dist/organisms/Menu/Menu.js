@@ -36,7 +36,7 @@ var classesOptions = (0, _classnames.default)("flex flex-1 flex-end flex-nowrap"
 var classesNavContainer = (0, _classnames.default)("flex flex-grow relative", "px-6", "items-center");
 var classesSearch = (0, _classnames.default)("flex", "justify-center", "cursor-pointer", "border-r border-l border-neutral-300", "py-4 my-2 hidden");
 var classButton = (0, _classnames.default)("flex", "items-start align-center justify-center text-center", "pr-6", "font-bold text-sm");
-var classesHeaderMobile = (0, _classnames.default)("flex absolute lg:hidden", "px-1 py-1", "shadow", "top-0", "w-full");
+var classesHeaderMobile = (0, _classnames.default)("flex absolute lg:hidden z-20", "px-1 py-1", "shadow", "top-0", "w-full");
 var classesMenuMobile = (0, _classnames.default)("py-4 px-2", "w-12 h-12", "flex items-center justify-center", "cursor-pointer");
 var classesLogoMobile = (0, _classnames.default)("flex relative", "w-full", "items-center justify-items-center justify-center");
 var classesSearchContainer = (0, _classnames.default)("flex relative flex-end hidden", "border-l-2  border-neutral-300", "px-2");
@@ -262,14 +262,10 @@ var Menu = function Menu(_ref) {
           })
         })
       })]
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      id: "MenuMob",
-      className: "relative w-full",
-      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_MenuMobile.default, {
-        submenuM: submenuM,
-        itemsData: data.menuMobile,
-        btn: btn
-      })
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_MenuMobile.default, {
+      submenuM: submenuM,
+      itemsData: data.menuMobile,
+      btn: btn
     })]
   });
 };

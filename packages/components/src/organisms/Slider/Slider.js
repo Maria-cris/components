@@ -12,7 +12,7 @@ import Aspect from "../../atoms/Aspect";
 import BannerContent from "../../molecules/BannerContent/BannerContent";
 
 const commonClassesSliderContainer = cn(
-  "box-border relative overflow-hidden w-full h-full hidden md:flex"
+  "box-border relative overflow-hidden w-full h-full hidden md:block"
 );
 
 const controlLeft = cn(

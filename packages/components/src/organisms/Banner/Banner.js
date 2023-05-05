@@ -1,38 +1,39 @@
 import PropTypes from "prop-types";
 import Aspect from "../../atoms/Aspect/Aspect";
 import BannerContent from "../../molecules/BannerContent/BannerContent";
-import { getClassBannerImage } from "../../helpers/classesHelper";
+import cn from "classnames";
 const bannerImageStyles = {
-  objectFit: "cover",
-  filter: "brightness(0.5)",
+  dark: { filter: "brightness(0.5)" },
+  light: { opacity: "0.5" },
 };
 const defaultValues = {
-  ratio: "1/2",
+  ratio: "2/1",
   overlay: "normal",
-  variant: false,
+  contentVariant: "dark",
   size: "lg",
   position: "left-top",
+  className: "",
 };
+const classBannerImage = cn("w-full h-full object-cover object-center");
 const Banner = ({
   imageUrl,
   ratio = defaultValues.ratio,
   overlay = defaultValues.overlay,
   title,
   text,
-  variant = defaultValues.variant,
+  contentVariant = defaultValues.contentVariant,
   btn,
   size = defaultValues.size,
   position = defaultValues.position,
+  className = defaultValues.className,
 }) => {
   return (
-    <div>
+    <div className={className}>
       <div className="hidden xl:block lg:block md:block  ">
         <Aspect ratio={ratio}>
           <img
-            className={getClassBannerImage(overlay)}
-            style={
-              overlay === "dark" ? bannerImageStyles : { objectFit: "cover" }
-            }
+            className={classBannerImage}
+            style={bannerImageStyles?.[overlay]}
             src={imageUrl}
             alt="image Banner"
           />
@@ -42,10 +43,11 @@ const Banner = ({
             btn={{
               id: btn.id,
               label: btn.label,
-              type: variant ? "outlined" : "primary",
+              variant: contentVariant ? "outlined" : "primary",
               size: size,
+              iconName: btn?.iconName,
             }}
-            variant={variant}
+            contentVariant={contentVariant}
             size={size}
             position={position}
             mobile={false}
@@ -57,7 +59,7 @@ const Banner = ({
           <Aspect ratio="4/3">
             <img
               src={imageUrl}
-              className="w-full h-full"
+              className="w-full h-full object-cover object-center"
               alt="img-banner-mobile"
             />
           </Aspect>
@@ -66,11 +68,12 @@ const Banner = ({
           <BannerContent
             title={title}
             text={text}
-            variant="false"
+            contentVariant="dark"
             btn={{
               id: btn?.id,
               label: btn?.label,
-              type: "primary",
+              variant: "primary",
+              iconName: btn?.iconName,
             }}
           />
         </div>
@@ -84,7 +87,7 @@ Banner.propTypes = {
   overlay: PropTypes.oneOf(["dark", "light", "no-overlay"]),
   title: PropTypes.string,
   text: PropTypes.string,
-  variant: PropTypes.bool,
+  contentVariant: PropTypes.oneOf(["dark", "light"]),
   btn: PropTypes.object,
   size: PropTypes.oneOf(["lg", "md", "sm"]),
   position: PropTypes.oneOf([
@@ -98,6 +101,7 @@ Banner.propTypes = {
     "right-middle",
     "right-bottom",
   ]),
+  className: PropTypes.string,
 };
 Banner.defaultProps = defaultValues;
 export default Banner;

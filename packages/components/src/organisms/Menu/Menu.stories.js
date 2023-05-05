@@ -9,8 +9,10 @@ export default {
       id: "MenuMobileBtn",
       label: "Pedir información",
       type: "primary",
+      iconName: "home",
       onClick: () => {},
     },
+    className: "",
     data: {
       menus: [
         { label: "Admisiones", route: "/admisiones", active: true, items: [] },

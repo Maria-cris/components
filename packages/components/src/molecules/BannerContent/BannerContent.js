@@ -9,25 +9,27 @@ import {
 import { getTextCount } from "../../helpers/textHelper";
 
 const defaultValues = {
-  variant: false,
+  contentVariant: "dark",
   size: "lg",
   position: "left-top",
+  className: "",
 };
 
 const BannerContent = ({
   title,
   text,
   btn,
-  variant = defaultValues.variant,
+  contentVariant = defaultValues.contentVariant,
   size = defaultValues.size,
   position = defaultValues.position,
+  className = defaultValues.className,
 }) => {
   const textColor = cn("pb-4 font-secondary", {
-    ["text-neutral-100"]: variant,
-    ["text-neutral-800"]: !variant,
+    ["text-neutral-100"]: contentVariant === "light",
+    ["text-neutral-800"]: !contentVariant || contentVariant === "dark",
   });
   return (
-    <div>
+    <div className={className}>
       <div id="banner-content" className={getPositionContainerText(position)}>
         <div
           style={{
@@ -58,7 +60,8 @@ const BannerContent = ({
               <Button
                 id={btn?.id}
                 label={btn?.label}
-                type={variant ? "outlined" : "primary"}
+                iconName={btn?.iconName}
+                variant={contentVariant === "light" ? "outlined" : "primary"}
                 size={size === "lg" ? "md" : size === "md" ? "sm" : "xsm"}
               />
             </div>
@@ -82,9 +85,10 @@ const BannerContent = ({
             <Button
               id={btn?.id}
               label={btn?.label}
-              type="primary"
+              variant="primary"
               size="xsm"
-              isExpand={true}
+              iconName={btn?.iconName}
+              className="min-w-full flex justify-center"
               onClick={btn?.onClick}
             />
           </div>
@@ -100,7 +104,7 @@ BannerContent.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   btn: PropTypes.object,
-  variant: PropTypes.bool,
+  contentVariant: PropTypes.oneOf(["light", "dark"]),
   size: PropTypes.oneOf(["lg", "md", "sm"]),
   position: PropTypes.oneOf([
     "left-top",
@@ -113,6 +117,7 @@ BannerContent.propTypes = {
     "right-middle",
     "right-bottom",
   ]),
+  className: PropTypes.string,
 };
 
 BannerContent.defaultProps = defaultValues;

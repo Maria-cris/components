@@ -5,6 +5,7 @@ export default {
   tags: ["autodocs"],
   args: {
     iconName: "home",
+    className: "",
   },
 };
 

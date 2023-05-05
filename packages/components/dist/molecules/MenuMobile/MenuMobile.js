@@ -40,7 +40,7 @@ var MenuMobile = function MenuMobile(_ref) {
     _useState2 = _slicedToArray(_useState, 2),
     index = _useState2[0],
     setIndex = _useState2[1];
-  var _useState3 = (0, _react.useState)(submenuM ? inactive : active),
+  var _useState3 = (0, _react.useState)(active),
     _useState4 = _slicedToArray(_useState3, 2),
     type = _useState4[0],
     setType = _useState4[1];
@@ -62,14 +62,14 @@ var MenuMobile = function MenuMobile(_ref) {
   var classesItems = (0, _classnames.default)("flex justify-between items-center p-1 h-full border-b border-neutral-300 cursor-pointer");
   var classesSubMenuContainer = (0, _classnames.default)("w-full flex flex-col py-1 z-20 overscroll-contain h-[90%] ");
   var classesReverse = (0, _classnames.default)("flex justify-end items-center p-1 border-b border-t w-full border-neutral-300 cursor-pointer flex-row-reverse");
-  var ClassesMenuMobContainer = (0, _classnames.default)("w-d:hidden w-full h-full", "bg-neutral-100", "border-t border-neutral-300", "p-2", "flex absolute flex-col overflow-y-auto overscrol-contain", " transition  ease-in-out delay-150 ", _defineProperty({}, "left-0 top-4", !submenuM));
+  var ClassesMenuMobContainer = (0, _classnames.default)("w-d:hidden w-full ", "bg-neutral-100", "border-t border-neutral-300", "p-2 top-10", "flex absolute flex-col overflow-y-auto overscrol-contain", " transition  ease-in-out delay-150 ", _defineProperty({}, "left-0 top-4", !submenuM));
   var navClasses = {
     transform: !submenuM ? "translate3d(0, 0, 0)" : "translate3d(-150%, 0, 0)",
     opacity: "1"
   };
   var MenuMobStyles = {
     inactive: _defineProperty({
-      transform: "translate3d(-150%,0,0)",
+      transform: "translate3d(0,0,0)",
       msOverflowStyle: "none" /* IE and Edge */
     }, "msOverflowStyle", "none"),
     principal: _defineProperty({
@@ -80,7 +80,7 @@ var MenuMobile = function MenuMobile(_ref) {
     }, "msOverflowStyle", "none")
   };
   var commonClassesMenuMob = (0, _classnames.default)("h-80 w-full", "overflow-y-scroll lg:hidden flex overscroll-contain", "pr-2", "-translate-x-full transition  ease-in-out delay-150");
-  var classesSubMenuMob = (0, _classnames.default)("w-full h-full top-0 left-0 absolute", "overflow-auto lg:hidden flex overscroll-contain");
+  var classesSubMenuMob = (0, _classnames.default)("w-full h-full top-0 left-0 absolute bg-neutral-100", "overflow-auto lg:hidden flex overscroll-contain");
   var stylesSubMenuMob = (_stylesSubMenuMob = {
     msOverflowStyle: "none" /* IE and Edge */
   }, _defineProperty(_stylesSubMenuMob, "msOverflowStyle", "none"), _defineProperty(_stylesSubMenuMob, "transform", sub === "principal" ? "translate3d(0, 0, 0)" : "translate3d(200%, 0, 0)"), _defineProperty(_stylesSubMenuMob, "transition", "transform 0.5s, opacity 0.1s"), _stylesSubMenuMob);
@@ -131,7 +131,7 @@ var MenuMobile = function MenuMobile(_ref) {
                 return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
                   className: (0, _classesHelper.getClassItemMobContainer)(item.active, false),
                   children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-                    className: "flex-1",
+                    className: "flex flex-1",
                     onClick: function onClick() {
                       return (0, _myrefHelper.myhref)(item.route);
                     },

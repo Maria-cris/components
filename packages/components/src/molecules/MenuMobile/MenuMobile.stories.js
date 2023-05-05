@@ -193,6 +193,7 @@ export default {
       type: "primary",
       onClick: () => {},
     },
+    className: "",
   },
 };
 

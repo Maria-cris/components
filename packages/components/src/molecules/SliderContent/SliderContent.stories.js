@@ -13,6 +13,7 @@ export default {
       size: "xsm",
     },
     position: "left-top",
+    className: "",
   },
   argTypes: {
     size: {

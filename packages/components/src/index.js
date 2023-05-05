@@ -5,7 +5,7 @@ import Icon from "./atoms/Icon";
 import TextLink from "./atoms/TextLink";
 import BannerContent from "./molecules/BannerContent";
 import Banner from "./organisms/Banner/Banner.js";
-import Cards from "./organisms/Cards";
+import Card from "./organisms/Card";
 import MenuMobile from "./molecules/MenuMobile";
 import Menu from "./organisms/Menu";
 import Slider from "./organisms/Slider/Slider";
@@ -23,7 +23,7 @@ export {
   MenuMobile,
   tailwindBase,
   Menu,
-  Cards,
+  Card,
   Slider,
   Carrusel,
 };

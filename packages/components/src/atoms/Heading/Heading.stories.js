@@ -8,6 +8,7 @@ export default {
     type: "h-1",
     variant: "normal",
     font: "principal",
+    className: "",
   },
   argTypes: {
     type: {

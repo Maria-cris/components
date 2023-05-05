@@ -21,6 +21,7 @@ const defaultValues = {
   type: "h-1",
   variant: "normal",
   font: "principal",
+  className: "",
 };
 
 const Heading = ({
@@ -28,8 +29,9 @@ const Heading = ({
   type = defaultValues.type,
   variant = defaultValues.variant,
   font = defaultValues.font,
+  className = defaultValues.className,
 }) => {
-  const headingClasses = cn("", {
+  const headingClasses = cn(className, {
     [[fonts?.[font]]]: font,
     [[types?.[type]]]: type,
     [[variants?.[variant]]]: variant,
@@ -42,6 +44,7 @@ Heading.propTypes = {
   type: PropTypes.oneOf(["h-1", "h-2", "h-3", "h-4", "h-5", "h-6"]),
   font: PropTypes.oneOf(["principal", "secondary"]),
   variant: PropTypes.oneOf(["normal", "primary", "negative"]),
+  className: PropTypes.string,
 };
 
 Heading.defaultProps = defaultValues;

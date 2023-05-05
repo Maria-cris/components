@@ -6,6 +6,13 @@ export default {
   args: {
     text: "Text Link",
     href: "https://cat-bounce.com/",
+    target: "_self",
+    iconName: "home",
+    className: "",
+    onClick: () => {
+      console.log("function");
+    },
+    disabled: false,
   },
 };
 

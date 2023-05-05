@@ -10,8 +10,9 @@ import Icon from "../../atoms/Icon";
 import PromoLink from "../../organisms/PromoLink";
 import SocialMedia from "../SocialMedia";
 import cn from "classnames";
+import PropTypes from "prop-types";
 
-const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
+const MenuMobile = ({ submenuM = false, itemsData, btn, className = "" }) => {
   // expand icon state
   const iconExpandMore = "arrow_forward_ios";
   const active = "principal";
@@ -33,7 +34,8 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
   };
 
   const ClassesMenuContainer = cn(
-    " w-full bg-neutral-100 container overscroll-contain h-[90%] px-2 overflow-hidden"
+    " w-full bg-neutral-100 container overscroll-contain h-[90%] px-2 overflow-hidden",
+    className
   );
   const ClassesItemsContainer = cn(
     "w-full flex flex-col  py-1 z-20  border-t border-neutral-300"
@@ -43,7 +45,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     "flex justify-between items-center p-1 h-full border-b border-neutral-300 cursor-pointer"
   );
   const classesSubMenuContainer = cn(
-    "w-full flex flex-col py-1 z-20 overscroll-contain h-[90%] "
+    "w-full flex flex-col  py-1 z-20 overscroll-contain h-[90%] "
   );
   const classesReverse = cn(
     "flex justify-end items-center p-1 border-b border-t w-full border-neutral-300 cursor-pointer flex-row-reverse"
@@ -52,11 +54,11 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     "w-d:hidden w-full ",
     "bg-neutral-100",
     "border-t border-neutral-300",
-    "p-2 top-10",
+    "p-2 top-12",
     "flex absolute flex-col overflow-y-auto overscrol-contain",
     " transition  ease-in-out delay-150 ",
     {
-      ["left-0 top-4"]: !submenuM,
+      ["left-0 "]: !submenuM,
     }
   );
   const navClasses = {
@@ -68,14 +70,12 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     inactive: {
       transform: "translate3d(0,0,0)",
       msOverflowStyle: "none" /* IE and Edge */,
-      msOverflowStyle: "none",
     },
     principal: {
       transform: "translate3d(0, 0, 0)",
       position: "absolute",
       opacity: "1",
       msOverflowStyle: "none" /* IE and Edge */,
-      msOverflowStyle: "none",
     },
   };
   const commonClassesMenuMob = cn(
@@ -85,7 +85,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
     "-translate-x-full transition  ease-in-out delay-150"
   );
   const classesSubMenuMob = cn(
-    "w-full h-full top-0 left-0 absolute bg-neutral-100",
+    "w-full h-full top-2 left-0 absolute bg-neutral-100",
     "overflow-auto lg:hidden flex overscroll-contain"
   );
   const stylesSubMenuMob = {
@@ -99,7 +99,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
   return (
     <div className={ClassesMenuContainer}>
       <div id="MenuM" className={ClassesMenuMobContainer} style={navClasses}>
-        <div id="MenuContainer" className="overscroll-contain h-screen  ">
+        <div id="MenuContainer" className="overscroll-contain h-screen   ">
           <div
             id="MenuOptions"
             className={commonClassesMenuMob}
@@ -136,7 +136,7 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
                       className={getClassItemMobContainer(item.active, false)}
                     >
                       <div
-                        className="flex flex-1"
+                        className="flex-1"
                         onClick={() => myhref(item.route)}
                       >
                         <TextLink text={item.label} href={item.route} />
@@ -233,19 +233,20 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
 
           <div
             id="info"
-            className=" absolute bottom-0 lg:hidden bg-neutral-100 flex flex-1 flex-col w-full"
+            className=" absolute bottom-10 lg:hidden bg-neutral-100 flex flex-1 flex-col w-full"
           >
             <div className="py-2 px-2">
               <Button
-                id={btn.id}
-                label={btn.label}
-                type={btn.type}
+                id={btn?.id}
+                label={btn?.label}
+                variant={btn?.variant}
                 size="sm"
-                isExpand={true}
-                onClick={btn.onclick}
+                iconName={btn?.iconName}
+                className="min-w-full flex justify-center"
+                onClick={btn?.onclick}
               />
             </div>
-            <div className="flex flex-row w-full rounded gap-2 px-2">
+            <div className="flex flex-row w-full rounded py-2 px-2">
               <PromoLink text="link" route="/route" />
               <PromoLink text="link2" route="/route" />
             </div>
@@ -257,6 +258,16 @@ const MenuMobile = ({ submenuM = false, itemsData, btn }) => {
       </div>
     </div>
   );
+};
+MenuMobile.propTypes = {
+  submenuM: PropTypes.bool,
+  itemsData: PropTypes.object,
+  btn: PropTypes.object,
+  className: PropTypes.string,
+};
+MenuMobile.defaultProps = {
+  className: "",
+  submenuM: true,
 };
 
 export default MenuMobile;

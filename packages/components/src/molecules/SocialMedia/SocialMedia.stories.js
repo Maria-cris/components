@@ -3,7 +3,7 @@ export default {
   title: "SocialMedia",
   component: SocialMedia,
   tags: ["autodocs"],
-  args: {},
+  args: { className: "" },
 };
 
 const Template = (args) => <SocialMedia {...args} />;

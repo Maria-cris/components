@@ -17,23 +17,27 @@ function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key i
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var defaultValues = {
-  variant: false,
+  contentVariant: "dark",
   size: "lg",
-  position: "left-top"
+  position: "left-top",
+  className: ""
 };
 var BannerContent = function BannerContent(_ref) {
   var _cn;
   var title = _ref.title,
     text = _ref.text,
     btn = _ref.btn,
-    _ref$variant = _ref.variant,
-    variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
+    _ref$contentVariant = _ref.contentVariant,
+    contentVariant = _ref$contentVariant === void 0 ? defaultValues.contentVariant : _ref$contentVariant,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? defaultValues.size : _ref$size,
     _ref$position = _ref.position,
-    position = _ref$position === void 0 ? defaultValues.position : _ref$position;
-  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", variant), _defineProperty(_cn, "text-neutral-800", !variant), _cn));
+    position = _ref$position === void 0 ? defaultValues.position : _ref$position,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? defaultValues.className : _ref$className;
+  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", contentVariant === "light"), _defineProperty(_cn, "text-neutral-800", !contentVariant || contentVariant === "dark"), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: className,
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       id: "banner-content",
       className: (0, _classesHelper.getPositionContainerText)(position),
@@ -58,7 +62,8 @@ var BannerContent = function BannerContent(_ref) {
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
             id: btn === null || btn === void 0 ? void 0 : btn.id,
             label: btn === null || btn === void 0 ? void 0 : btn.label,
-            type: variant ? "outlined" : "primary",
+            iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
+            variant: contentVariant === "light" ? "outlined" : "primary",
             size: size === "lg" ? "md" : size === "md" ? "sm" : "xsm"
           })
         }) : ""]
@@ -83,9 +88,10 @@ var BannerContent = function BannerContent(_ref) {
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
           id: btn === null || btn === void 0 ? void 0 : btn.id,
           label: btn === null || btn === void 0 ? void 0 : btn.label,
-          type: "primary",
+          variant: "primary",
           size: "xsm",
-          isExpand: true,
+          iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
+          className: "min-w-full flex justify-center",
           onClick: btn === null || btn === void 0 ? void 0 : btn.onClick
         })
       }) : ""]
@@ -96,9 +102,10 @@ BannerContent.propTypes = {
   title: _propTypes.default.string,
   text: _propTypes.default.string,
   btn: _propTypes.default.object,
-  variant: _propTypes.default.bool,
+  contentVariant: _propTypes.default.oneOf(["light", "dark"]),
   size: _propTypes.default.oneOf(["lg", "md", "sm"]),
-  position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"])
+  position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"]),
+  className: _propTypes.default.string
 };
 BannerContent.defaultProps = defaultValues;
 var _default = BannerContent;

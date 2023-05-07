@@ -6,7 +6,6 @@ const defaultValues = {
   id: "btn",
   size: "sm",
   disabled: false,
-  isExpand: false,
   variant: "primary",
   iconName: "",
   className: "",
@@ -39,6 +38,12 @@ const variants = {
     "text-neutral-900 hover:text-neutral-900",
     "active:ring-0 active:border-0 focus:border focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 "
   ),
+  "outlined-negative": cn(
+    "bg-transparent text-neutral-100 border border-neutral-100  ",
+    "hover:bg-neutral-100 hover:border-neutral-900 hover:text-neutral-900",
+    "active:ring-0 active:border-0 active:bg-neutral-400 active:text-neutral-100 ",
+    "focus:border focus:border-neutral-100 focus:ring-1 focus:ring-neutral-100 "
+  ),
 };
 const commonClasses = cn(
   "flex",
@@ -55,6 +60,12 @@ const isDisabled = {
     "bg-transparent",
     "text-neutral-400",
     "border border-neutral-400"
+  ),
+  "outlined-negative": cn(
+    "cursor-not-allowed",
+    "bg-transparent",
+    "text-neutral-200",
+    "border border-neutral-200"
   ),
 };
 
@@ -97,7 +108,12 @@ Button.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["primary", "outlined", "text"]),
+  variant: PropTypes.oneOf([
+    "primary",
+    "outlined",
+    "text",
+    "outlined-negative",
+  ]),
   size: PropTypes.oneOf(["xsm", "sm", "md", "lg"]),
   iconName: PropTypes.string,
 };

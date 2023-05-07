@@ -90,7 +90,7 @@ export const getClassIconMobContainer = (active) => {
 
 export const getPositionSliderContainerText = (potition) => {
   const commonClasses = cn(
-    "absolute py-10 px-32",
+    "absolute py-12 px-32",
     "top-0  left-0",
     "w-full h-full",
     "hidden md:flex "

@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "default", {
   enumerable: true,
   get: function get() {
-    return _Cards.default;
+    return _Card.default;
   }
 });
-var _Cards = _interopRequireDefault(require("./Cards"));
+var _Card = _interopRequireDefault(require("./Card"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

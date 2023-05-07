@@ -18,13 +18,4 @@
   .slides {
     @apply flex w-full h-full;
   }
-  .swiper {
-    @aply w-full h-full;
-  }
-  .swiper-slide {
-    @aply flex align-center justify-center items-center;
-  }
-  .swiper-slide img {
-    @aply block w-full h-full object-cover;
-  }
 }

@@ -19,7 +19,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 var defaultValues = {
   variant: false,
   size: "lg",
-  position: "left-top"
+  position: "left-top",
+  className: ""
 };
 var SliderContent = function SliderContent(_ref) {
   var _cn;
@@ -31,9 +32,12 @@ var SliderContent = function SliderContent(_ref) {
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? defaultValues.size : _ref$size,
     _ref$position = _ref.position,
-    position = _ref$position === void 0 ? defaultValues.position : _ref$position;
+    position = _ref$position === void 0 ? defaultValues.position : _ref$position,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? defaultValues.className : _ref$className;
   var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", variant), _defineProperty(_cn, "text-neutral-800", !variant), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: className,
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       id: "slider-content",
       className: (0, _classesHelper.getPositionSliderContainerText)(position),
@@ -58,7 +62,8 @@ var SliderContent = function SliderContent(_ref) {
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
             id: btn === null || btn === void 0 ? void 0 : btn.id,
             label: btn === null || btn === void 0 ? void 0 : btn.label,
-            type: variant ? "outlined" : "primary",
+            iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
+            variant: variant ? "outlined" : "primary",
             size: size === "lg" ? "md" : size === "md" ? "sm" : "xsm"
           })
         }) : ""]
@@ -85,9 +90,10 @@ var SliderContent = function SliderContent(_ref) {
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
           id: btn === null || btn === void 0 ? void 0 : btn.id,
           label: btn === null || btn === void 0 ? void 0 : btn.label,
-          type: "primary",
+          variant: "primary",
           size: "xsm",
-          isExpand: true,
+          iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
+          className: "min-w-full flex justify-center",
           onClick: btn === null || btn === void 0 ? void 0 : btn.onClick
         })
       }) : ""]
@@ -100,7 +106,8 @@ SliderContent.propTypes = {
   btn: _propTypes.default.object,
   variant: _propTypes.default.bool,
   size: _propTypes.default.oneOf(["lg", "md", "sm"]),
-  position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"])
+  position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"]),
+  className: _propTypes.default.string
 };
 SliderContent.defaultProps = defaultValues;
 var _default = SliderContent;

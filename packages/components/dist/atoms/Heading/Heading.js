@@ -31,7 +31,8 @@ var variants = {
 var defaultValues = {
   type: "h-1",
   variant: "normal",
-  font: "principal"
+  font: "principal",
+  className: ""
 };
 var Heading = function Heading(_ref) {
   var _cn;
@@ -41,8 +42,10 @@ var Heading = function Heading(_ref) {
     _ref$variant = _ref.variant,
     variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
     _ref$font = _ref.font,
-    font = _ref$font === void 0 ? defaultValues.font : _ref$font;
-  var headingClasses = (0, _classnames.default)("", (_cn = {}, _defineProperty(_cn, [fonts === null || fonts === void 0 ? void 0 : fonts[font]], font), _defineProperty(_cn, [types === null || types === void 0 ? void 0 : types[type]], type), _defineProperty(_cn, [variants === null || variants === void 0 ? void 0 : variants[variant]], variant), _cn));
+    font = _ref$font === void 0 ? defaultValues.font : _ref$font,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? defaultValues.className : _ref$className;
+  var headingClasses = (0, _classnames.default)(className, (_cn = {}, _defineProperty(_cn, [fonts === null || fonts === void 0 ? void 0 : fonts[font]], font), _defineProperty(_cn, [types === null || types === void 0 ? void 0 : types[type]], type), _defineProperty(_cn, [variants === null || variants === void 0 ? void 0 : variants[variant]], variant), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
     className: headingClasses,
     children: title
@@ -52,7 +55,8 @@ Heading.propTypes = {
   title: _propTypes.default.string,
   type: _propTypes.default.oneOf(["h-1", "h-2", "h-3", "h-4", "h-5", "h-6"]),
   font: _propTypes.default.oneOf(["principal", "secondary"]),
-  variant: _propTypes.default.oneOf(["normal", "primary", "negative"])
+  variant: _propTypes.default.oneOf(["normal", "primary", "negative"]),
+  className: _propTypes.default.string
 };
 Heading.defaultProps = defaultValues;
 var _default = Heading;

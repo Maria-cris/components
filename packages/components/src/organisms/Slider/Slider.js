@@ -1,46 +1,49 @@
+// Import Swiper React components
 import { useRef } from "react";
-import PropTypes from "prop-types";
-import { getTextCount } from "../../helpers/textHelper";
-import cn from "classnames";
-
+import Controls from "../../atoms/Controls/Controls";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
+import Aspect from "../../atoms/Aspect/Aspect";
+import SliderContent from "../../molecules/SliderContent/SliderContent";
+import "swiper/css/bundle";
+import PropTypes from "prop-types";
 
-import SliderContent from "../../molecules/SliderContent";
-import Controls from "../../atoms/Controls";
-import Aspect from "../../atoms/Aspect";
-import BannerContent from "../../molecules/BannerContent/BannerContent";
-
-const commonClassesSliderContainer = cn(
-  "box-border relative overflow-hidden w-full h-full hidden md:block"
-);
-
-const controlLeft = cn(
-  "absolute h-full w-full flex items-center justify-end pr-10 "
-);
-const controlRight = cn(
-  "absolute h-full w-full flex items-center justify-start pl-10 "
-);
+const sliderImageStyles = {
+  dark: { filter: "brightness(0.5)" },
+  light: { opacity: "0.5" },
+};
 
 const Slider = ({ slides }) => {
-  const navigationPrevRef = useRef(null);
-  const navigationNextRef = useRef(null);
+  const naviPrevRef = useRef(null);
+  const navNextRef = useRef(null);
 
   return (
     <div>
-      <section className={commonClassesSliderContainer}>
+      <div className=" hidden md:flex ">
+        <div
+          ref={naviPrevRef}
+          className=" absolute  z-10 top-1/2 left-8 bg-neutral-100 opacity-50 hover:shadow-lg  rounded-lg w-14 h-14 items-center justify-center"
+        >
+          <Controls iconName="arrow_back_ios" />
+        </div>
+        <div
+          ref={navNextRef}
+          className="absolute  z-10 top-1/2 right-8  bg-neutral-100 opacity-50 hover:shadow-lg  rounded-lg w-14 h-14 items-center justify-center"
+        >
+          <Controls iconName="arrow_forward_ios" />
+        </div>
         <Swiper
           navigation={{
-            prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
+            nextEl: navNextRef.current,
+            prevEl: naviPrevRef.current,
           }}
           loop={true}
           onSwiper={(swiper) => {
             // Delay execution for the refs to be defined
             setTimeout(() => {
               // Override prevEl & nextEl now that refs are defined
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
-              swiper.params.navigation.nextEl = navigationNextRef.current;
+              swiper.params.navigation.prevEl = naviPrevRef.current;
+              swiper.params.navigation.nextEl = navNextRef.current;
               // Re-init navigation
               swiper.navigation.destroy();
               swiper.navigation.init();
@@ -53,54 +56,35 @@ const Slider = ({ slides }) => {
             bulletClass: "ccBullets",
             bulletActiveClass: "ccBulletsActive",
           }}
-          slidesPerView={"1"}
+          slidesPerView={1}
           modules={[Navigation, Pagination]}
           className="slides"
-          effect={"coverflow"}
         >
-          {slides.map((slide, slideIndex) => (
-            <SwiperSlide key={slideIndex}>
-              <div className="flex">
-                <Aspect ratio="2/1">
-                  <img
-                    className={"w-full h-full flex"}
-                    src={slide.url ? slide.url : ""}
-                    alt="bg-image"
-                    style={
-                      slide?.overlay === "dark"
-                        ? { filter: "brightness(50%)" }
-                        : slide?.overlay === "light"
-                        ? { opacity: "0.5" }
-                        : {}
-                    }
-                  />
-                </Aspect>
-                {slide.button ? (
+          {slides?.map((slide, indexSlide) => (
+            <SwiperSlide key={indexSlide}>
+              <Aspect ratio="2/1">
+                <img
+                  style={sliderImageStyles?.[slide?.overlay]}
+                  className="w-full h-full object-cover object-center"
+                  src={slide?.url}
+                  alt="slider-img"
+                />
+                <div className="absolute w-full h-full top-0 left-0 p-">
                   <SliderContent
-                    title={getTextCount(slide.title ? slide.title : "", 58)}
-                    text={getTextCount(slide.text ? slide.text : "", 200)}
-                    align={`${slide.textAlign ? slide.textAlign : ""}`}
-                    button={slide.button}
+                    title={slide?.title}
+                    text={slide?.text}
+                    btn={slide?.btn}
+                    variant={slide?.variant}
+                    position={slide?.position}
+                    className={slide?.className}
                   />
-                ) : (
-                  <SliderContent
-                    title={`${slide.title ? slide.title : ""}`}
-                    text={`${slide.text ? slide.text : ""}`}
-                  />
-                )}
-              </div>
+                </div>
+              </Aspect>
             </SwiperSlide>
           ))}
-
-          <div ref={navigationPrevRef} className={controlLeft}>
-            <Controls iconName="arrow_forward_ios" />
-          </div>
-          <div ref={navigationNextRef} className={controlRight}>
-            <Controls iconName="arrow_back_ios" />
-          </div>
         </Swiper>
-      </section>
-      <section className="md:hidden flex">
+      </div>
+      <div className=" flex md:hidden">
         <Swiper
           loop={true}
           pagination={{
@@ -109,55 +93,38 @@ const Slider = ({ slides }) => {
             bulletClass: "ccBullets",
             bulletActiveClass: "ccBulletsActive",
           }}
-          slidesPerView={"1"}
+          slidesPerView={1}
           modules={[Pagination]}
-          className="relative flex px-8 pt-8 pb-16 h-full w-full justify-center"
+          className="slides"
         >
-          {slides.map((slide, slideIndex) => (
-            <SwiperSlide key={slideIndex}>
-              <section
-                className="relative overflow-hidden flex justify-center items-center w-full "
-                onClick={slide.onclickFunction ? slide.onClickFunction : ""}
-              >
-                <article className="relative flex w-full justify-center">
-                  <div className="relative flex px-8 pt-8 pb-16 h-full w-full justify-center">
-                    <div className="w-full h-full">
-                      <Aspect ratio="1/1">
-                        <img
-                          src={slide.url ? slide.url : ""}
-                          className="absolute top-0 left-0 w-full h-full"
-                          alt="image-mobile"
-                        />
-                      </Aspect>
-                      {slide.button ? (
-                        <BannerContent
-                          title={getTextCount(
-                            slide.title ? slide.title : "",
-                            58
-                          )}
-                          text={getTextCount(slide.text ? slide.text : "", 200)}
-                          btn={slide.button}
-                        />
-                      ) : (
-                        <BannerContent
-                          title={`${slide.title ? slide.title : ""}`}
-                          text={`${slide.text ? slide.text : ""}`}
-                        />
-                      )}
-                    </div>
-                    <div></div>
-                  </div>
-                </article>
-              </section>
+          {slides?.map((slide, indexSlide) => (
+            <SwiperSlide key={indexSlide}>
+              <div className="flex flex-col pb-6">
+                <Aspect ratio="1/1">
+                  <img
+                    className="w-full h-full object-cover object-center"
+                    src={slide?.url}
+                    alt="slider-img"
+                  />
+                </Aspect>
+                <div>
+                  <SliderContent
+                    title={slide?.title}
+                    text={slide?.text}
+                    btn={slide?.btn}
+                    variant={slide?.variant}
+                    position={slide?.position}
+                    className={slide?.className}
+                  />
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </section>
+      </div>
     </div>
   );
 };
-Slider.propTypes = {
-  slides: PropTypes.array,
-};
-
+Slider.propTypes = { slides: PropTypes.array };
+Slider.defaultProps = { slides: [{}] };
 export default Slider;

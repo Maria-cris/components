@@ -18,8 +18,9 @@ var defaultValues = {
   size: "sm",
   disabled: false,
   isExpand: false,
-  type: "primary",
-  icon: ""
+  variant: "primary",
+  iconName: "",
+  className: ""
 };
 var sizes = {
   xsm: (0, _classnames.default)("px-4 py-3 text-sm rounded"),
@@ -27,21 +28,21 @@ var sizes = {
   md: (0, _classnames.default)("py-5 px-9 text-xl rounded-lg"),
   lg: (0, _classnames.default)("py-6 px-12 text-xl rounded-lg")
 };
-// const sizeIcon = {
+// const sizeIconName = {
 //   sm: cn("p-1.5 w-8 h-8"),
 //   md: cn("p-3.5 w-12 h-12"),
 //   lg: cn("p-4 w-15 h-15"),
 // };
 
 var variants = {
-  primary: (0, _classnames.default)("bg-neutral-900 hover:bg-neutral-800 active:bg-neutral-600", "text-neutral-100", "focus:border-2 border-neutral-900 focus:bg-neutral-600"),
-  outlined: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-600 focus:bg-neutral-100", "text-neutral-900", "border border-neutral-900 focus:border-2"),
-  text: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-400 ", "text-neutral-900 hover:text-neutral-900", " border-neutral-900 focus:border-2 ")
+  primary: (0, _classnames.default)("bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-600 active:bg-neutral-600", "text-neutral-100", "border border-neutral-900 active:border-0 active:ring-0 focus:border-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none"),
+  outlined: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-400 focus:bg-neutral-100", "text-neutral-900", " border border-transparent focus:border-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none"),
+  text: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-400 ", "text-neutral-900 hover:text-neutral-900", "active:ring-0 active:border-0 focus:border focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 ")
 };
-var commonClasses = (0, _classnames.default)("cursor-pointer", "flex", "relative", "min-w-40 max-w-full", "font-bold font-principal", "items-center justify-center");
+var commonClasses = (0, _classnames.default)("flex", "relative", "min-w-40 max-w-full", "font-bold font-principal", "items-center justify-center");
 var isDisabled = {
   primary: (0, _classnames.default)("cursor-not-allowed", "bg-neutral-400", "text-neutral-100"),
-  secondary: (0, _classnames.default)(),
+  text: (0, _classnames.default)("cursor-not-allowed text-neutral-400"),
   outlined: (0, _classnames.default)("cursor-not-allowed", "bg-transparent", "text-neutral-400", "border border-neutral-400")
 };
 var Button = function Button(_ref) {
@@ -49,27 +50,30 @@ var Button = function Button(_ref) {
   var _ref$id = _ref.id,
     id = _ref$id === void 0 ? defaultValues.id : _ref$id,
     label = _ref.label,
-    _ref$type = _ref.type,
-    type = _ref$type === void 0 ? defaultValues.type : _ref$type,
+    _ref$variant = _ref.variant,
+    variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? defaultValues.size : _ref$size,
-    _ref$isExpand = _ref.isExpand,
-    isExpand = _ref$isExpand === void 0 ? false : _ref$isExpand,
     _ref$disabled = _ref.disabled,
     disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-    _ref$icon = _ref.icon,
-    icon = _ref$icon === void 0 ? defaultValues.icon : _ref$icon,
-    onClick = _ref.onClick;
-  var buttonClasses = (0, _classnames.default)(commonClasses, (_cn = {}, _defineProperty(_cn, [sizes[size]], true), _defineProperty(_cn, [variants[type]], !disabled), _defineProperty(_cn, "min-w-full flex justify-center", isExpand), _defineProperty(_cn, [isDisabled[type]], disabled), _cn));
+    _ref$iconName = _ref.iconName,
+    iconName = _ref$iconName === void 0 ? defaultValues.iconName : _ref$iconName,
+    onClick = _ref.onClick,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? defaultValues.className : _ref$className;
+  var buttonClasses = (0, _classnames.default)(commonClasses, className, (_cn = {}, _defineProperty(_cn, [sizes[size]], true), _defineProperty(_cn, [variants[variant]], !disabled), _defineProperty(_cn, [isDisabled[variant]], disabled), _defineProperty(_cn, "cursor-pointer", !disabled), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
     id: id,
     className: buttonClasses,
-    type: "button",
+    variant: "button",
     onClick: onClick,
-    children: icon ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("span", {
+    children: iconName ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("span", {
+      className: (0, _classnames.default)(" flex items-center", _defineProperty({}, "gap-2", label)),
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
-        iconName: icon
-      }), " ", " " + label]
+        iconName: iconName
+      }), " ", /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+        children: label
+      })]
     }) : /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
       children: label
     })
@@ -78,12 +82,12 @@ var Button = function Button(_ref) {
 Button.propTypes = {
   id: _propTypes.default.string,
   disabled: _propTypes.default.bool,
-  isExpand: _propTypes.default.bool,
+  className: _propTypes.default.string,
   label: _propTypes.default.string,
   onClick: _propTypes.default.func,
-  type: _propTypes.default.oneOf(["primary", "outlined", "text"]),
+  variant: _propTypes.default.oneOf(["primary", "outlined", "text"]),
   size: _propTypes.default.oneOf(["xsm", "sm", "md", "lg"]),
-  icon: _propTypes.default.string
+  iconName: _propTypes.default.string
 };
 Button.defaultProps = defaultValues;
 var _default = Button;

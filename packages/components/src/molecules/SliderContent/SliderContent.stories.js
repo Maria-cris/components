@@ -16,10 +16,6 @@ export default {
     className: "",
   },
   argTypes: {
-    size: {
-      options: ["lg", "md", "sm"],
-      control: { type: "select" },
-    },
     position: {
       options: [
         "left-top",

@@ -16,7 +16,7 @@ var _Aspect = _interopRequireDefault(require("../../atoms/Aspect"));
 var _BannerContent = _interopRequireDefault(require("../../molecules/BannerContent/BannerContent"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var commonClassesSliderContainer = (0, _classnames.default)("box-border relative overflow-hidden w-full h-full hidden md:flex");
+var commonClassesSliderContainer = (0, _classnames.default)("box-border relative overflow-hidden w-full h-full hidden md:block");
 var controlLeft = (0, _classnames.default)("absolute h-full w-full flex items-center justify-end pr-10 ");
 var controlRight = (0, _classnames.default)("absolute h-full w-full flex items-center justify-start pl-10 ");
 var Slider = function Slider(_ref) {

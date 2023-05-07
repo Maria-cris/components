@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getclassSubMenu = exports.getPositionSliderContainerText = exports.getPositionContainerText = exports.getClassItemMobContainer = exports.getClassItem = exports.getClassIconMobContainer = exports.getClassBannerPositionButton = exports.getClassBannerImage = void 0;
+exports.getclassSubMenu = exports.getPositionSliderContainerText = exports.getPositionContainerText = exports.getClassItemMobContainer = exports.getClassItem = exports.getClassIconMobContainer = exports.getClassBannerPositionButton = void 0;
 var _classnames = _interopRequireDefault(require("classnames"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -12,11 +12,6 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 /* Classes*/
 
-var getClassBannerImage = function getClassBannerImage(overlay) {
-  var classesBannerImg = (0, _classnames.default)("w-full h-full", _defineProperty({}, "opacity-50", overlay === "light"));
-  return classesBannerImg;
-};
-exports.getClassBannerImage = getClassBannerImage;
 var getPositionContainerText = function getPositionContainerText(potition) {
   var commonClasses = (0, _classnames.default)("absolute p-10", "top-0  left-0", "w-full h-full", "hidden md:flex ");
   var positions = {
@@ -35,14 +30,14 @@ var getPositionContainerText = function getPositionContainerText(potition) {
 };
 exports.getPositionContainerText = getPositionContainerText;
 var getClassBannerPositionButton = function getClassBannerPositionButton(potition) {
-  var _cn3;
-  var classesBannerImg = (0, _classnames.default)("flex", (_cn3 = {}, _defineProperty(_cn3, "justify-center items-start text-center", potition === "center-top"), _defineProperty(_cn3, "justify-center items-center text-center", potition === "center-middle"), _defineProperty(_cn3, "justify-center items-end text-center", potition === "center-bottom"), _defineProperty(_cn3, "justify-start items-start text-left", potition === "left-top"), _defineProperty(_cn3, "justify-start items-center text-left", potition === "left-middle"), _defineProperty(_cn3, "justify-start items-end text-left", potition === "left-bottom"), _defineProperty(_cn3, "justify-end items-start text-right", potition === "right-top"), _defineProperty(_cn3, "justify-end items-center text-right", potition === "right-middle"), _defineProperty(_cn3, "justify-end items-end text-right", potition === "right-bottom"), _cn3));
+  var _cn2;
+  var classesBannerImg = (0, _classnames.default)("flex", (_cn2 = {}, _defineProperty(_cn2, "justify-center items-start text-center", potition === "center-top"), _defineProperty(_cn2, "justify-center items-center text-center", potition === "center-middle"), _defineProperty(_cn2, "justify-center items-end text-center", potition === "center-bottom"), _defineProperty(_cn2, "justify-start items-start text-left", potition === "left-top"), _defineProperty(_cn2, "justify-start items-center text-left", potition === "left-middle"), _defineProperty(_cn2, "justify-start items-end text-left", potition === "left-bottom"), _defineProperty(_cn2, "justify-end items-start text-right", potition === "right-top"), _defineProperty(_cn2, "justify-end items-center text-right", potition === "right-middle"), _defineProperty(_cn2, "justify-end items-end text-right", potition === "right-bottom"), _cn2));
   return classesBannerImg;
 };
 exports.getClassBannerPositionButton = getClassBannerPositionButton;
 var getClassItem = function getClassItem(principal, active) {
-  var _cn4;
-  var classItem = (0, _classnames.default)("flex flex-1 flex-nowrap align-middle  ", (_cn4 = {}, _defineProperty(_cn4, "font-bold", principal), _defineProperty(_cn4, "underline", active), _defineProperty(_cn4, "pl-2  py-4", !principal), _defineProperty(_cn4, "bg-neutral-900 text-neutral-100", active && !principal), _cn4));
+  var _cn3;
+  var classItem = (0, _classnames.default)("flex flex-1 flex-nowrap align-middle  ", (_cn3 = {}, _defineProperty(_cn3, "font-bold", principal), _defineProperty(_cn3, "underline", active), _defineProperty(_cn3, "pl-2  py-4", !principal), _defineProperty(_cn3, "bg-neutral-900 text-neutral-100", active && !principal), _cn3));
   return classItem;
 };
 exports.getClassItem = getClassItem;
@@ -53,8 +48,8 @@ var getclassSubMenu = function getclassSubMenu(submenu) {
 };
 exports.getclassSubMenu = getclassSubMenu;
 var getClassItemMobContainer = function getClassItemMobContainer(active, principal) {
-  var _cn6;
-  var classItemMobContainer = (0, _classnames.default)("flex", (_cn6 = {}, _defineProperty(_cn6, "bg-neutral-900 text-neutral-100", active), _defineProperty(_cn6, "flex-1", principal), _defineProperty(_cn6, "justify-between items-center h-full p-1 border-b border-neutral-300 cursor-pointer", !principal), _cn6));
+  var _cn5;
+  var classItemMobContainer = (0, _classnames.default)("flex", (_cn5 = {}, _defineProperty(_cn5, "bg-neutral-900 text-neutral-100", active), _defineProperty(_cn5, "flex-1", principal), _defineProperty(_cn5, "justify-between items-center p-1 border-b border-neutral-300 cursor-pointer", !principal), _cn5));
   return classItemMobContainer;
 };
 exports.getClassItemMobContainer = getClassItemMobContainer;

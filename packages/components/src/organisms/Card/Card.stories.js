@@ -7,7 +7,7 @@ export default {
   args: {
     imageUrl: "https://wallpapercave.com/wp/wp2599594.jpg",
     title: "Demo Card",
-    text: "Demo Card",
+    text: "Lorem ipsum dolor sit amet consectetur. Urna curabitur sit faucibus vitae. Elit dignissim tempus pharetra risus porta in phasellus magnis pellentesque.",
     subtitle: "subtitle",
     type: "horizontal",
     aspectRatio: "2/1",
@@ -26,7 +26,7 @@ export default {
   args2: {
     imageUrl: "https://wallpapercave.com/wp/wp2599594.jpg",
     title: "Demo Card",
-    text: "Demo Card",
+    text: "Lorem ipsum dolor sit amet consectetur. Urna curabitur sit faucibus vitae. Elit dignissim tempus pharetra risus porta in phasellus magnis pellentesque.",
     subtitle: "subtitle",
     type: "horizontal",
     aspectRatio: "2/1",

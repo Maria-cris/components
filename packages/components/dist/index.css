@@ -7,7 +7,7 @@
 
 @layer components {
   .ccIndicators {
-    @apply absolute bottom-0 flex w-full justify-center pb-12;
+    @apply absolute bottom-0 flex w-full justify-center pt-6;
   }
   .ccBullets {
     @apply cursor-pointer block mr-2 w-4 h-4 rounded-[50%] bg-neutral-600;
@@ -16,6 +16,15 @@
     @apply rounded-[60px] w-8;
   }
   .slides {
-    @apply relative flex w-full h-full;
+    @apply flex w-full h-full;
+  }
+  .swiper {
+    @aply w-full h-full;
+  }
+  .swiper-slide {
+    @aply flex align-center justify-center items-center;
+  }
+  .swiper-slide img {
+    @aply block w-full h-full object-cover;
   }
 }

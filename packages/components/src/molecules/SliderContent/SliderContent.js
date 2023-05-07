@@ -9,8 +9,7 @@ import {
 import { getTextCount } from "../../helpers/textHelper";
 
 const defaultValues = {
-  variant: false,
-  size: "lg",
+  variant: "dark",
   position: "left-top",
   className: "",
 };
@@ -20,13 +19,12 @@ const SliderContent = ({
   text,
   btn,
   variant = defaultValues.variant,
-  size = defaultValues.size,
   position = defaultValues.position,
   className = defaultValues.className,
 }) => {
   const textColor = cn("pb-4 font-secondary", {
-    ["text-neutral-100"]: variant,
-    ["text-neutral-800"]: !variant,
+    ["text-neutral-100"]: variant === "light",
+    ["text-neutral-800"]: variant === "dark",
   });
   return (
     <div className={className}>
@@ -34,13 +32,14 @@ const SliderContent = ({
         id="slider-content"
         className={getPositionSliderContainerText(position)}
       >
-        <div className="w-1/2">
+        <div className="w-3/5">
           {title ? (
             <div className={textColor}>
               <Heading
                 title={getTextCount(title, 53)}
                 type="h-3"
                 font="secondary"
+                className="font-semibold"
               />
             </div>
           ) : (
@@ -60,11 +59,9 @@ const SliderContent = ({
           {btn ? (
             <div className={getClassBannerPositionButton(position)}>
               <Button
-                id={btn?.id}
-                label={btn?.label}
-                iconName={btn?.iconName}
-                variant={variant ? "outlined" : "primary"}
-                size={size === "lg" ? "md" : size === "md" ? "sm" : "xsm"}
+                variant={variant === "light" ? "outlined-negative" : "primary"}
+                size="sm"
+                {...btn}
               />
             </div>
           ) : (
@@ -85,13 +82,11 @@ const SliderContent = ({
         {btn ? (
           <div className="pb-4 font-secondary">
             <Button
-              id={btn?.id}
               label={btn?.label}
               variant="primary"
-              size="xsm"
-              iconName={btn?.iconName}
+              size="sm"
               className="min-w-full flex justify-center"
-              onClick={btn?.onClick}
+              {...btn}
             />
           </div>
         ) : (
@@ -106,8 +101,7 @@ SliderContent.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   btn: PropTypes.object,
-  variant: PropTypes.bool,
-  size: PropTypes.oneOf(["lg", "md", "sm"]),
+  variant: PropTypes.oneOf(["light", "dark"]),
   position: PropTypes.oneOf([
     "left-top",
     "left-middle",

@@ -61,7 +61,9 @@ const BannerContent = ({
                 id={btn?.id}
                 label={btn?.label}
                 iconName={btn?.iconName}
-                variant={contentVariant === "light" ? "outlined" : "primary"}
+                variant={
+                  contentVariant === "light" ? "outlined-negative" : "primary"
+                }
                 size={size === "lg" ? "md" : size === "md" ? "sm" : "xsm"}
               />
             </div>

@@ -27,10 +27,10 @@ Object.defineProperty(exports, "Button", {
     return _Button.default;
   }
 });
-Object.defineProperty(exports, "Cards", {
+Object.defineProperty(exports, "Card", {
   enumerable: true,
   get: function get() {
-    return _Cards.default;
+    return _Card.default;
   }
 });
 Object.defineProperty(exports, "Carrusel", {
@@ -88,7 +88,7 @@ var _Icon = _interopRequireDefault(require("./atoms/Icon"));
 var _TextLink = _interopRequireDefault(require("./atoms/TextLink"));
 var _BannerContent = _interopRequireDefault(require("./molecules/BannerContent"));
 var _Banner = _interopRequireDefault(require("./organisms/Banner/Banner.js"));
-var _Cards = _interopRequireDefault(require("./organisms/Cards"));
+var _Card = _interopRequireDefault(require("./organisms/Card"));
 var _MenuMobile = _interopRequireDefault(require("./molecules/MenuMobile"));
 var _Menu = _interopRequireDefault(require("./organisms/Menu"));
 var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));

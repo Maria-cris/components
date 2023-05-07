@@ -4,6 +4,7 @@ import Heading from "./atoms/Heading";
 import Icon from "./atoms/Icon";
 import TextLink from "./atoms/TextLink";
 import BannerContent from "./molecules/BannerContent";
+import SliderContent from "./molecules/SliderContent/SliderContent";
 import Banner from "./organisms/Banner/Banner.js";
 import Card from "./organisms/Card";
 import MenuMobile from "./molecules/MenuMobile";
@@ -19,6 +20,7 @@ export {
   Icon,
   TextLink,
   BannerContent,
+  SliderContent,
   Banner,
   MenuMobile,
   tailwindBase,

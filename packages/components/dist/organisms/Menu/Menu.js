@@ -41,10 +41,17 @@ var classesMenuMobile = (0, _classnames.default)("py-4 px-2", "w-12 h-12", "flex
 var classesLogoMobile = (0, _classnames.default)("flex relative", "w-full", "items-center justify-items-center justify-center");
 var classesSearchContainer = (0, _classnames.default)("flex relative flex-end hidden", "border-l-2  border-neutral-300", "px-2");
 var classesSearchMobile = (0, _classnames.default)("py-4 px-2", "w-12 h-12", "flex hidden", "items-center justify-center", "cursor-pointer ");
+var defaultValues = {
+  languages: false,
+  className: ""
+};
 var Menu = function Menu(_ref) {
   var data = _ref.data,
-    languages = _ref.languages,
-    btn = _ref.btn;
+    _ref$languages = _ref.languages,
+    languages = _ref$languages === void 0 ? defaultValues.languages : _ref$languages,
+    btn = _ref.btn,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? defaultValues.className : _ref$className;
   //hooks
   var _useState = (0, _react.useState)(true),
     _useState2 = _slicedToArray(_useState, 2),
@@ -70,6 +77,7 @@ var Menu = function Menu(_ref) {
     _useState12 = _slicedToArray(_useState11, 2),
     iconClose = _useState12[0],
     setIconClose = _useState12[1];
+  var scrollDirection = (0, _useScrollDirection.useScrollDirection)();
 
   //function handlers
   var handleOnclickMenu = function handleOnclickMenu() {
@@ -87,7 +95,7 @@ var Menu = function Menu(_ref) {
   //classes
   var classLanguages = (0, _classnames.default)(" flex relative flex-1 flex-start text-primary-500 font-bold font-principal", _defineProperty({}, "invisible", !languages));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: "sticky top-0 z-20 bg-white transition duration-100",
+    className: "sticky ".concat(scrollDirection === "down" && !IconOpen ? "-top-40" : "top-0", " z-20 bg-white transition duration-100"),
     style: {
       background: "#fff"
     },
@@ -190,7 +198,8 @@ var Menu = function Menu(_ref) {
             children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
               label: btn === null || btn === void 0 ? void 0 : btn.label,
               size: "xsm",
-              type: "primary",
+              variant: "primary",
+              iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
               onClick: btn === null || btn === void 0 ? void 0 : btn.onClick
             })
           })]
@@ -250,7 +259,7 @@ var Menu = function Menu(_ref) {
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)("img", {
           src: data.logotype.src,
           alt: "logo",
-          className: "w-[90px] h-10 aspect-square"
+          className: "w-[90px] h-10 "
         })
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         id: "search",
@@ -272,7 +281,9 @@ var Menu = function Menu(_ref) {
 Menu.propTypes = {
   data: _propTypes.default.object,
   languages: _propTypes.default.bool,
-  btn: _propTypes.default.object
+  btn: _propTypes.default.object,
+  className: _propTypes.default.string
 };
+Menu.defaultProps = defaultValues;
 var _default = Menu;
 exports.default = _default;

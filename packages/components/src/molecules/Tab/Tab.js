@@ -9,7 +9,12 @@ const defaultValues = {
   active: false,
   className: "",
 };
-const Tab = ({ label, active, className, iconName }) => {
+const Tab = ({
+  label,
+  active = defaultValues.active,
+  className = defaultValues.className,
+  iconName,
+}) => {
   return (
     <div className={cn(className, "flex flex-col space-x-0")}>
       <div

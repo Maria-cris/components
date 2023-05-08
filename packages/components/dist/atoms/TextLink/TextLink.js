@@ -53,7 +53,7 @@ var TextLink = function TextLink(_ref) {
     icon = _useState2[0],
     setIcon = _useState2[1];
   return items ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: "items-center whitespace-nowrap flex",
+    className: "items-center whitespace-nowrap flex group",
     onMouseEnter: function onMouseEnter(_) {
       return setIcon(iconExpandLess);
     },
@@ -63,13 +63,13 @@ var TextLink = function TextLink(_ref) {
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       className: (0, _classnames.default)("p-1  cursor-pointer ", className, (_cn = {}, _defineProperty(_cn, "hover:underline", !disabled), _defineProperty(_cn, "underline", active), _cn)),
       children: /*#__PURE__*/(0, _jsxRuntime.jsx)("a", {
-        className: "font-principal",
+        className: "font-principal group-hover:underline ",
         href: href,
         target: target,
         children: text
       })
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      className: "flex align-middle",
+      className: "flex align-middle text-2xl",
       children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
         iconName: icon
       })
@@ -93,7 +93,6 @@ var TextLink = function TextLink(_ref) {
         children: text
       })
     }), iconName ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      className: "text-2xl",
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
         iconName: iconName
       }), " "]

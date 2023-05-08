@@ -75,10 +75,10 @@ Object.defineProperty(exports, "SliderContent", {
     return _SliderContent.default;
   }
 });
-Object.defineProperty(exports, "Tabs", {
+Object.defineProperty(exports, "Tab", {
   enumerable: true,
   get: function get() {
-    return _Tabs.default;
+    return _Tab.default;
   }
 });
 Object.defineProperty(exports, "TextLink", {
@@ -106,6 +106,6 @@ var _MenuMobile = _interopRequireDefault(require("./molecules/MenuMobile"));
 var _Menu = _interopRequireDefault(require("./organisms/Menu"));
 var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));
 var _Carrusel = _interopRequireDefault(require("./organisms/Carrusel/Carrusel"));
-var _Tabs = _interopRequireDefault(require("./organisms/Tabs"));
+var _Tab = _interopRequireDefault(require("./molecules/Tab"));
 var _tailwindBase = _interopRequireDefault(require("./tailwind-base/tailwindBase"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

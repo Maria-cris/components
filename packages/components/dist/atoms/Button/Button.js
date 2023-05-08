@@ -69,7 +69,7 @@ var Button = function Button(_ref) {
     variant: "button",
     onClick: onClick,
     children: iconName ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("span", {
-      className: (0, _classnames.default)(" flex items-center", _defineProperty({}, "gap-2", label)),
+      className: (0, _classnames.default)(" flex items-center", _defineProperty({}, "space-x-2", label)),
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
         iconName: iconName
       }), " ", /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {

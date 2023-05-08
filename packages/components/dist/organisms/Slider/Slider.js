@@ -30,16 +30,16 @@ var Slider = function Slider(_ref) {
   var navNextRef = (0, _react.useRef)(null);
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      className: " hidden md:flex ",
+      className: "hidden md:flex relative h-fit",
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         ref: naviPrevRef,
-        className: " absolute  z-10 top-1/2 left-8 bg-neutral-100 opacity-50 hover:shadow-lg  rounded-lg w-14 h-14 items-center justify-center",
+        className: " absolute  cursor-pointer z-10 bottom-2/4 left-8 bg-neutral-100 opacity-50 hover:shadow-lg flex  rounded-lg w-14 h-14 items-center justify-center align-center",
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Controls.default, {
           iconName: "arrow_back_ios"
         })
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         ref: navNextRef,
-        className: "absolute  z-10 top-1/2 right-8  bg-neutral-100 opacity-50 hover:shadow-lg  rounded-lg w-14 h-14 items-center justify-center",
+        className: "absolute cursor-pointer z-10 bottom-2/4 right-8  bg-neutral-100 opacity-50 hover:shadow-lg flex  rounded-lg w-14 h-14 items-center justify-center",
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Controls.default, {
           iconName: "arrow_forward_ios"
         })
@@ -85,7 +85,7 @@ var Slider = function Slider(_ref) {
                   title: slide === null || slide === void 0 ? void 0 : slide.title,
                   text: slide === null || slide === void 0 ? void 0 : slide.text,
                   btn: slide === null || slide === void 0 ? void 0 : slide.btn,
-                  variant: slide === null || slide === void 0 ? void 0 : slide.variant,
+                  contentVariant: slide === null || slide === void 0 ? void 0 : slide.contentVariant,
                   position: slide === null || slide === void 0 ? void 0 : slide.position,
                   className: slide === null || slide === void 0 ? void 0 : slide.className
                 })
@@ -123,7 +123,7 @@ var Slider = function Slider(_ref) {
                   title: slide === null || slide === void 0 ? void 0 : slide.title,
                   text: slide === null || slide === void 0 ? void 0 : slide.text,
                   btn: slide === null || slide === void 0 ? void 0 : slide.btn,
-                  variant: slide === null || slide === void 0 ? void 0 : slide.variant,
+                  contentVariant: slide === null || slide === void 0 ? void 0 : slide.contentVariant,
                   position: slide === null || slide === void 0 ? void 0 : slide.position,
                   className: slide === null || slide === void 0 ? void 0 : slide.className
                 })

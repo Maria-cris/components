@@ -19,7 +19,7 @@ function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key i
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var defaultValues = {
-  variant: "dark",
+  contentVariant: "dark",
   position: "left-top",
   className: ""
 };
@@ -28,13 +28,13 @@ var SliderContent = function SliderContent(_ref) {
   var title = _ref.title,
     text = _ref.text,
     btn = _ref.btn,
-    _ref$variant = _ref.variant,
-    variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
+    _ref$contentVariant = _ref.contentVariant,
+    contentVariant = _ref$contentVariant === void 0 ? defaultValues.contentVariant : _ref$contentVariant,
     _ref$position = _ref.position,
     position = _ref$position === void 0 ? defaultValues.position : _ref$position,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? defaultValues.className : _ref$className;
-  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", variant === "light"), _defineProperty(_cn, "text-neutral-800", variant === "dark"), _cn));
+  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", contentVariant === "light"), _defineProperty(_cn, "text-neutral-800", contentVariant === "dark"), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     className: className,
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
@@ -60,7 +60,7 @@ var SliderContent = function SliderContent(_ref) {
         }) : "", btn ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: (0, _classesHelper.getClassBannerPositionButton)(position),
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, _objectSpread({
-            variant: variant === "light" ? "outlined-negative" : "primary",
+            variant: contentVariant === "light" ? "outlined-negative" : "primary",
             size: "sm"
           }, btn))
         }) : ""]
@@ -98,7 +98,7 @@ SliderContent.propTypes = {
   title: _propTypes.default.string,
   text: _propTypes.default.string,
   btn: _propTypes.default.object,
-  variant: _propTypes.default.oneOf(["light", "dark"]),
+  contentVariant: _propTypes.default.oneOf(["light", "dark"]),
   position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"]),
   className: _propTypes.default.string
 };

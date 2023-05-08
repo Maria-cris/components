@@ -72,7 +72,7 @@ var Banner = function Banner(_ref) {
         })]
       })
     }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      className: "lg:hidden md:hidden flex flex-col gap-1 ",
+      className: "lg:hidden md:hidden flex flex-col space-x-1 ",
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         className: "w-full h-full flex relative ",
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Aspect.default, {

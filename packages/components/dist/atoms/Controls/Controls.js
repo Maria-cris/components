@@ -8,7 +8,7 @@ var _Icon = _interopRequireDefault(require("../Icon"));
 var _classnames = _interopRequireDefault(require("classnames"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var commonClasses = (0, _classnames.default)(" cursor-pointer flex justify-center text-center items-center w-9 h-9 rounded-2 ");
+var commonClasses = (0, _classnames.default)(" cursor-pointer flex justify-center text-center items-center rounded-2 ");
 var Controls = function Controls(_ref) {
   var iconName = _ref.iconName;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {

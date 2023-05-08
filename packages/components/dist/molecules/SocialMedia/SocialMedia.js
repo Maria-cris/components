@@ -18,7 +18,7 @@ var defaultValues = {
 var SocialMedia = function SocialMedia() {
   var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultValues.className;
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: (0, _classnames.default)("flex px-10 py-10 w-full justify-center gap-2 ", className),
+    className: (0, _classnames.default)("flex px-10 py-10 w-full justify-center space-x-2 ", className),
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("img", {
       className: "h-10",
       src: _instagram.default,

@@ -45,7 +45,6 @@ export const getClassBannerPositionButton = (potition) => {
 export const getClassItem = (principal, active) => {
   const classItem = cn("flex flex-1 flex-nowrap align-middle  ", {
     ["font-bold"]: principal,
-    ["underline"]: active,
     ["pl-2  py-4"]: !principal,
     ["bg-neutral-900 text-neutral-100"]: active && !principal,
   });

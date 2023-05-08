@@ -11,6 +11,7 @@ import MenuMobile from "./molecules/MenuMobile";
 import Menu from "./organisms/Menu";
 import Slider from "./organisms/Slider/Slider";
 import Carrusel from "./organisms/Carrusel/Carrusel";
+import Tabs from "./organisms/Tabs";
 import tailwindBase from "./tailwind-base/tailwindBase";
 
 export {
@@ -28,4 +29,5 @@ export {
   Card,
   Slider,
   Carrusel,
+  Tabs,
 };

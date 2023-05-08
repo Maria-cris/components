@@ -29,7 +29,7 @@ const TextLink = ({
   const [icon, setIcon] = useState(iconExpandMore);
   return items ? (
     <div
-      className="items-center whitespace-nowrap flex"
+      className="items-center whitespace-nowrap flex group"
       onMouseEnter={(_) => setIcon(iconExpandLess)}
       onMouseLeave={(_) => setIcon(iconExpandMore)}
     >
@@ -39,11 +39,15 @@ const TextLink = ({
           ["underline"]: active,
         })}
       >
-        <a className="font-principal" href={href} target={target}>
+        <a
+          className="font-principal group-hover:underline "
+          href={href}
+          target={target}
+        >
           {text}
         </a>
       </div>
-      <div className="flex align-middle">
+      <div className="flex align-middle text-2xl">
         <Icon iconName={icon} />
       </div>
     </div>
@@ -69,7 +73,7 @@ const TextLink = ({
         )}
       </div>
       {iconName ? (
-        <div className="text-2xl">
+        <div>
           <Icon iconName={iconName} />{" "}
         </div>
       ) : (

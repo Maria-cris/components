@@ -13,6 +13,8 @@ export default {
       console.log("function");
     },
     disabled: false,
+    items: false,
+    active: false,
   },
 };
 

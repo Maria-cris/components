@@ -37,7 +37,7 @@ var getClassBannerPositionButton = function getClassBannerPositionButton(potitio
 exports.getClassBannerPositionButton = getClassBannerPositionButton;
 var getClassItem = function getClassItem(principal, active) {
   var _cn3;
-  var classItem = (0, _classnames.default)("flex flex-1 flex-nowrap align-middle  ", (_cn3 = {}, _defineProperty(_cn3, "font-bold", principal), _defineProperty(_cn3, "underline", active), _defineProperty(_cn3, "pl-2  py-4", !principal), _defineProperty(_cn3, "bg-neutral-900 text-neutral-100", active && !principal), _cn3));
+  var classItem = (0, _classnames.default)("flex flex-1 flex-nowrap align-middle  ", (_cn3 = {}, _defineProperty(_cn3, "font-bold", principal), _defineProperty(_cn3, "pl-2  py-4", !principal), _defineProperty(_cn3, "bg-neutral-900 text-neutral-100", active && !principal), _cn3));
   return classItem;
 };
 exports.getClassItem = getClassItem;

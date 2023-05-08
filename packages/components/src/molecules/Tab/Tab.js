@@ -26,7 +26,7 @@ const Tab = ({
     >
       <div
         className={cn(
-          "flex relative  justify-center p-4  items-center whitespace-nowrap",
+          "flex relative  justify-center p-4  items-center whitespace-nowrap ",
           {
             ["bg-neutral-900 text-neutral-100 drop-shadow-md border-b-2 border border-neutral-900"]:
               active,

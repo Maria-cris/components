@@ -18,18 +18,24 @@ const Tab = ({
   return (
     <div className={cn(className, "flex flex-col space-x-0")}>
       <div
-        className={cn("flex relative  justify-center p-4 items-center ", {
-          ["bg-neutral-900 text-neutral-100 drop-shadow-md border-b-2 border-b-neutral-900"]:
-            active,
-          ["bg-neutral-100 border-b-2 border border-neutral-300  border-b-primary-500"]:
-            !active,
-        })}
+        className={cn(
+          "flex relative  justify-center p-4  items-center whitespace-nowrap",
+          {
+            ["bg-neutral-900 text-neutral-100 drop-shadow-md border-b-2 border border-neutral-900"]:
+              active,
+            ["bg-neutral-100 border-b-2 border border-neutral-300 border-l-0 border-b-primary-500"]:
+              !active,
+          }
+        )}
       >
         {iconName ? (
           <span
-            className={cn(" flex text-sm font-semibold leading-[125%] ", {
-              ["space-x-2"]: label,
-            })}
+            className={cn(
+              " flex text-sm font-semibold leading-[125%] whitespace-nowrap",
+              {
+                ["space-x-2"]: label,
+              }
+            )}
           >
             <Icon iconName={iconName} />
             <Heading

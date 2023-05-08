@@ -11,7 +11,16 @@ export default {
 };
 
 const Template = (args) => <Tab {...args} />;
+const Tabs = (args) => (
+  <div className="flex flex-row ">
+    <Tab label="label1" active={false} />
+    <Tab {...args} />
+    <Tab label="label2" active={false} />
+    <Tab label="label3" active={false} />
+  </div>
+);
 
 const Standard = Template.bind({});
+const TabsExample = Tabs.bind({});
 
-export { Standard };
+export { Standard, TabsExample };

@@ -69,6 +69,12 @@ Object.defineProperty(exports, "Slider", {
     return _Slider.default;
   }
 });
+Object.defineProperty(exports, "SliderContent", {
+  enumerable: true,
+  get: function get() {
+    return _SliderContent.default;
+  }
+});
 Object.defineProperty(exports, "TextLink", {
   enumerable: true,
   get: function get() {
@@ -87,6 +93,7 @@ var _Heading = _interopRequireDefault(require("./atoms/Heading"));
 var _Icon = _interopRequireDefault(require("./atoms/Icon"));
 var _TextLink = _interopRequireDefault(require("./atoms/TextLink"));
 var _BannerContent = _interopRequireDefault(require("./molecules/BannerContent"));
+var _SliderContent = _interopRequireDefault(require("./molecules/SliderContent/SliderContent"));
 var _Banner = _interopRequireDefault(require("./organisms/Banner/Banner.js"));
 var _Card = _interopRequireDefault(require("./organisms/Card"));
 var _MenuMobile = _interopRequireDefault(require("./molecules/MenuMobile"));

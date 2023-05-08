@@ -60,7 +60,7 @@ var getClassIconMobContainer = function getClassIconMobContainer(active) {
 };
 exports.getClassIconMobContainer = getClassIconMobContainer;
 var getPositionSliderContainerText = function getPositionSliderContainerText(potition) {
-  var commonClasses = (0, _classnames.default)("absolute py-10 px-32", "top-0  left-0", "w-full h-full", "hidden md:flex ");
+  var commonClasses = (0, _classnames.default)("absolute py-12 px-32", "top-0  left-0", "w-full h-full", "hidden md:flex ");
   var positions = {
     "center-top": "justify-center items-start text-center",
     "center-middle": "justify-center items-center text-center",

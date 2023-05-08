@@ -9,7 +9,7 @@ import {
 import { getTextCount } from "../../helpers/textHelper";
 
 const defaultValues = {
-  variant: "dark",
+  contentVariant: "dark",
   position: "left-top",
   className: "",
 };
@@ -18,13 +18,13 @@ const SliderContent = ({
   title,
   text,
   btn,
-  variant = defaultValues.variant,
+  contentVariant = defaultValues.contentVariant,
   position = defaultValues.position,
   className = defaultValues.className,
 }) => {
   const textColor = cn("pb-4 font-secondary", {
-    ["text-neutral-100"]: variant === "light",
-    ["text-neutral-800"]: variant === "dark",
+    ["text-neutral-100"]: contentVariant === "light",
+    ["text-neutral-800"]: contentVariant === "dark",
   });
   return (
     <div className={className}>
@@ -59,7 +59,9 @@ const SliderContent = ({
           {btn ? (
             <div className={getClassBannerPositionButton(position)}>
               <Button
-                variant={variant === "light" ? "outlined-negative" : "primary"}
+                variant={
+                  contentVariant === "light" ? "outlined-negative" : "primary"
+                }
                 size="sm"
                 {...btn}
               />
@@ -101,7 +103,7 @@ SliderContent.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   btn: PropTypes.object,
-  variant: PropTypes.oneOf(["light", "dark"]),
+  contentVariant: PropTypes.oneOf(["light", "dark"]),
   position: PropTypes.oneOf([
     "left-top",
     "left-middle",

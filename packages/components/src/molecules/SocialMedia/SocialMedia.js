@@ -10,7 +10,10 @@ const defaultValues = {
 const SocialMedia = (className = defaultValues.className) => {
   return (
     <div
-      className={cn("flex px-10 py-10 w-full justify-center gap-2 ", className)}
+      className={cn(
+        "flex px-10 py-10 w-full justify-center space-x-2 ",
+        className
+      )}
     >
       <img className="h-10" src={instagram} alt="insta" />
       <img className="h-10" src={facebook} alt="face" />

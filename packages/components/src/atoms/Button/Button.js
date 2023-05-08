@@ -93,7 +93,7 @@ const Button = ({
       onClick={onClick}
     >
       {iconName ? (
-        <span className={cn(" flex items-center", { ["gap-2"]: label })}>
+        <span className={cn(" flex items-center", { ["space-x-2"]: label })}>
           <Icon iconName={iconName} /> <span>{label}</span>
         </span>
       ) : (

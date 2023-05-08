@@ -63,7 +63,7 @@ var BannerContent = function BannerContent(_ref) {
             id: btn === null || btn === void 0 ? void 0 : btn.id,
             label: btn === null || btn === void 0 ? void 0 : btn.label,
             iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
-            variant: contentVariant === "light" ? "outlined" : "primary",
+            variant: contentVariant === "light" ? "outlined-negative" : "primary",
             size: size === "lg" ? "md" : size === "md" ? "sm" : "xsm"
           })
         }) : ""]

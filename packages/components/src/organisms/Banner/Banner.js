@@ -54,7 +54,7 @@ const Banner = ({
           />
         </Aspect>
       </div>
-      <div className="lg:hidden md:hidden flex flex-col gap-1 ">
+      <div className="lg:hidden md:hidden flex flex-col space-x-1 ">
         <div className="w-full h-full flex relative ">
           <Aspect ratio="4/3">
             <img

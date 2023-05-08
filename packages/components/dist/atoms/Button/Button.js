@@ -17,7 +17,6 @@ var defaultValues = {
   id: "btn",
   size: "sm",
   disabled: false,
-  isExpand: false,
   variant: "primary",
   iconName: "",
   className: ""
@@ -37,13 +36,15 @@ var sizes = {
 var variants = {
   primary: (0, _classnames.default)("bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-600 active:bg-neutral-600", "text-neutral-100", "border border-neutral-900 active:border-0 active:ring-0 focus:border-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none"),
   outlined: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-400 focus:bg-neutral-100", "text-neutral-900", " border border-transparent focus:border-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none"),
-  text: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-400 ", "text-neutral-900 hover:text-neutral-900", "active:ring-0 active:border-0 focus:border focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 ")
+  text: (0, _classnames.default)("bg-transparent hover:bg-neutral-200 active:bg-neutral-400 ", "text-neutral-900 hover:text-neutral-900", "active:ring-0 active:border-0 focus:border focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 "),
+  "outlined-negative": (0, _classnames.default)("bg-transparent text-neutral-100 border border-neutral-100  ", "hover:bg-neutral-100 hover:border-neutral-900 hover:text-neutral-900", "active:ring-0 active:border-0 active:bg-neutral-400 active:text-neutral-100 ", "focus:border focus:border-neutral-100 focus:ring-1 focus:ring-neutral-100 ")
 };
 var commonClasses = (0, _classnames.default)("flex", "relative", "min-w-40 max-w-full", "font-bold font-principal", "items-center justify-center");
 var isDisabled = {
   primary: (0, _classnames.default)("cursor-not-allowed", "bg-neutral-400", "text-neutral-100"),
   text: (0, _classnames.default)("cursor-not-allowed text-neutral-400"),
-  outlined: (0, _classnames.default)("cursor-not-allowed", "bg-transparent", "text-neutral-400", "border border-neutral-400")
+  outlined: (0, _classnames.default)("cursor-not-allowed", "bg-transparent", "text-neutral-400", "border border-neutral-400"),
+  "outlined-negative": (0, _classnames.default)("cursor-not-allowed", "bg-transparent", "text-neutral-200", "border border-neutral-200")
 };
 var Button = function Button(_ref) {
   var _cn;
@@ -85,7 +86,7 @@ Button.propTypes = {
   className: _propTypes.default.string,
   label: _propTypes.default.string,
   onClick: _propTypes.default.func,
-  variant: _propTypes.default.oneOf(["primary", "outlined", "text"]),
+  variant: _propTypes.default.oneOf(["primary", "outlined", "text", "outlined-negative"]),
   size: _propTypes.default.oneOf(["xsm", "sm", "md", "lg"]),
   iconName: _propTypes.default.string
 };

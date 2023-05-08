@@ -19,16 +19,16 @@ const Slider = ({ slides }) => {
 
   return (
     <div>
-      <div className=" hidden md:flex ">
+      <div className="hidden md:flex relative h-fit">
         <div
           ref={naviPrevRef}
-          className=" absolute  z-10 top-1/2 left-8 bg-neutral-100 opacity-50 hover:shadow-lg  rounded-lg w-14 h-14 items-center justify-center"
+          className=" absolute  cursor-pointer z-10 bottom-2/4 left-8 bg-neutral-100 opacity-50 hover:shadow-lg flex  rounded-lg w-14 h-14 items-center justify-center align-center"
         >
           <Controls iconName="arrow_back_ios" />
         </div>
         <div
           ref={navNextRef}
-          className="absolute  z-10 top-1/2 right-8  bg-neutral-100 opacity-50 hover:shadow-lg  rounded-lg w-14 h-14 items-center justify-center"
+          className="absolute cursor-pointer z-10 bottom-2/4 right-8  bg-neutral-100 opacity-50 hover:shadow-lg flex  rounded-lg w-14 h-14 items-center justify-center"
         >
           <Controls iconName="arrow_forward_ios" />
         </div>
@@ -74,7 +74,7 @@ const Slider = ({ slides }) => {
                     title={slide?.title}
                     text={slide?.text}
                     btn={slide?.btn}
-                    variant={slide?.variant}
+                    contentVariant={slide?.contentVariant}
                     position={slide?.position}
                     className={slide?.className}
                   />
@@ -112,7 +112,7 @@ const Slider = ({ slides }) => {
                     title={slide?.title}
                     text={slide?.text}
                     btn={slide?.btn}
-                    variant={slide?.variant}
+                    contentVariant={slide?.contentVariant}
                     position={slide?.position}
                     className={slide?.className}
                   />

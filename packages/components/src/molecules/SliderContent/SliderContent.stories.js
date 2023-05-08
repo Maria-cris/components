@@ -13,6 +13,7 @@ export default {
       size: "xsm",
     },
     position: "left-top",
+    contentVariant: "dark",
     className: "",
   },
   argTypes: {
@@ -29,6 +30,10 @@ export default {
         "right-bottom",
       ],
       control: { type: "select" },
+    },
+    contentVariant: {
+      options: ["dark", "light"],
+      control: { type: "radio" },
     },
   },
 };

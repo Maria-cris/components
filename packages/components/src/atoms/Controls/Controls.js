@@ -2,7 +2,7 @@ import Icon from "../Icon";
 import cn from "classnames";
 
 const commonClasses = cn(
-  " cursor-pointer flex justify-center text-center items-center w-9 h-9 rounded-2 "
+  " cursor-pointer flex justify-center text-center items-center rounded-2 "
 );
 const Controls = ({ iconName }) => {
   return (

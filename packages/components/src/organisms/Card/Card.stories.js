@@ -54,7 +54,7 @@ const Row = (args1) => (
         font="primary"
       />
     </div>
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-row space-x-4">
       <Card {...args1} />
       <Card {...args1} />
       <Card {...args1} />
@@ -82,7 +82,7 @@ const Column = (args2) => (
         font="primary"
       />
     </div>
-    <div className="flex flex-col gap-4 w-1/2 border p-2">
+    <div className="flex flex-col space-y-4 w-1/2 border p-2">
       <Card {...args2} />
       <Card {...args2} />
       <Card {...args2} />

@@ -13,12 +13,13 @@ var _textHelper = require("../../helpers/textHelper");
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var defaultValues = {
-  variant: false,
-  size: "lg",
+  variant: "dark",
   position: "left-top",
   className: ""
 };
@@ -29,26 +30,25 @@ var SliderContent = function SliderContent(_ref) {
     btn = _ref.btn,
     _ref$variant = _ref.variant,
     variant = _ref$variant === void 0 ? defaultValues.variant : _ref$variant,
-    _ref$size = _ref.size,
-    size = _ref$size === void 0 ? defaultValues.size : _ref$size,
     _ref$position = _ref.position,
     position = _ref$position === void 0 ? defaultValues.position : _ref$position,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? defaultValues.className : _ref$className;
-  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", variant), _defineProperty(_cn, "text-neutral-800", !variant), _cn));
+  var textColor = (0, _classnames.default)("pb-4 font-secondary", (_cn = {}, _defineProperty(_cn, "text-neutral-100", variant === "light"), _defineProperty(_cn, "text-neutral-800", variant === "dark"), _cn));
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     className: className,
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       id: "slider-content",
       className: (0, _classesHelper.getPositionSliderContainerText)(position),
       children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-        className: "w-1/2",
+        className: "w-3/5",
         children: [title ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: textColor,
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Heading.default, {
             title: (0, _textHelper.getTextCount)(title, 53),
             type: "h-3",
-            font: "secondary"
+            font: "secondary",
+            className: "font-semibold"
           })
         }) : "", text ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: textColor,
@@ -59,13 +59,10 @@ var SliderContent = function SliderContent(_ref) {
           })
         }) : "", btn ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: (0, _classesHelper.getClassBannerPositionButton)(position),
-          children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
-            id: btn === null || btn === void 0 ? void 0 : btn.id,
-            label: btn === null || btn === void 0 ? void 0 : btn.label,
-            iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
-            variant: variant ? "outlined" : "primary",
-            size: size === "lg" ? "md" : size === "md" ? "sm" : "xsm"
-          })
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, _objectSpread({
+            variant: variant === "light" ? "outlined-negative" : "primary",
+            size: "sm"
+          }, btn))
         }) : ""]
       })
     }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
@@ -87,15 +84,12 @@ var SliderContent = function SliderContent(_ref) {
         })
       }), btn ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         className: "pb-4 font-secondary",
-        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, {
-          id: btn === null || btn === void 0 ? void 0 : btn.id,
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button.default, _objectSpread({
           label: btn === null || btn === void 0 ? void 0 : btn.label,
           variant: "primary",
-          size: "xsm",
-          iconName: btn === null || btn === void 0 ? void 0 : btn.iconName,
-          className: "min-w-full flex justify-center",
-          onClick: btn === null || btn === void 0 ? void 0 : btn.onClick
-        })
+          size: "sm",
+          className: "min-w-full flex justify-center"
+        }, btn))
       }) : ""]
     })]
   });
@@ -104,8 +98,7 @@ SliderContent.propTypes = {
   title: _propTypes.default.string,
   text: _propTypes.default.string,
   btn: _propTypes.default.object,
-  variant: _propTypes.default.bool,
-  size: _propTypes.default.oneOf(["lg", "md", "sm"]),
+  variant: _propTypes.default.oneOf(["light", "dark"]),
   position: _propTypes.default.oneOf(["left-top", "left-middle", "left-bottom", "center-top", "center-middle", "center-bottom", "right-top", "right-middle", "right-bottom"]),
   className: _propTypes.default.string
 };

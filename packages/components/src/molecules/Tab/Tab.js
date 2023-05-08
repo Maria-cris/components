@@ -9,6 +9,7 @@ const defaultValues = {
   active: false,
   className: "",
   isFirst: false,
+  onClick: () => {},
 };
 const Tab = ({
   label,
@@ -16,9 +17,13 @@ const Tab = ({
   className = defaultValues.className,
   iconName,
   isFirst,
+  onClick,
 }) => {
   return (
-    <div className={cn(className, "flex flex-col space-x-0 w-fit")}>
+    <div
+      className={cn(className, "flex flex-col space-x-0 w-fit")}
+      onClick={onClick}
+    >
       <div
         className={cn(
           "flex relative  justify-center p-4  items-center whitespace-nowrap",

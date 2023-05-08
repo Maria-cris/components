@@ -7,13 +7,14 @@ export default {
     label: "Text Link",
     active: true,
     iconName: "home",
+    isFirst: true,
   },
 };
 
 const Template = (args) => <Tab {...args} />;
 const Tabs = (args) => (
   <div className="flex flex-row ">
-    <Tab label="label1" active={false} />
+    <Tab label="label1" active={false} isFirst />
     <Tab {...args} />
     <Tab label="label2" active={false} />
     <Tab label="label3" active={false} />

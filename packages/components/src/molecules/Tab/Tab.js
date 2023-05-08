@@ -8,23 +8,26 @@ import Icon from "../../atoms/Icon/Icon";
 const defaultValues = {
   active: false,
   className: "",
+  isFirst: false,
 };
 const Tab = ({
   label,
   active = defaultValues.active,
   className = defaultValues.className,
   iconName,
+  isFirst,
 }) => {
   return (
-    <div className={cn(className, "flex flex-col space-x-0")}>
+    <div className={cn(className, "flex flex-col space-x-0 w-fit")}>
       <div
         className={cn(
           "flex relative  justify-center p-4  items-center whitespace-nowrap",
           {
             ["bg-neutral-900 text-neutral-100 drop-shadow-md border-b-2 border border-neutral-900"]:
               active,
-            ["bg-neutral-100 border-b-2 border border-neutral-300 border-l-0 border-b-primary-500"]:
+            ["bg-neutral-100 border-b-2 border-t border-r border-neutral-300  border-b-primary-500"]:
               !active,
+            ["border-l border-neutral-300"]: isFirst,
           }
         )}
       >
@@ -67,6 +70,7 @@ Tab.propTypes = {
   className: PropTypes.string,
   iconName: PropTypes.string,
   active: PropTypes.bool,
+  isFirst: PropTypes.bool,
 };
 Tab.defaultProps = defaultValues;
 

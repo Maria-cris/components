@@ -1,12 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import Icon from "../../atoms/Icon/Icon";
 import Heading from "../../atoms/Heading/Heading";
 import cn from "classnames";
 import PropTypes from "prop-types";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 const defaultValues = {
   className: "",
   theme: "dark",
+  number: 0,
 };
 const variants = {
   shadow: "border rounded-lg shadow-lb",
@@ -37,15 +40,16 @@ const colors = {
   "primary-900": "border-primary-900 shadow-primary-900",
 };
 const Numbers = ({
-  number,
+  number = defaultValues.number,
   title,
   iconName,
   description,
   variant,
   color,
-  className,
-  theme,
+  className = defaultValues.className,
+  theme = defaultValues.theme,
 }) => {
+  const [finishedCount, setFinishedCount] = useState(false);
   return (
     <div
       id="Numbers-Container"
@@ -66,9 +70,27 @@ const Numbers = ({
         ) : (
           ""
         )}
-        <span>
-          <Heading title={number} type="h-3" font="secondary" />
-        </span>
+        <CountUp
+          separator=","
+          start={0}
+          end={number}
+          onEnd={() => setFinishedCount(true)}
+        >
+          {({ countUpRef, start }) => (
+            <VisibilitySensor
+              onChange={(isVisible) => {
+                if (!isVisible || finishedCount) return;
+                start();
+              }}
+              delayedCall
+            >
+              <span
+                className="font-secondary text-2xl lg:text-5xl md:text-3xl font-bold leading-[125%] "
+                ref={countUpRef}
+              />
+            </VisibilitySensor>
+          )}
+        </CountUp>
       </div>
       <div id="Numbers-title" className="pb-2">
         <Heading title={title} type="h-6" font="secondary" />

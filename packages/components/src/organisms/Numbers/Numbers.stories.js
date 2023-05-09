@@ -4,7 +4,7 @@ export default {
   component: Numbers,
   tags: ["autodocs"],
   args: {
-    number: "12,000",
+    number: 12000,
     title: "Numbers",
     iconName: "people",
     description: "Numbers component",

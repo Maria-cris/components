@@ -22,7 +22,7 @@ var types = {
   "h-3": (0, _classnames.default)("text-2xl lg:text-5xl md:text-3xl font-extrabold"),
   "h-4": (0, _classnames.default)("text-xxl md:text-3xl font-bold"),
   "h-5": (0, _classnames.default)("text-base lg:text-xl font-bold"),
-  "h-6": (0, _classnames.default)("text-sm lg:text-md font-bold")
+  "h-6": (0, _classnames.default)("text-sm lg:text-base font-semibold")
 };
 var variants = {
   primary: (0, _classnames.default)("text-neutral-500"),

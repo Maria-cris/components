@@ -18,20 +18,27 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var defaultValues = {
   active: false,
-  className: ""
+  className: "",
+  isFirst: false,
+  onClick: function onClick() {}
 };
 var Tab = function Tab(_ref) {
   var _cn;
   var label = _ref.label,
-    active = _ref.active,
-    className = _ref.className,
-    iconName = _ref.iconName;
+    _ref$active = _ref.active,
+    active = _ref$active === void 0 ? defaultValues.active : _ref$active,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? defaultValues.className : _ref$className,
+    iconName = _ref.iconName,
+    isFirst = _ref.isFirst,
+    onClick = _ref.onClick;
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: (0, _classnames.default)(className, "flex flex-col space-x-0"),
+    className: (0, _classnames.default)(className, "flex flex-col space-x-0 w-fit"),
+    onClick: onClick,
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      className: (0, _classnames.default)("flex relative  justify-center p-4 items-center ", (_cn = {}, _defineProperty(_cn, "bg-neutral-900 text-neutral-100 drop-shadow-md border-b-2 border-b-neutral-900", active), _defineProperty(_cn, "bg-neutral-100 border-b-2 border border-neutral-300  border-b-primary-500", !active), _cn)),
+      className: (0, _classnames.default)("flex relative  justify-center p-4  items-center whitespace-nowrap ", (_cn = {}, _defineProperty(_cn, "bg-neutral-900 text-neutral-100 drop-shadow-md border-b-2 border border-neutral-900", active), _defineProperty(_cn, "bg-neutral-100 border-b-2 border-t border-r border-neutral-300  border-b-primary-500", !active), _defineProperty(_cn, "border-l border-neutral-300", isFirst), _cn)),
       children: iconName ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("span", {
-        className: (0, _classnames.default)(" flex text-sm font-semibold leading-[125%] ", _defineProperty({}, "space-x-2", label)),
+        className: (0, _classnames.default)(" flex text-sm font-semibold leading-[125%] whitespace-nowrap", _defineProperty({}, "space-x-2", label)),
         children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
           iconName: iconName
         }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Heading.default, {
@@ -62,7 +69,8 @@ Tab.propTypes = {
   label: _propTypes.default.string,
   className: _propTypes.default.string,
   iconName: _propTypes.default.string,
-  active: _propTypes.default.bool
+  active: _propTypes.default.bool,
+  isFirst: _propTypes.default.bool
 };
 Tab.defaultProps = defaultValues;
 var _default = Tab;

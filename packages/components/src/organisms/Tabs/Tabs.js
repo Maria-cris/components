@@ -8,15 +8,12 @@ const defaultValues = {
 };
 const Tabs = ({ tabs, className = defaultValues.className }) => {
   return (
-    <div
-      className={cn(
-        className,
-        "flex flex-row justify-center overscroll-x-auto w-auto"
-      )}
-    >
-      {tabs.map((tab, indexTab) => (
-        <Tab {...tab} key={indexTab} />
-      ))}
+    <div className="overflow-hidden">
+      <div className={cn(className, "flex justify-center overflow-auto")}>
+        {tabs.map((tab, indexTab) => (
+          <Tab {...tab} key={indexTab} />
+        ))}
+      </div>
     </div>
   );
 };

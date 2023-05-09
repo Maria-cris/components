@@ -5,7 +5,9 @@ const defaultValues = {
   className: "",
 };
 const Icon = ({ iconName, className = defaultValues.className }) => {
-  return <span className={cn("font-icons", className)}>{iconName}</span>;
+  return (
+    <span className={cn("font-icons select-none", className)}>{iconName}</span>
+  );
 };
 
 Icon.propTypes = {

@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       principal: ["Nunito Sans"],
-      secondary: ["Poppins"],
+      secondary: ["poppins"],
       icons: ["Material Icons"],
     },
     colors: {

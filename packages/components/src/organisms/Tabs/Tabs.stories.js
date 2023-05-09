@@ -12,6 +12,7 @@ export default {
       { label: "Text Link", iconName: "home" },
       { label: "Text Link", iconName: "home" },
       { label: "Text Link", iconName: "home" },
+      { label: "Text Link", iconName: "home" },
     ],
   },
 };

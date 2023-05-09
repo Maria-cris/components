@@ -9,7 +9,7 @@ const defaultValues = {
   theme: "dark",
 };
 const variants = {
-  shadow: "border rounded-lg shadow-lb shadow-neutral-900",
+  shadow: "border rounded-lg shadow-lb",
   stroke: "border rounded-lg",
 };
 const themes = {
@@ -51,14 +51,17 @@ const Numbers = ({
       id="Numbers-Container"
       className={cn(className, "flex flex-col bg-transparent p-4", {
         [variants?.[variant]]: variant,
-        [themes[theme]]: theme,
-        [colors[color]]: color,
+        [themes?.[theme]]: theme,
+        [colors?.[color]]: color,
       })}
     >
-      <div id="Number-Icon" className="flex align-center space-x-1 pb-2">
+      <div
+        id="Number-Icon"
+        className="flex align-center items-center space-x-1 pb-2"
+      >
         {iconName ? (
-          <span className="text-2xl lg:text-5xl md:text-3xl font-extrabold">
-            <Icon iconName={iconName} />
+          <span className="text-2xl lg:text-5xl md:text-3xl">
+            <Icon iconName={iconName} type="outlined" />
           </span>
         ) : (
           ""

@@ -9,6 +9,7 @@ export default {
     iconName: "people",
     description: "Numbers component",
     variant: "",
+    className: "shadow-primary-800 border-primary-200",
   },
   argTypes: {
     variant: {

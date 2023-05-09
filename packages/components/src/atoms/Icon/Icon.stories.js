@@ -7,6 +7,12 @@ export default {
     iconName: "home",
     className: "",
   },
+  argTypes: {
+    type: {
+      options: ["solid", "outlined"],
+      control: { type: "radio" },
+    },
+  },
 };
 
 const Template = (args) => <Icon {...args} />;

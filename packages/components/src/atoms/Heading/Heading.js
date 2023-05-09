@@ -11,7 +11,7 @@ const types = {
   "h-3": cn("text-2xl lg:text-5xl md:text-3xl font-extrabold"),
   "h-4": cn("text-xxl md:text-3xl font-bold"),
   "h-5": cn("text-base lg:text-xl font-bold"),
-  "h-6": cn("text-sm lg:text-md font-bold"),
+  "h-6": cn("text-sm lg:text-base font-semibold"),
 };
 const variants = {
   primary: cn("text-neutral-500"),

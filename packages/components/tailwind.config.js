@@ -7,6 +7,7 @@ module.exports = {
       principal: ["Nunito Sans"],
       secondary: ["poppins"],
       icons: ["Material Icons"],
+      iconsOutlined: ["material-icons-outlined"],
     },
     colors: {
       primary: {
@@ -43,7 +44,11 @@ module.exports = {
       },
       success: { 100: "", 200: "", 300: "", 400: "", 500: "" },
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        lb: "4px 6px 0px 0px rgba(0, 0, 0, 1)",
+      },
+    },
   },
   plugins: [],
 };

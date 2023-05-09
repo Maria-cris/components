@@ -102,7 +102,7 @@ const Numbers = ({
   );
 };
 Numbers.propTypes = {
-  number: PropTypes.string,
+  number: PropTypes.number,
   iconName: PropTypes.string,
   description: PropTypes.string,
   title: PropTypes.string,

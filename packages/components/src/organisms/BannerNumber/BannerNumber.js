@@ -25,6 +25,13 @@ const BannerNumber = ({
     ["text-neutral-100"]: contentVariant === "light",
     ["text-neutral-800"]: contentVariant === "dark",
   });
+  const ratio = (numbersCount) => {
+    let aspect = "";
+    if (numbersCount > 2) {
+      aspect = "1/2";
+    } else aspect = "3/4";
+    return aspect;
+  };
   return (
     <div>
       <div className="hidden lg:flex">
@@ -45,7 +52,7 @@ const BannerNumber = ({
               />
             </div>
             <span className={fontColors}>{description}</span>
-            <div className="flex space-x-6 pt-10">
+            <div className="grid grid-cols-4 gap-6 pt-10">
               {numbers.map((number, numberindex) => (
                 <Numbers {...number} key={numberindex} />
               ))}
@@ -71,7 +78,7 @@ const BannerNumber = ({
               />
             </div>
             <span className={fontColors}>{description}</span>
-            <div className="flex space-x-6 pt-10">
+            <div className="grid grid-cols-4 gap-6 pt-10">
               {numbers.map((number, numberindex) => (
                 <Numbers {...number} key={numberindex} />
               ))}
@@ -80,7 +87,7 @@ const BannerNumber = ({
         </Aspect>
       </div>
       <div className="flex md:hidden ">
-        <Aspect ratio="1/2">
+        <Aspect ratio={ratio(numbers.length)}>
           <img
             className={classBannerImage}
             style={bannerImageStyles?.[overlay]}
@@ -110,11 +117,11 @@ const BannerNumber = ({
 };
 BannerNumber.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  overlay: PropTypes.oneOf(["dark", "light", "no-overlay"]),
+  overlay: PropTypes.oneOf(["dark", "light", ""]),
   title: PropTypes.string,
   description: PropTypes.string,
   contentVariant: PropTypes.oneOf(["dark", "light"]),
-  numbers: PropTypes.object,
+  numbers: PropTypes.array,
 };
 BannerNumber.defaultProps = defaultValues;
 export default BannerNumber;

@@ -14,6 +14,7 @@ import Carrusel from "./organisms/Carrusel/Carrusel";
 import Tab from "./molecules/Tab";
 import Tabs from "./organisms/Tabs";
 import Numbers from "./organisms/Numbers";
+import BannerNumber from "./organisms/BannerNumber/BannerNumber";
 import tailwindBase from "./tailwind-base/tailwindBase";
 
 export {
@@ -34,4 +35,5 @@ export {
   Tab,
   Tabs,
   Numbers,
+  BannerNumber,
 };

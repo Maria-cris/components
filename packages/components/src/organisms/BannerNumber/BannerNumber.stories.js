@@ -6,7 +6,7 @@ export default {
   args: {
     imageUrl: "https://wallpapercave.com/wp/wp2599594.jpg",
     title: "Demo BannerNumber",
-    description: "Demo BannerNumber",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     overlay: "",
     contentVariant: "dark",
     numbers: [

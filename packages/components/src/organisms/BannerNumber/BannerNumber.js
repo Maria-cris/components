@@ -43,7 +43,7 @@ const BannerNumber = ({
             alt="image Banner"
           />
           <div className="w-full h-full absolute top-0 left-0 flex flex-col p-10 ">
-            <div className="pb-2">
+            <div className="pb-2 w-1/2">
               <Heading
                 title={title}
                 type="h-3"
@@ -51,7 +51,9 @@ const BannerNumber = ({
                 className={fontColors}
               />
             </div>
-            <span className={fontColors}>{description}</span>
+            <div className="w-1/2">
+              <span className={fontColors}>{description}</span>
+            </div>
             <div className="grid grid-cols-4 gap-6 pt-10">
               {numbers.map((number, numberindex) => (
                 <Numbers {...number} key={numberindex} />
@@ -69,7 +71,7 @@ const BannerNumber = ({
             alt="image Banner"
           />
           <div className="w-full h-full absolute top-0 left-0 flex flex-col p-10 ">
-            <div className="pb-2">
+            <div className="pb-2 w-4/5">
               <Heading
                 title={title}
                 type="h-3"
@@ -77,7 +79,9 @@ const BannerNumber = ({
                 className={fontColors}
               />
             </div>
-            <span className={fontColors}>{description}</span>
+            <div className="w-4/5">
+              <span className={fontColors}>{description}</span>
+            </div>
             <div className="grid grid-cols-4 gap-6 pt-10">
               {numbers.map((number, numberindex) => (
                 <Numbers {...number} key={numberindex} />

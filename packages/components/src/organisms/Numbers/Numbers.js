@@ -12,8 +12,8 @@ const defaultValues = {
   number: 0,
 };
 const variants = {
-  shadow: "border rounded-lg shadow-lb",
-  stroke: "border rounded-lg",
+  shadow: "border rounded-lg shadow-lb p-4",
+  stroke: "border rounded-lg p-4",
 };
 const themes = {
   dark: "text-neutral-800",
@@ -53,7 +53,7 @@ const Numbers = ({
   return (
     <div
       id="Numbers-Container"
-      className={cn(className, "flex flex-col bg-transparent p-4", {
+      className={cn(className, "flex flex-col bg-transparent ", {
         [variants?.[variant]]: variant,
         [themes?.[theme]]: theme,
         [colors?.[color]]: color,

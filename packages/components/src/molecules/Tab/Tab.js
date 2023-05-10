@@ -76,6 +76,7 @@ Tab.propTypes = {
   iconName: PropTypes.string,
   active: PropTypes.bool,
   isFirst: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 Tab.defaultProps = defaultValues;
 

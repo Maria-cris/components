@@ -9,7 +9,6 @@ export default {
     iconName: "people",
     description: "Numbers component",
     variant: "",
-    className: "shadow-primary-800 border-primary-200",
   },
   argTypes: {
     variant: {
@@ -48,7 +47,7 @@ export default {
 
 const Template = (args) => <Numbers {...args} />;
 const example = (args) => (
-  <div className="flex space-x-2">
+  <div className="flex space-x-6">
     <Numbers {...args} />
     <Numbers {...args} />
     <Numbers {...args} />

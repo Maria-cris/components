@@ -7,7 +7,6 @@ module.exports = {
       principal: ["Nunito Sans"],
       secondary: ["poppins"],
       icons: ["Material Icons"],
-      iconsOutlined: ["material-icons-outlined"],
     },
     colors: {
       primary: {

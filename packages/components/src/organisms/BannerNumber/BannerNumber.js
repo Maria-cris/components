@@ -56,7 +56,17 @@ const BannerNumber = ({
             </div>
             <div className="grid grid-cols-4 gap-6 pt-10">
               {numbers.map((number, numberindex) => (
-                <Numbers {...number} key={numberindex} />
+                <Numbers
+                  number={number?.number}
+                  title={number?.title}
+                  iconName={number?.iconName}
+                  description={number?.description}
+                  variant={number?.variant}
+                  color={number?.color}
+                  theme={contentVariant}
+                  className={number?.className}
+                  key={numberindex}
+                />
               ))}
             </div>
           </div>
@@ -122,7 +132,7 @@ const BannerNumber = ({
               })}
             >
               {numbers.map((number, numberindex) => (
-                <Numbers {...number} key={numberindex} />
+                <Numbers theme={contentVariant} {...number} key={numberindex} />
               ))}
             </div>
           </div>

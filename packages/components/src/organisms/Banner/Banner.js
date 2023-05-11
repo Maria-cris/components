@@ -10,7 +10,7 @@ const defaultValues = {
   ratio: "2/1",
   overlay: "normal",
   contentVariant: "dark",
-  size: "lg",
+  size: "md",
   position: "left-top",
   className: "",
 };
@@ -44,7 +44,6 @@ const Banner = ({
               id: btn.id,
               label: btn.label,
               variant: contentVariant ? "outlined" : "primary",
-              size: size,
               iconName: btn?.iconName,
             }}
             contentVariant={contentVariant}

@@ -16,7 +16,6 @@ export default {
         iconName: "people",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         variant: "",
-        theme: "light",
       },
       {
         number: 12000,
@@ -24,7 +23,6 @@ export default {
         iconName: "people",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         variant: "",
-        theme: "light",
       },
       {
         number: 12000,
@@ -32,7 +30,6 @@ export default {
         iconName: "people",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         variant: "",
-        theme: "light",
       },
       {
         number: 12000,
@@ -40,7 +37,6 @@ export default {
         iconName: "people",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         variant: "",
-        theme: "light",
       },
     ],
   },

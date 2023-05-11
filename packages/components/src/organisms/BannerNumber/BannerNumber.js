@@ -119,16 +119,15 @@ const BannerNumber = ({
             </div>
             <div
               className={cn("font-secondary", {
-                ["text-xs min-[380px]:text-sm"]: numbers.length < 3,
+                ["text-xs min-[380px]:text-sm"]: numbers.length < 4,
                 ["text-sm"]: numbers.length > 2,
               })}
             >
               <span className={fontColors}>{description}</span>
             </div>
             <div
-              className={cn("flex flex-col pt-6", {
-                ["space-y-4 min-[380px]:space-y-6"]: numbers.length < 3,
-                ["space-y-6"]: numbers.length > 2,
+              className={cn("flex flex-col pt-6 space-y-4", {
+                [" min-[380px]:space-y-6"]: numbers.length < 3,
               })}
             >
               {numbers.map((number, numberindex) => (

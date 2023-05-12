@@ -191,6 +191,28 @@ export default {
       phoneNumber: "0000 000 000",
       icon: { iconName: "call" },
     },
+    certificates: {
+      title: "Certificaciones",
+      logos: [
+        {
+          url: "https://www.pngfind.com/pngs/m/342-3423146_award-ribbon-transparent-png-ribbon-for-certificate-of.png",
+          alt: "certificate",
+          link: "https://www.pngfind.com/pngs/m/342-3423146_award-ribbon-transparent-png-ribbon-for-certificate-of.png",
+        },
+        {
+          url: "https://www.pngfind.com/pngs/m/342-3423146_award-ribbon-transparent-png-ribbon-for-certificate-of.png",
+          alt: "certificate",
+        },
+      ],
+    },
+    legal: {
+      title: "Derechos reservados:",
+      text: "Lottus Education 2023",
+      linkText: {
+        text: "Aviso de privacidad",
+        href: "https://uane.edu.mx/",
+      },
+    },
   },
 };
 

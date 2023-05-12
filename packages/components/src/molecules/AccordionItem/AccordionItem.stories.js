@@ -6,7 +6,10 @@ export default {
   args: {
     data: {
       title: "Item 1",
-      content: "content",
+      content: [
+        { text: "content", link: "https://www.deepl.com/es/translator" },
+        { text: "content" },
+      ],
       icon: { iconName: "people", type: "outlined" },
       text: "texto",
     },

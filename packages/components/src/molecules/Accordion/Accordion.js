@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import AccordionItem from "../AccordionItem/AccordionItem";
 
-const Accordion = ({ itemsData, oneItemOpen = true }) => {
+const Accordion = ({ itemsData, oneItemOpen = false }) => {
   const [clicked, setClicked] = useState("0");
 
   const handleToggle = (index) => {
@@ -47,6 +47,6 @@ Accordion.propTypes = {
   oneItemOpen: PropTypes.bool,
 };
 Accordion.defaultProps = {
-  oneItemOpen: true,
+  oneItemOpen: false,
 };
 export default Accordion;

@@ -14,8 +14,11 @@ import Carrusel from "./organisms/Carrusel/Carrusel";
 import Tab from "./molecules/Tab";
 import Tabs from "./organisms/Tabs";
 import Numbers from "./organisms/Numbers";
+import AccordionItem from "./molecules/AccordionItem/AccordionItem";
+import Accordion from "./molecules/Accordion/Accordion";
 import BannerNumber from "./organisms/BannerNumber/BannerNumber";
 import tailwindBase from "./tailwind-base/tailwindBase";
+import Footer from "./organisms/Footer/Footer";
 
 export {
   Aspect,
@@ -36,4 +39,7 @@ export {
   Tabs,
   Numbers,
   BannerNumber,
+  AccordionItem,
+  Accordion,
+  Footer,
 };

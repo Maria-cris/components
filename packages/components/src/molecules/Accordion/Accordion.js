@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import AccordionItem from "../AccordionItem/AccordionItem";
 
-const Accordion = ({ itemsData }) => {
+const Accordion = ({ itemsData, oneItemOpen = true }) => {
   const [clicked, setClicked] = useState("0");
 
   const handleToggle = (index) => {
@@ -12,14 +12,30 @@ const Accordion = ({ itemsData }) => {
     setClicked(index);
   };
 
-  return (
-    <ul className="accordion">
+  return oneItemOpen ? (
+    <ul className="">
       {itemsData.map((item, index) => (
         <li key={index}>
           <AccordionItem
-            data={item}
+            data={item?.data}
             onToggle={() => handleToggle(index)}
             open={clicked === index}
+            borderDownOn={item?.borderDownOn}
+            ColorClass={item?.ColorClass}
+            oneItemOpen={true}
+          />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul className="">
+      {itemsData.map((item, index) => (
+        <li key={index}>
+          <AccordionItem
+            data={item?.data}
+            borderDownOn={item?.borderDownOn}
+            ColorClass={item?.ColorClass}
+            oneItemOpen={false}
           />
         </li>
       ))}
@@ -28,6 +44,9 @@ const Accordion = ({ itemsData }) => {
 };
 Accordion.propTypes = {
   itemsData: PropTypes.array,
+  oneItemOpen: PropTypes.bool,
 };
-
+Accordion.defaultProps = {
+  oneItemOpen: true,
+};
 export default Accordion;

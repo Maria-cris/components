@@ -9,8 +9,9 @@ export default {
       content: "content",
       icon: { iconName: "people", type: "outlined" },
       text: "texto",
-      open: true,
     },
+    open: true,
+    borderDownOn: true,
   },
 };
 

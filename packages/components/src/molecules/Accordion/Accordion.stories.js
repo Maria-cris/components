@@ -6,20 +6,29 @@ export default {
   args: {
     itemsData: [
       {
-        title: "Item 1",
-        content: "content",
-        icon: { iconName: "people", type: "outlined" },
-        text: "texto",
+        data: {
+          title: "Item 1",
+          content: "content",
+          icon: { iconName: "people", type: "outlined" },
+          text: "texto",
+        },
         open: true,
+        borderDownOn: false,
+        ColorClass: "border-neutral-400 bg-neutral-300",
       },
       {
-        title: "Item 1",
-        content: "content",
-        icon: { iconName: "people", type: "outlined" },
-        text: "texto",
+        data: {
+          title: "Item 1",
+          content: "content",
+          icon: { iconName: "people", type: "outlined" },
+          text: "texto",
+        },
         open: true,
+        borderDownOn: true,
+        ColorClass: "border-primary-500",
       },
     ],
+    oneItemOpen: true,
   },
 };
 

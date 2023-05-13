@@ -44,7 +44,7 @@ const Outstanding = ({
         [colors[backgroundColor]]: true,
       })}
     >
-      <div className="md:w-1/2 w-full">
+      <div className="md:w-1/2 w-full self-end">
         <Aspect ratio="2/1">
           <img
             src={imageUrl}

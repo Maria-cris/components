@@ -19,7 +19,8 @@ export default {
           isExpand: false,
         },
         position: "left-middle",
-        overlay: "light",
+        overlay: "dark",
+        contentVariant: "light",
       },
       {
         url: "https://st3.depositphotos.com/1010305/16498/i/950/depositphotos_164980550-stock-photo-tiger-in-forest-tiger-in.jpg",

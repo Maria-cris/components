@@ -19,6 +19,7 @@ import Accordion from "./molecules/Accordion/Accordion";
 import BannerNumber from "./organisms/BannerNumber/BannerNumber";
 import tailwindBase from "./tailwind-base/tailwindBase";
 import Footer from "./organisms/Footer/Footer";
+import Outstanding from "./organisms/Outstanding";
 
 export {
   Aspect,
@@ -42,4 +43,5 @@ export {
   AccordionItem,
   Accordion,
   Footer,
+  Outstanding,
 };

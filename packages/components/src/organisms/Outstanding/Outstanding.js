@@ -18,6 +18,7 @@ const paddingContent = {
 };
 const defaultValues = {
   imgPosition: "right",
+  backgroundColor: "color1",
 };
 const colors = {
   color1: "bg-rainbow-100",
@@ -34,7 +35,7 @@ const Outstanding = ({
   title,
   paragraph,
   imgPosition = defaultValues.imgPosition,
-  backgroundColor,
+  backgroundColor = defaultValues.backgroundColor,
 }) => {
   return (
     <div

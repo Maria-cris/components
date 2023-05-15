@@ -1,6 +1,6 @@
 {
   "name": "@lottus-ed/components",
-  "version": "4.10.1",
+  "version": "4.11.0",
   "private": false,
   "main": "dist/index.js",
   "files": [

@@ -8,6 +8,7 @@ import cn from "classnames";
 const defaultValues = {
   className: "",
 };
+
 const logos = {
   ["instagram"]: instagram,
   ["facebook"]: facebook,

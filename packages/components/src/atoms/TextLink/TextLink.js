@@ -10,6 +10,12 @@ const defaultValues = {
   disabled: false,
   active: false,
   items: false,
+  iconPosition: "right",
+};
+
+const iconPositions = {
+  right: "flex",
+  left: "flex flex-row-reverse",
 };
 
 const TextLink = ({
@@ -22,6 +28,7 @@ const TextLink = ({
   disabled = defaultValues.disabled,
   active = defaultValues.active,
   items = defaultValues.items,
+  iconPosition = defaultValues.iconPosition,
 }) => {
   //expand icon state
   let iconExpandMore = "expand_more";
@@ -29,7 +36,7 @@ const TextLink = ({
   const [icon, setIcon] = useState(iconExpandMore);
   return items ? (
     <div
-      className="items-center whitespace-nowrap flex group"
+      className="items-center whitespace-nowrap flex group "
       onMouseEnter={(_) => setIcon(iconExpandLess)}
       onMouseLeave={(_) => setIcon(iconExpandMore)}
     >
@@ -52,33 +59,35 @@ const TextLink = ({
       </div>
     </div>
   ) : (
-    <div className="items-center whitespace-nowrap flex">
-      <div
-        className={cn("p-1  cursor-pointer ", className, {
-          ["hover:underline"]: !disabled,
-          ["underline"]: active,
-        })}
-        onClick={onClick}
-      >
-        {href && !disabled ? (
-          <a className="font-principal" href={href} target={target}>
-            {text}
-          </a>
-        ) : disabled ? (
-          <span className="font-principal">{text}</span>
+    <div className="items-center whitespace-nowrap flex ">
+      <div className={cn({ [iconPositions[iconPosition]]: true })}>
+        <div
+          className={cn("p-1  cursor-pointer  ", className, {
+            ["hover:underline"]: !disabled,
+            ["underline"]: active,
+          })}
+          onClick={onClick}
+        >
+          {href && !disabled ? (
+            <a className="font-principal" href={href} target={target}>
+              {text}
+            </a>
+          ) : disabled ? (
+            <span className="font-principal">{text}</span>
+          ) : (
+            <span className="font-principal" onClick={onClick}>
+              {text}
+            </span>
+          )}
+        </div>
+        {iconName ? (
+          <div className="flex items-center">
+            <Icon iconName={iconName} />{" "}
+          </div>
         ) : (
-          <span className="font-principal" onClick={onClick}>
-            {text}
-          </span>
+          ""
         )}
       </div>
-      {iconName ? (
-        <div>
-          <Icon iconName={iconName} />{" "}
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 };
@@ -88,6 +97,7 @@ TextLink.propTypes = {
   iconName: PropTypes.string,
   className: PropTypes.string,
   target: PropTypes.oneOf(["_self", "_blank"]),
+  iconPosition: PropTypes.oneOf(["left", "right"]),
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
   active: PropTypes.bool,

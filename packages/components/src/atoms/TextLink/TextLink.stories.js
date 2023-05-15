@@ -15,6 +15,13 @@ export default {
     disabled: false,
     items: false,
     active: false,
+    iconPosition: "left",
+  },
+  argTypes: {
+    iconPosition: {
+      options: ["left", "right"],
+      controls: { type: "radio" },
+    },
   },
 };
 

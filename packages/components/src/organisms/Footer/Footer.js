@@ -197,7 +197,7 @@ const Footer = ({
             <div id="socialmedia" className="flex justify-start">
               <SocialMedia
                 className="  flex  py-4  min-[300px]:px-0 space-x-8 min-[300px]:justify-start  "
-                imgClassName="h-5"
+                svgClass="h-5"
                 socialMedia={contact?.socialMedia}
               />
             </div>

@@ -60,6 +60,28 @@ export default {
         src: "https://1.bp.blogspot.com/-ilM0ThnMs_s/WIVtiNb1qOI/AAAAAAAADEw/1fY4kvXEJdQm_IKoBFI4iVQfWoF9GqEaACPcB/s1600/uane%2Bmatamoros%2Blogo%2Bgota%2Bde%2Bagua.png",
         alt: "logotipo-uteg",
       },
+      socialMedia: [
+        {
+          socialName: "instagram",
+          alt: "instagram-logo",
+          link: "https://www.instagram.com/",
+        },
+        {
+          socialName: "facebook",
+          alt: "facebook-logo",
+          link: "https://www.facebook.com",
+        },
+        {
+          socialName: "tiktok",
+          alt: "tiktok-logo",
+          link: "https://www.tiktok.com",
+        },
+        {
+          socialName: "twitter",
+          alt: "twitter-logo",
+          link: "https://www.twitter.com",
+        },
+      ],
       menuMobile: [
         {
           label: "Estudiantes",

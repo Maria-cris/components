@@ -12,7 +12,7 @@ const Icon = ({
 }) => {
   return (
     <span
-      className={cn("select-none", className, {
+      className={cn("select-none leading-0", className, {
         ["material-icons-outlined"]: type === "outlined",
         ["font-icons"]: type === "solid",
       })}

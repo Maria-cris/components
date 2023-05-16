@@ -26,10 +26,15 @@ var defaultValues = {
   onClick: function onClick() {},
   disabled: false,
   active: false,
-  items: false
+  items: false,
+  iconPosition: "right"
+};
+var iconPositions = {
+  right: "flex",
+  left: "flex flex-row-reverse"
 };
 var TextLink = function TextLink(_ref) {
-  var _cn, _cn2;
+  var _cn, _cn3;
   var text = _ref.text,
     href = _ref.href,
     _ref$className = _ref.className,
@@ -44,7 +49,9 @@ var TextLink = function TextLink(_ref) {
     _ref$active = _ref.active,
     active = _ref$active === void 0 ? defaultValues.active : _ref$active,
     _ref$items = _ref.items,
-    items = _ref$items === void 0 ? defaultValues.items : _ref$items;
+    items = _ref$items === void 0 ? defaultValues.items : _ref$items,
+    _ref$iconPosition = _ref.iconPosition,
+    iconPosition = _ref$iconPosition === void 0 ? defaultValues.iconPosition : _ref$iconPosition;
   //expand icon state
   var iconExpandMore = "expand_more";
   var iconExpandLess = "expand_less";
@@ -53,7 +60,7 @@ var TextLink = function TextLink(_ref) {
     icon = _useState2[0],
     setIcon = _useState2[1];
   return items ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: "items-center whitespace-nowrap flex group",
+    className: "items-center whitespace-nowrap flex group ",
     onMouseEnter: function onMouseEnter(_) {
       return setIcon(iconExpandLess);
     },
@@ -74,29 +81,33 @@ var TextLink = function TextLink(_ref) {
         iconName: icon
       })
     })]
-  }) : /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: "items-center whitespace-nowrap flex",
-    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      className: (0, _classnames.default)("p-1  cursor-pointer ", className, (_cn2 = {}, _defineProperty(_cn2, "hover:underline", !disabled), _defineProperty(_cn2, "underline", active), _cn2)),
-      onClick: onClick,
-      children: href && !disabled ? /*#__PURE__*/(0, _jsxRuntime.jsx)("a", {
-        className: "font-principal",
-        href: href,
-        target: target,
-        children: text
-      }) : disabled ? /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-        className: "font-principal",
-        children: text
-      }) : /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-        className: "font-principal",
+  }) : /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+    className: "items-center whitespace-nowrap flex ",
+    children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      className: (0, _classnames.default)(_defineProperty({}, iconPositions[iconPosition], true)),
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        className: (0, _classnames.default)("p-1  cursor-pointer  ", className, (_cn3 = {}, _defineProperty(_cn3, "hover:underline", !disabled), _defineProperty(_cn3, "underline", active), _cn3)),
         onClick: onClick,
-        children: text
-      })
-    }), iconName ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
-        iconName: iconName
-      }), " "]
-    }) : ""]
+        children: href && !disabled ? /*#__PURE__*/(0, _jsxRuntime.jsx)("a", {
+          className: "font-principal",
+          href: href,
+          target: target,
+          children: text
+        }) : disabled ? /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+          className: "font-principal",
+          children: text
+        }) : /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+          className: "font-principal",
+          onClick: onClick,
+          children: text
+        })
+      }), iconName ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "flex items-center",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
+          iconName: iconName
+        }), " "]
+      }) : ""]
+    })
   });
 };
 TextLink.propTypes = {
@@ -105,6 +116,7 @@ TextLink.propTypes = {
   iconName: _propTypes.default.string,
   className: _propTypes.default.string,
   target: _propTypes.default.oneOf(["_self", "_blank"]),
+  iconPosition: _propTypes.default.oneOf(["left", "right"]),
   onClick: _propTypes.default.func,
   disabled: _propTypes.default.bool,
   active: _propTypes.default.bool

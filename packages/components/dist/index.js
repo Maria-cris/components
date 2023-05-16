@@ -3,6 +3,18 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "Accordion", {
+  enumerable: true,
+  get: function get() {
+    return _Accordion.default;
+  }
+});
+Object.defineProperty(exports, "AccordionItem", {
+  enumerable: true,
+  get: function get() {
+    return _AccordionItem.default;
+  }
+});
 Object.defineProperty(exports, "Aspect", {
   enumerable: true,
   get: function get() {
@@ -21,6 +33,12 @@ Object.defineProperty(exports, "BannerContent", {
     return _BannerContent.default;
   }
 });
+Object.defineProperty(exports, "BannerNumber", {
+  enumerable: true,
+  get: function get() {
+    return _BannerNumber.default;
+  }
+});
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
@@ -37,6 +55,12 @@ Object.defineProperty(exports, "Carrusel", {
   enumerable: true,
   get: function get() {
     return _Carrusel.default;
+  }
+});
+Object.defineProperty(exports, "Footer", {
+  enumerable: true,
+  get: function get() {
+    return _Footer.default;
   }
 });
 Object.defineProperty(exports, "Heading", {
@@ -63,6 +87,18 @@ Object.defineProperty(exports, "MenuMobile", {
     return _MenuMobile.default;
   }
 });
+Object.defineProperty(exports, "Numbers", {
+  enumerable: true,
+  get: function get() {
+    return _Numbers.default;
+  }
+});
+Object.defineProperty(exports, "Outstanding", {
+  enumerable: true,
+  get: function get() {
+    return _Outstanding.default;
+  }
+});
 Object.defineProperty(exports, "Slider", {
   enumerable: true,
   get: function get() {
@@ -79,6 +115,12 @@ Object.defineProperty(exports, "Tab", {
   enumerable: true,
   get: function get() {
     return _Tab.default;
+  }
+});
+Object.defineProperty(exports, "Tabs", {
+  enumerable: true,
+  get: function get() {
+    return _Tabs.default;
   }
 });
 Object.defineProperty(exports, "TextLink", {
@@ -107,5 +149,12 @@ var _Menu = _interopRequireDefault(require("./organisms/Menu"));
 var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));
 var _Carrusel = _interopRequireDefault(require("./organisms/Carrusel/Carrusel"));
 var _Tab = _interopRequireDefault(require("./molecules/Tab"));
+var _Tabs = _interopRequireDefault(require("./organisms/Tabs"));
+var _Numbers = _interopRequireDefault(require("./organisms/Numbers"));
+var _AccordionItem = _interopRequireDefault(require("./molecules/AccordionItem/AccordionItem"));
+var _Accordion = _interopRequireDefault(require("./molecules/Accordion/Accordion"));
+var _BannerNumber = _interopRequireDefault(require("./organisms/BannerNumber/BannerNumber"));
 var _tailwindBase = _interopRequireDefault(require("./tailwind-base/tailwindBase"));
+var _Footer = _interopRequireDefault(require("./organisms/Footer/Footer"));
+var _Outstanding = _interopRequireDefault(require("./organisms/Outstanding"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

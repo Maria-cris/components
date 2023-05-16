@@ -19,10 +19,10 @@ var fonts = {
 var types = {
   "h-1": (0, _classnames.default)("text-4xl md:text-6xl lg:text-7xl font-extrabold"),
   "h-2": (0, _classnames.default)("text-2xl md:text-4xl lg:text-6xl font-extrabold"),
-  "h-3": (0, _classnames.default)("text-2xl lg:text-5xl md:text-3xl font-extrabold"),
+  "h-3": (0, _classnames.default)("text-2xl lg:text-5xl md:text-3xl md:font-extrabold font-bold"),
   "h-4": (0, _classnames.default)("text-xxl md:text-3xl font-bold"),
   "h-5": (0, _classnames.default)("text-base lg:text-xl font-bold"),
-  "h-6": (0, _classnames.default)("text-sm lg:text-base font-semibold")
+  "h-6": (0, _classnames.default)("text-base lg:text-lg font-semibold")
 };
 var variants = {
   primary: (0, _classnames.default)("text-neutral-500"),

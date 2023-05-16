@@ -22,7 +22,7 @@ var defaultValues = {
   ratio: "2/1",
   overlay: "normal",
   contentVariant: "dark",
-  size: "lg",
+  size: "md",
   position: "left-top",
   className: ""
 };
@@ -62,7 +62,6 @@ var Banner = function Banner(_ref) {
             id: btn.id,
             label: btn.label,
             variant: contentVariant ? "outlined" : "primary",
-            size: size,
             iconName: btn === null || btn === void 0 ? void 0 : btn.iconName
           },
           contentVariant: contentVariant,

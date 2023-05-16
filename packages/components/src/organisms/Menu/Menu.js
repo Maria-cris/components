@@ -284,7 +284,12 @@ const Menu = ({
           </div>
         </div>
       </header>
-      <MenuMobile submenuM={submenuM} itemsData={data.menuMobile} btn={btn} />
+      <MenuMobile
+        submenuM={submenuM}
+        itemsData={data.menuMobile}
+        btn={btn}
+        socialMedia={data?.socialMedia}
+      />
     </div>
   );
 };

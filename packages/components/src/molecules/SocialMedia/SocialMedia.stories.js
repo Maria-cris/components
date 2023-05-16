@@ -5,6 +5,7 @@ export default {
   tags: ["autodocs"],
   args: {
     className: "",
+    svgClass: "text-primary-600",
     socialMedia: [
       {
         socialName: "instagram",

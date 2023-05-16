@@ -70,7 +70,8 @@ Tab.propTypes = {
   className: _propTypes.default.string,
   iconName: _propTypes.default.string,
   active: _propTypes.default.bool,
-  isFirst: _propTypes.default.bool
+  isFirst: _propTypes.default.bool,
+  onClick: _propTypes.default.func
 };
 Tab.defaultProps = defaultValues;
 var _default = Tab;

@@ -12,7 +12,13 @@ import SocialMedia from "../SocialMedia";
 import cn from "classnames";
 import PropTypes from "prop-types";
 
-const MenuMobile = ({ submenuM = false, itemsData, btn, className = "" }) => {
+const MenuMobile = ({
+  submenuM = false,
+  itemsData,
+  btn,
+  className = "",
+  socialMedia,
+}) => {
   // expand icon state
   const iconExpandMore = "arrow_forward_ios";
   const active = "principal";
@@ -251,7 +257,10 @@ const MenuMobile = ({ submenuM = false, itemsData, btn, className = "" }) => {
               <PromoLink text="link2" route="/route" />
             </div>
             <div>
-              <SocialMedia />
+              <SocialMedia
+                socialMedia={socialMedia}
+                svgClass="text-neutral-600"
+              />
             </div>
           </div>
         </div>
@@ -264,6 +273,7 @@ MenuMobile.propTypes = {
   itemsData: PropTypes.object,
   btn: PropTypes.object,
   className: PropTypes.string,
+  socialMedia: PropTypes.object,
 };
 MenuMobile.defaultProps = {
   className: "",

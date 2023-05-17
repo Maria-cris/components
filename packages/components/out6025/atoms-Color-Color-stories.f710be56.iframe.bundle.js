@@ -1,0 +1,1 @@
+(self.webpackChunk_lottus_ed_components=self.webpackChunk_lottus_ed_components||[]).push([[409],{"./src/atoms/Color/Color.stories.js":function(){}}]);

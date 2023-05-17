@@ -21,10 +21,10 @@ const defaultValues = {
   backgroundColor: "color1",
 };
 const colors = {
-  color1: "bg-rainbow-100",
-  color2: "bg-rainbow-200",
-  color3: "bg-rainbow-300",
-  color4: "bg-rainbow-400",
+  color1: "bg-outstanding-100",
+  color2: "bg-outstanding-200",
+  color3: "bg-outstanding-300",
+  color4: "bg-outstanding-400",
   color5: "bg-neutral-500",
   color6: "bg-neutral-800",
   color7: "bg-neutral-900",

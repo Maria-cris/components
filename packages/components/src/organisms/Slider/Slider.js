@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import Aspect from "../../atoms/Aspect/Aspect";
 import SliderContent from "../../molecules/SliderContent/SliderContent";
-import "swiper/css/bundle";
 import PropTypes from "prop-types";
 
 const sliderImageStyles = {

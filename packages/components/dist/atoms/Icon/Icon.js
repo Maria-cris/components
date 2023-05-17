@@ -24,7 +24,7 @@ var Icon = function Icon(_ref) {
     _ref$type = _ref.type,
     type = _ref$type === void 0 ? defaultValues.type : _ref$type;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-    className: (0, _classnames.default)("select-none", className, (_cn = {}, _defineProperty(_cn, "material-icons-outlined", type === "outlined"), _defineProperty(_cn, "font-icons", type === "solid"), _cn)),
+    className: (0, _classnames.default)("select-none leading-0", className, (_cn = {}, _defineProperty(_cn, "material-icons-outlined", type === "outlined"), _defineProperty(_cn, "font-icons", type === "solid"), _cn)),
     children: iconName
   });
 };

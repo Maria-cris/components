@@ -215,7 +215,7 @@ var Footer = function Footer(_ref) {
             className: "flex justify-start",
             children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SocialMedia.default, {
               className: "  flex  py-4  min-[300px]:px-0 space-x-8 min-[300px]:justify-start  ",
-              imgClassName: "h-5",
+              svgClass: "h-5",
               socialMedia: contact === null || contact === void 0 ? void 0 : contact.socialMedia
             })
           })]

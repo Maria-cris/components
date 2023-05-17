@@ -41,7 +41,7 @@ module.exports = {
         800: "#282828",
         900: "#000",
       },
-      rainbow: {
+      outstanding: {
         100: "#8B9BA3",
         200: "#B0003C",
         300: "#00BEB4",

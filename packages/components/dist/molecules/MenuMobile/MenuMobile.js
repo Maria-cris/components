@@ -33,7 +33,8 @@ var MenuMobile = function MenuMobile(_ref) {
     itemsData = _ref.itemsData,
     btn = _ref.btn,
     _ref$className = _ref.className,
-    className = _ref$className === void 0 ? "" : _ref$className;
+    className = _ref$className === void 0 ? "" : _ref$className,
+    socialMedia = _ref.socialMedia;
   // expand icon state
   var iconExpandMore = "arrow_forward_ios";
   var active = "principal";
@@ -251,7 +252,10 @@ var MenuMobile = function MenuMobile(_ref) {
               route: "/route"
             })]
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SocialMedia.default, {})
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SocialMedia.default, {
+              socialMedia: socialMedia,
+              svgClass: "text-neutral-600"
+            })
           })]
         })]
       })
@@ -262,7 +266,8 @@ MenuMobile.propTypes = {
   submenuM: _propTypes.default.bool,
   itemsData: _propTypes.default.object,
   btn: _propTypes.default.object,
-  className: _propTypes.default.string
+  className: _propTypes.default.string,
+  socialMedia: _propTypes.default.object
 };
 MenuMobile.defaultProps = {
   className: "",

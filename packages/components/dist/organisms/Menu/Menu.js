@@ -274,7 +274,8 @@ var Menu = function Menu(_ref) {
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_MenuMobile.default, {
       submenuM: submenuM,
       itemsData: data.menuMobile,
-      btn: btn
+      btn: btn,
+      socialMedia: data === null || data === void 0 ? void 0 : data.socialMedia
     })]
   });
 };

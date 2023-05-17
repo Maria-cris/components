@@ -7,6 +7,7 @@ const config = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
     "@storybook/addon-styling",
+    "storybook-color-picker",
   ],
   framework: {
     name: "@storybook/react-webpack5",

@@ -92,7 +92,7 @@ const BannerNumber = ({
             <div className="w-4/5 font-secondary  md:text-base">
               <span className={fontColors}>{description}</span>
             </div>
-            <div className="grid grid-cols-4 gap-6 pt-10">
+            <div className="grid grid-cols-4 gap-6 pt-6">
               {numbers.map((number, numberindex) => (
                 <Numbers
                   number={number?.number}

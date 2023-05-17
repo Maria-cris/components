@@ -11,7 +11,7 @@ import { myhref } from "../../helpers/myrefHelper";
 const linksTitleSection = cn(
   "font-principal font-bold lg:text-lg text-neutral-800 pb-6"
 );
-const textLinksClasses = cn("font-principal text-neutral-600 px-0 pb-4");
+const textLinksClasses = cn("font-principal text-neutral-600 px-0 pb-4 pt-0");
 
 const Footer = ({
   logoUrl,
@@ -132,7 +132,7 @@ const Footer = ({
             <div className="flex lg:justify-end font-principal font-bold">
               {contact?.phoneText}
             </div>
-            <div className="flex items-start space-x-2 ">
+            <div className="flex items-start space-x-2 pt-2">
               <span>
                 <Icon {...contact?.icon} />
               </span>

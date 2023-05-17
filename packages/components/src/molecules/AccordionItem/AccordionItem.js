@@ -35,7 +35,7 @@ const AccordionItem = ({
         id="accordion-item-title"
         className={cn(
           ColorClass,
-          "border border-neutral-400 flex flex-1 items-start py-6 px-4",
+          "border border-neutral-400 flex flex-1 items-start py-6 px-4 cursor-pointer",
           {
             ["border-b-0"]: !borderDownOn,
             ["bg-neutral-200"]: open || isOpen,
@@ -84,7 +84,12 @@ const AccordionItem = ({
             }
           >
             <div className="w-full">{item?.text}</div>
-            <div className="text-neutral-700 font-bold text-2xl leading-0 flex items-start cursor-pointer invisible">
+            <div
+              className={cn(
+                "text-neutral-700 font-bold text-2xl leading-0 flex items-start cursor-pointer",
+                { ["invisible"]: !item.iconHoriz }
+              )}
+            >
               <Icon iconName="more_horiz" />
             </div>
           </div>

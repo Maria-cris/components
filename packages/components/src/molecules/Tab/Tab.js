@@ -39,13 +39,13 @@ const Tab = ({
         {iconName ? (
           <span
             className={cn(
-              " flex text-sm font-semibold leading-[125%] whitespace-nowrap",
+              " flex text-sm font-semibold leading-[125%] whitespace-nowrap items-center justify-center",
               {
                 ["space-x-2"]: label,
               }
             )}
           >
-            <Icon iconName={iconName} />
+            <Icon iconName={iconName} className="flex justify-center text-lg" />
             <Heading
               title={label}
               type="h-6"

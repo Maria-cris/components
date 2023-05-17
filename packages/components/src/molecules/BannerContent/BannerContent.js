@@ -76,7 +76,7 @@ const BannerContent = ({
         id="banner-content-mobile"
         className="w-full h-full flex flex-col md:hidden "
       >
-        <div className="pb-4 text-neutral-800">
+        <div className="py-4 text-neutral-800">
           <Heading title={title} type="h-3" font="secondary" />
         </div>
         <div className="pb-4 text-neutral-800 font-secondary">

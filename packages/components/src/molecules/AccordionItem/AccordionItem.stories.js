@@ -7,7 +7,11 @@ export default {
     data: {
       title: "Item 1",
       content: [
-        { text: "content", link: "https://www.deepl.com/es/translator" },
+        {
+          text: "content",
+          link: "https://www.deepl.com/es/translator",
+          iconHoriz: true,
+        },
         { text: "content" },
       ],
       icon: { iconName: "people", type: "outlined" },

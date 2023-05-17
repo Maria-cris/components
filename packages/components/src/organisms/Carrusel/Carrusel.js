@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import Card from "../Card";
 import Aspect from "../../atoms/Aspect/Aspect";
-import "swiper/css/bundle";
 import PropTypes from "prop-types";
 
 const defaultValues = {

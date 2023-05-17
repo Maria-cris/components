@@ -10,7 +10,6 @@ var _react2 = require("swiper/react");
 var _swiper = require("swiper");
 var _Aspect = _interopRequireDefault(require("../../atoms/Aspect/Aspect"));
 var _SliderContent = _interopRequireDefault(require("../../molecules/SliderContent/SliderContent"));
-require("swiper/css/bundle");
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

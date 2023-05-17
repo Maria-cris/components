@@ -6,10 +6,12 @@ export default {
   args: {
     link: "https://www.caffeineinformer.com/death-by-caffeine",
     text: "Demo PromoLink",
-
+    imgUrl:
+      "https://bachilleratorapido.com/wp-content/uploads/2020/07/La-UANE-de-Saltillo-2.jpg",
     color: "color1",
     className: "",
   },
+
   argTypes: {
     color: {
       options: [
@@ -27,7 +29,16 @@ export default {
 };
 
 const Template = (args) => <PromoLink {...args} />;
+const Example = (args) => (
+  <div className="flex space-x-4">
+    <PromoLink {...args} />
+    <PromoLink {...args} />
+    <PromoLink {...args} />
+    <PromoLink {...args} />
+  </div>
+);
 
 const Standard = Template.bind({});
+const ExamplePromoLinks = Example.bind({});
 
-export { Standard };
+export { Standard, ExamplePromoLinks };

@@ -20,6 +20,7 @@ import BannerNumber from "./organisms/BannerNumber/BannerNumber";
 import tailwindBase from "./tailwind-base/tailwindBase";
 import Footer from "./organisms/Footer/Footer";
 import Outstanding from "./organisms/Outstanding";
+import LeaderBoard from "./organisms/LeaderBoard/LeaderBoard";
 
 export {
   Aspect,
@@ -44,4 +45,5 @@ export {
   Accordion,
   Footer,
   Outstanding,
+  LeaderBoard,
 };

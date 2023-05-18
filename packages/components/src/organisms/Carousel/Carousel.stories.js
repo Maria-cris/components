@@ -1,7 +1,7 @@
-import Carrusel from "./Carrusel.js";
+import Carousel from "./Carousel.js";
 export default {
-  title: "Carrusel",
-  component: Carrusel,
+  title: "Carousel",
+  component: Carousel,
   tags: ["autodocs"],
   args: {
     data: [
@@ -65,8 +65,8 @@ export default {
   },
 };
 
-const Template = (args) => <Carrusel {...args} />;
+const Template = (args) => <Carousel {...args} />;
 
-const carrusel = Template.bind({});
+const carousel = Template.bind({});
 
-export { carrusel };
+export { carousel };

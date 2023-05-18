@@ -10,7 +10,7 @@ import Card from "./organisms/Card";
 import MenuMobile from "./molecules/MenuMobile";
 import Menu from "./organisms/Menu";
 import Slider from "./organisms/Slider/Slider";
-import Carrusel from "./organisms/Carrusel/Carrusel";
+import Carousel from "./organisms/Carousel/Carousel";
 import Tab from "./molecules/Tab";
 import Tabs from "./organisms/Tabs";
 import Numbers from "./organisms/Numbers";
@@ -35,7 +35,7 @@ export {
   Menu,
   Card,
   Slider,
-  Carrusel,
+  Carousel,
   Tab,
   Tabs,
   Numbers,

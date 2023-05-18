@@ -24,7 +24,7 @@ function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key i
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var linksTitleSection = (0, _classnames.default)("font-principal font-bold lg:text-lg text-neutral-800 pb-6");
-var textLinksClasses = (0, _classnames.default)("font-principal text-neutral-600 px-0 pb-4");
+var textLinksClasses = (0, _classnames.default)("font-principal text-neutral-600 px-0 pb-4 pt-0");
 var Footer = function Footer(_ref) {
   var _newsletter$btn, _newsletter$btn2;
   var logoUrl = _ref.logoUrl,
@@ -136,7 +136,7 @@ var Footer = function Footer(_ref) {
             className: "flex lg:justify-end font-principal font-bold",
             children: contact === null || contact === void 0 ? void 0 : contact.phoneText
           }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-            className: "flex items-start space-x-2 ",
+            className: "flex items-start space-x-2 pt-2",
             children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
               children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, _objectSpread({}, contact === null || contact === void 0 ? void 0 : contact.icon))
             }), /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {

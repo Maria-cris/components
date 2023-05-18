@@ -69,7 +69,7 @@ var SliderContent = function SliderContent(_ref) {
       id: "slider-content-mobile",
       className: "w-full h-full flex flex-col md:hidden ",
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-        className: "pb-4 text-neutral-800",
+        className: "py-4 text-neutral-800",
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Heading.default, {
           title: title,
           type: "h-3",

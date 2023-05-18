@@ -116,7 +116,7 @@ var BannerNumber = function BannerNumber(_ref) {
               children: description
             })
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-            className: "grid grid-cols-4 gap-6 pt-10",
+            className: "grid grid-cols-4 gap-6 pt-6",
             children: numbers.map(function (number, numberindex) {
               return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Numbers.default, {
                 number: number === null || number === void 0 ? void 0 : number.number,

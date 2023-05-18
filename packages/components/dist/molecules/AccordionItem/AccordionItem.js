@@ -57,7 +57,7 @@ var AccordionItem = function AccordionItem(_ref) {
     className: "font-principal",
     children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
       id: "accordion-item-title",
-      className: (0, _classnames.default)(ColorClass, "border border-neutral-400 flex flex-1 items-start py-6 px-4", (_cn = {}, _defineProperty(_cn, "border-b-0", !borderDownOn), _defineProperty(_cn, "bg-neutral-200", open || isOpen), _cn)),
+      className: (0, _classnames.default)(ColorClass, "border border-neutral-400 flex flex-1 items-start py-6 px-4 cursor-pointer", (_cn = {}, _defineProperty(_cn, "border-b-0", !borderDownOn), _defineProperty(_cn, "bg-neutral-200", open || isOpen), _cn)),
       onClick: oneItemOpen ? onToggle : handleOnClick,
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
         className: "flex pr-4 text-neutral-600",
@@ -86,7 +86,7 @@ var AccordionItem = function AccordionItem(_ref) {
             className: "w-full",
             children: item === null || item === void 0 ? void 0 : item.text
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-            className: "text-neutral-700 font-bold text-2xl leading-0 flex items-start cursor-pointer invisible",
+            className: (0, _classnames.default)("text-neutral-700 font-bold text-2xl leading-0 flex items-start cursor-pointer", _defineProperty({}, "invisible", !item.iconHoriz)),
             children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Icon.default, {
               iconName: "more_horiz"
             })

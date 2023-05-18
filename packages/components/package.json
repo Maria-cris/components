@@ -19,7 +19,7 @@
     "react-visibility-sensor": "^5.1.1",
     "storybook": "^7.0.7",
     "storybook-color-picker": "^3.1.0",
-    "swiper": "^9.2.4",
+    "swiper": "^8.0.6",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "web-vitals": "^2.1.4"
   },

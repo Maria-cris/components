@@ -51,10 +51,10 @@ Object.defineProperty(exports, "Card", {
     return _Card.default;
   }
 });
-Object.defineProperty(exports, "Carrusel", {
+Object.defineProperty(exports, "Carousel", {
   enumerable: true,
   get: function get() {
-    return _Carrusel.default;
+    return _Carousel.default;
   }
 });
 Object.defineProperty(exports, "Footer", {
@@ -73,6 +73,12 @@ Object.defineProperty(exports, "Icon", {
   enumerable: true,
   get: function get() {
     return _Icon.default;
+  }
+});
+Object.defineProperty(exports, "LeaderBoard", {
+  enumerable: true,
+  get: function get() {
+    return _LeaderBoard.default;
   }
 });
 Object.defineProperty(exports, "Menu", {
@@ -147,7 +153,7 @@ var _Card = _interopRequireDefault(require("./organisms/Card"));
 var _MenuMobile = _interopRequireDefault(require("./molecules/MenuMobile"));
 var _Menu = _interopRequireDefault(require("./organisms/Menu"));
 var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));
-var _Carrusel = _interopRequireDefault(require("./organisms/Carrusel/Carrusel"));
+var _Carousel = _interopRequireDefault(require("./organisms/Carousel/Carousel"));
 var _Tab = _interopRequireDefault(require("./molecules/Tab"));
 var _Tabs = _interopRequireDefault(require("./organisms/Tabs"));
 var _Numbers = _interopRequireDefault(require("./organisms/Numbers"));
@@ -157,4 +163,5 @@ var _BannerNumber = _interopRequireDefault(require("./organisms/BannerNumber/Ban
 var _tailwindBase = _interopRequireDefault(require("./tailwind-base/tailwindBase"));
 var _Footer = _interopRequireDefault(require("./organisms/Footer/Footer"));
 var _Outstanding = _interopRequireDefault(require("./organisms/Outstanding"));
+var _LeaderBoard = _interopRequireDefault(require("./organisms/LeaderBoard/LeaderBoard"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

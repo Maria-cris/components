@@ -23,14 +23,12 @@ const Extensions = ({
       <Icon {...icon} className="group-hover:animate-bounce" />
       {type === "phone" ? (
         <span>
-          <span className="md:hidden hover:underline cursor-pointer ">
+          <span className="md:hidden  cursor-pointer ">
             <a href={"tel:" + value} target={target}>
               {text}
             </a>
           </span>
-          <span className="hidden md:flex cursor-pointer hover:underline">
-            {text}
-          </span>
+          <span className="hidden md:flex  ">{text}</span>
         </span>
       ) : type === "mail" ? (
         <span className="hover:underline cursor-pointer ">

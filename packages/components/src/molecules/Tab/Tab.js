@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import Heading from "../../atoms/Heading/Heading";
-import polygon from "../../assets/polygon.svg";
+// import polygon from "../../assets/polygon.svg";
 import PropTypes from "prop-types";
 import Icon from "../../atoms/Icon/Icon";
 import SVGIcons from "../../assets/SVGIcons";

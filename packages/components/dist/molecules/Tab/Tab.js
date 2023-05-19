@@ -10,6 +10,7 @@ var _Heading = _interopRequireDefault(require("../../atoms/Heading/Heading"));
 var _polygon = _interopRequireDefault(require("../../assets/polygon.svg"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _Icon = _interopRequireDefault(require("../../atoms/Icon/Icon"));
+var _SVGIcons = _interopRequireDefault(require("../../assets/SVGIcons"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -57,11 +58,10 @@ var Tab = function Tab(_ref) {
         className: "text-sm font-semibold leading-[125%]"
       })
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      className: (0, _classnames.default)("flex justify-center", _defineProperty({}, "hidden", !active)),
-      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("img", {
-        className: "h-2 ",
-        src: _polygon.default,
-        alt: "polygon"
+      className: (0, _classnames.default)("flex justify-center h-2", _defineProperty({}, "hidden", !active)),
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SVGIcons.default, {
+        name: "polygonTab",
+        className: "text-neutral-900"
       })
     })]
   });

@@ -270,7 +270,7 @@ const MenuMobile = ({
 };
 MenuMobile.propTypes = {
   submenuM: PropTypes.bool,
-  itemsData: PropTypes.object,
+  itemsData: PropTypes.array,
   btn: PropTypes.object,
   className: PropTypes.string,
   socialMedia: PropTypes.array,

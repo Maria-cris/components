@@ -99,6 +99,12 @@ Object.defineProperty(exports, "PromoLink", {
     return _PromoLink.default;
   }
 });
+Object.defineProperty(exports, "Slider", {
+  enumerable: true,
+  get: function get() {
+    return _Slider.default;
+  }
+});
 Object.defineProperty(exports, "SliderContent", {
   enumerable: true,
   get: function get() {
@@ -150,4 +156,5 @@ var _Footer = _interopRequireDefault(require("./organisms/Footer/Footer"));
 var _Outstanding = _interopRequireDefault(require("./organisms/Outstanding"));
 var _LeaderBoard = _interopRequireDefault(require("./organisms/LeaderBoard/LeaderBoard"));
 var _PromoLink = _interopRequireDefault(require("./organisms/PromoLink/PromoLink"));
+var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

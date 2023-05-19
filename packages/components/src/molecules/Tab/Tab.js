@@ -50,7 +50,7 @@ const Tab = ({
             <Heading
               title={label}
               type="h-6"
-              variant="light"
+              variant="negative"
               font="secondary"
               className="text-sm font-semibold leading-[125%]"
             />
@@ -59,7 +59,7 @@ const Tab = ({
           <Heading
             title={label}
             type="h-6"
-            variant="light"
+            variant="negative"
             font="secondary"
             className="text-sm font-semibold leading-[125%]"
           />

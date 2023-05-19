@@ -280,7 +280,7 @@ var Menu = function Menu(_ref) {
   });
 };
 Menu.propTypes = {
-  data: _propTypes.default.object,
+  data: _propTypes.default.array,
   languages: _propTypes.default.bool,
   btn: _propTypes.default.object,
   className: _propTypes.default.string

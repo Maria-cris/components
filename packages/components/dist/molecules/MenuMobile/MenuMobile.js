@@ -267,7 +267,7 @@ MenuMobile.propTypes = {
   itemsData: _propTypes.default.object,
   btn: _propTypes.default.object,
   className: _propTypes.default.string,
-  socialMedia: _propTypes.default.object
+  socialMedia: _propTypes.default.array
 };
 MenuMobile.defaultProps = {
   className: "",

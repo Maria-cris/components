@@ -294,7 +294,7 @@ const Menu = ({
   );
 };
 Menu.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   languages: PropTypes.bool,
   btn: PropTypes.object,
   className: PropTypes.string,

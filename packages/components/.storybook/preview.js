@@ -2,9 +2,7 @@
 import primaryPalette from "./primary.json";
 import neutralPalette from "./neutral.json";
 import "../src/index.css";
-import "swiper/css";
 import "keen-slider/keen-slider.min.css";
-import "swiper/css/bundle";
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },

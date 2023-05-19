@@ -12,8 +12,7 @@
     "prop-types": "^15.8.1",
     "react-countup": "^6.4.2",
     "react-lottie-player": "^1.5.4",
-    "react-visibility-sensor": "^5.1.1",
-    "swiper": "^9.3.2"
+    "react-visibility-sensor": "^5.1.1"
   },
   "publishConfig": {
     "access": "public"

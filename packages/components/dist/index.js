@@ -33,12 +33,6 @@ Object.defineProperty(exports, "BannerContent", {
     return _BannerContent.default;
   }
 });
-Object.defineProperty(exports, "BannerNumber", {
-  enumerable: true,
-  get: function get() {
-    return _BannerNumber.default;
-  }
-});
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
@@ -93,12 +87,6 @@ Object.defineProperty(exports, "MenuMobile", {
     return _MenuMobile.default;
   }
 });
-Object.defineProperty(exports, "Numbers", {
-  enumerable: true,
-  get: function get() {
-    return _Numbers.default;
-  }
-});
 Object.defineProperty(exports, "Outstanding", {
   enumerable: true,
   get: function get() {
@@ -109,12 +97,6 @@ Object.defineProperty(exports, "PromoLink", {
   enumerable: true,
   get: function get() {
     return _PromoLink.default;
-  }
-});
-Object.defineProperty(exports, "Slider", {
-  enumerable: true,
-  get: function get() {
-    return _Slider.default;
   }
 });
 Object.defineProperty(exports, "SliderContent", {
@@ -158,14 +140,11 @@ var _Banner = _interopRequireDefault(require("./organisms/Banner/Banner.js"));
 var _Card = _interopRequireDefault(require("./organisms/Card"));
 var _MenuMobile = _interopRequireDefault(require("./molecules/MenuMobile"));
 var _Menu = _interopRequireDefault(require("./organisms/Menu"));
-var _Slider = _interopRequireDefault(require("./organisms/Slider/Slider"));
 var _Carousel = _interopRequireDefault(require("./organisms/Carousel/Carousel"));
 var _Tab = _interopRequireDefault(require("./molecules/Tab"));
 var _Tabs = _interopRequireDefault(require("./organisms/Tabs"));
-var _Numbers = _interopRequireDefault(require("./organisms/Numbers"));
 var _AccordionItem = _interopRequireDefault(require("./molecules/AccordionItem/AccordionItem"));
 var _Accordion = _interopRequireDefault(require("./molecules/Accordion/Accordion"));
-var _BannerNumber = _interopRequireDefault(require("./organisms/BannerNumber/BannerNumber"));
 var _tailwindBase = _interopRequireDefault(require("./tailwind-base/tailwindBase"));
 var _Footer = _interopRequireDefault(require("./organisms/Footer/Footer"));
 var _Outstanding = _interopRequireDefault(require("./organisms/Outstanding"));

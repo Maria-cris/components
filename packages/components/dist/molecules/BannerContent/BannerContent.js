@@ -55,7 +55,9 @@ var BannerContent = function BannerContent(_ref) {
         }) : "", text ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: textColor,
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-            children: (0, _textHelper.getTextCount)(text, 132)
+            dangerouslySetInnerHTML: {
+              __html: text
+            }
           })
         }) : "", btn ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
           className: (0, _classesHelper.getClassBannerPositionButton)(position),
@@ -81,7 +83,9 @@ var BannerContent = function BannerContent(_ref) {
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         className: "pb-4 text-neutral-800 font-secondary",
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-          children: text
+          dangerouslySetInnerHTML: {
+            __html: text
+          }
         })
       }), btn ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         className: "pb-4 font-secondary",

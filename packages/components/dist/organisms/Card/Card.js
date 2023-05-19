@@ -109,7 +109,9 @@ var Card = function Card(_ref) {
           id: "content",
           className: classText,
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-            children: text
+            dangerouslySetInnerHTML: {
+              __html: text
+            }
           })
         })]
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {

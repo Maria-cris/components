@@ -116,7 +116,7 @@ const Card = ({
             <Heading title={title} type="h-6" font="secondary" />
           </div>
           <div id="content" className={classText}>
-            <span>{text}</span>
+            <span dangerouslySetInnerHTML={{ __html: text }} />
           </div>
         </div>
         <div className={classLink}>

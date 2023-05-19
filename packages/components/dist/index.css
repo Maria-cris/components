@@ -6,9 +6,6 @@
 @import url("https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp");
 
 @layer components {
-  .ccIndicators {
-    @apply absolute bottom-0 flex w-full justify-center pt-6;
-  }
   .ccBullets {
     @apply cursor-pointer block mr-2 w-4 h-4 rounded-[50%] bg-neutral-600;
   }
@@ -22,4 +19,13 @@
 .material-icons-outlined {
   font-size: unset;
   line-height: unset;
+}
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
 }

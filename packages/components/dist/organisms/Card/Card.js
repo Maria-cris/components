@@ -28,7 +28,7 @@ var classesContent = (0, _classnames.default)("flex flex-col", "relative", "just
 var classesSubTitle = (0, _classnames.default)("flex", "pb-2", "font-bold font-principal text-neutral-500", " md:text-sm sm:text-xs");
 var classesLink = (0, _classnames.default)("flex", "font-bold font-principal", "justify-end items-center", "lg:text-base md:text-sm sm:text-xs");
 var classesText = (0, _classnames.default)("pb-2", "text-neutral-500", "font-nunito", " md:text-sm sm:text-xs");
-var classesCard = (0, _classnames.default)("flex flex-1", "relative", "rounded border border-neutral-300", "overflow-hidden");
+var classesCard = (0, _classnames.default)("flex flex-1", "relative", "rounded border border-neutral-300", "overflow-hidden h-full");
 var defaultValues = {
   type: "horizontal",
   aspectRatio: "2/1",

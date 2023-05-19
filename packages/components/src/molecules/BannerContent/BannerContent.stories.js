@@ -5,7 +5,20 @@ export default {
   tags: ["autodocs"],
   args: {
     title: "Demo BannerContent",
-    text: "Demo BannerContent",
+    text: "content demo",
+    contentVariant: "dark",
+    btn: {
+      id: "banner-button",
+      label: "button",
+      variant: "primary",
+      size: "xsm",
+    },
+    position: "left-top",
+    className: "",
+  },
+  args1: {
+    title: "Demo BannerContent",
+    text: "<li>Example rich text</li>",
     contentVariant: "dark",
     btn: {
       id: "banner-button",
@@ -43,7 +56,25 @@ export default {
 };
 
 const Template = (args) => <BannerContent {...args} />;
+const Template2 = (args2) => (
+  <BannerContent
+    {...{
+      title: "Demo BannerContent",
+      text: "<li>Example rich text</li>",
+      contentVariant: "dark",
+      btn: {
+        id: "banner-button",
+        label: "button",
+        variant: "primary",
+        size: "xsm",
+      },
+      position: "left-top",
+      className: "",
+    }}
+  />
+);
 
 const Standard = Template.bind({});
+const RichTextExample = Template2.bind({});
 
-export { Standard };
+export { Standard, RichTextExample };

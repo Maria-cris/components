@@ -50,7 +50,8 @@ const BannerContent = ({
           )}
           {text ? (
             <div className={textColor}>
-              <span>{getTextCount(text, 132)}</span>
+              {/* <span>{getTextCount(text, 132)}</span> */}
+              <span dangerouslySetInnerHTML={{ __html: text }} />
             </div>
           ) : (
             ""
@@ -80,7 +81,7 @@ const BannerContent = ({
           <Heading title={title} type="h-3" font="secondary" />
         </div>
         <div className="pb-4 text-neutral-800 font-secondary">
-          <span>{text}</span>
+          <span dangerouslySetInnerHTML={{ __html: text }} />
         </div>
         {btn ? (
           <div className="pb-4 font-secondary">

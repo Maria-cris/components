@@ -41,6 +41,5 @@ Tabs.propTypes = {
   tabs: _propTypes.default.array,
   className: _propTypes.default.string
 };
-Tabs.defaultProps = defaultValues;
 var _default = Tabs;
 exports.default = _default;

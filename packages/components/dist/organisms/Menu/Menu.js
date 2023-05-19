@@ -285,6 +285,5 @@ Menu.propTypes = {
   btn: _propTypes.default.object,
   className: _propTypes.default.string
 };
-Menu.defaultProps = defaultValues;
 var _default = Menu;
 exports.default = _default;

@@ -45,14 +45,14 @@ var Tab = function Tab(_ref) {
         }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Heading.default, {
           title: label,
           type: "h-6",
-          variant: "light",
+          variant: "negative",
           font: "secondary",
           className: "text-sm font-semibold leading-[125%]"
         })]
       }) : /*#__PURE__*/(0, _jsxRuntime.jsx)(_Heading.default, {
         title: label,
         type: "h-6",
-        variant: "light",
+        variant: "negative",
         font: "secondary",
         className: "text-sm font-semibold leading-[125%]"
       })

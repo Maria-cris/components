@@ -21,6 +21,5 @@ Tabs.propTypes = {
   tabs: PropTypes.array,
   className: PropTypes.string,
 };
-Tabs.defaultProps = defaultValues;
 
 export default Tabs;

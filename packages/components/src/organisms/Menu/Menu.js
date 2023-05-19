@@ -299,6 +299,5 @@ Menu.propTypes = {
   btn: PropTypes.object,
   className: PropTypes.string,
 };
-Menu.defaultProps = defaultValues;
 
 export default Menu;

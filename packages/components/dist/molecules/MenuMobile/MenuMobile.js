@@ -264,7 +264,7 @@ var MenuMobile = function MenuMobile(_ref) {
 };
 MenuMobile.propTypes = {
   submenuM: _propTypes.default.bool,
-  itemsData: _propTypes.default.object,
+  itemsData: _propTypes.default.array,
   btn: _propTypes.default.object,
   className: _propTypes.default.string,
   socialMedia: _propTypes.default.array

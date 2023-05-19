@@ -4,6 +4,7 @@ import Heading from "../../atoms/Heading/Heading";
 import polygon from "../../assets/polygon.svg";
 import PropTypes from "prop-types";
 import Icon from "../../atoms/Icon/Icon";
+import SVGIcons from "../../assets/SVGIcons";
 
 const defaultValues = {
   active: false,
@@ -64,8 +65,9 @@ const Tab = ({
           />
         )}
       </div>
-      <div className={cn("flex justify-center", { ["hidden"]: !active })}>
-        <img className="h-2 " src={polygon} alt="polygon" />
+      <div className={cn("flex justify-center h-2", { ["hidden"]: !active })}>
+        {/* <img className="h-2 " src={polygon} alt="polygon" /> */}
+        <SVGIcons name="polygonTab" className="text-neutral-900" />
       </div>
     </div>
   );

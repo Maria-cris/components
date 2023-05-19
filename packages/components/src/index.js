@@ -19,6 +19,7 @@ import Footer from "./organisms/Footer/Footer";
 import Outstanding from "./organisms/Outstanding";
 import LeaderBoard from "./organisms/LeaderBoard/LeaderBoard";
 import PromoLink from "./organisms/PromoLink/PromoLink";
+import Slider from "./organisms/Slider/Slider";
 
 export {
   Aspect,
@@ -42,4 +43,5 @@ export {
   Outstanding,
   LeaderBoard,
   PromoLink,
+  Slider,
 };

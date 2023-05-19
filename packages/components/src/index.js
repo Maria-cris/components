@@ -21,6 +21,7 @@ import tailwindBase from "./tailwind-base/tailwindBase";
 import Footer from "./organisms/Footer/Footer";
 import Outstanding from "./organisms/Outstanding";
 import LeaderBoard from "./organisms/LeaderBoard/LeaderBoard";
+import PromoLink from "./organisms/PromoLink/PromoLink";
 
 export {
   Aspect,
@@ -46,4 +47,5 @@ export {
   Footer,
   Outstanding,
   LeaderBoard,
+  PromoLink,
 };

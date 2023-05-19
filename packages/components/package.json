@@ -87,5 +87,5 @@
     "storybook-color-picker": "^3.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
-  "gitHead": "b7ad5b7c2492f2fe68252a075660947bbe3d8327"
+  "gitHead": "eeff5d7204ca518489c3488f26db57a6eefd8918"
 }

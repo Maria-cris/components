@@ -27,7 +27,7 @@
     "build-storybook": "storybook build",
     "deploy-storybook": "storybook-to-ghpages",
     "prepare": "npm run dist",
-    "dist": "rm -rf dist/* && babel src/ --out-dir dist --copy-files --no-copy-ignored --ignore src/**/*.stories.js node_modules"
+    "dist": "rm -rf dist/* && babel src/ --out-dir dist --copy-files --no-copy-ignored --ignore src/**/*.stories.js,node_modules "
   },
   "eslintConfig": {
     "extends": [
@@ -87,5 +87,5 @@
     "storybook-color-picker": "^3.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
-  "gitHead": "f11f885200eeed283f38532e539fbcf5e5c19801"
+  "gitHead": "b7ad5b7c2492f2fe68252a075660947bbe3d8327"
 }

@@ -1,209 +1,119 @@
-// Import Swiper React components
-import { useRef } from "react";
-import Controls from "../../atoms/Controls/Controls";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
-import Card from "../Card";
 import Aspect from "../../atoms/Aspect/Aspect";
-import PropTypes from "prop-types";
+import { useState } from "react";
+import cn from "classnames";
+import Card from "../Card";
 
-const defaultValues = {
-  variant: "img",
-};
+import { useKeenSlider } from "keen-slider/react";
 
-const Carrusel = ({ data, variant = defaultValues.variant }) => {
-  const naviPrevRef = useRef(null);
-  const navNextRef = useRef(null);
+const Carousel = ({ data, variant }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const stylesBaseControls =
+    "material-icons select-none absolute top-[35%] p-1 rounded-lg text-[12px] w-p:hidden";
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: true,
+    breakpoints: {
+      "(min-width: 320px)": {
+        slides: { perView: 1, spacing: 24 },
+      },
+      "(min-width: 600px)": {
+        slides: { perView: 2, spacing: 24 },
+      },
+      "(min-width: 1024px)": {
+        slides: { perView: 3, spacing: 24 },
+      },
+    },
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
+
+  const activeBulletSlide = (position) => {
+    instanceRef.current?.moveToIdx(position);
+  };
 
   return (
-    <div>
-      <div className="w-full h-full  absolute hidden lg:flex px-28 ">
-        <div
-          ref={naviPrevRef}
-          className=" absolute bottom-1/2 left-16 hidden lg:flex bg-neutral-100 hover:shadow-lg hover:shadow-neutral-500 rounded-lg"
-        >
-          <Controls iconName="arrow_back_ios" />
-        </div>
-        <div
-          ref={navNextRef}
-          className="absolute bottom-1/2 right-16 hidden lg:flex bg-neutral-100 hover:shadow-lg hover:shadow-neutral-500 rounded-lg"
-        >
-          <Controls iconName="arrow_forward_ios" />
-        </div>
-        <Swiper
-          navigation={{
-            nextEl: navNextRef.current,
-            prevEl: naviPrevRef.current,
-          }}
-          loop={true}
-          onSwiper={(swiper) => {
-            // Delay execution for the refs to be defined
-            setTimeout(() => {
-              // Override prevEl & nextEl now that refs are defined
-              swiper.params.navigation.prevEl = naviPrevRef.current;
-              swiper.params.navigation.nextEl = navNextRef.current;
-              // Re-init navigation
-              swiper.navigation.destroy();
-              swiper.navigation.init();
-              swiper.navigation.update();
-            });
-          }}
-          pagination={{
-            clickable: true,
-            horizontalClass: "ccIndicators",
-            bulletClass: "ccBullets",
-            bulletActiveClass: "ccBulletsActive",
-          }}
-          slidesPerView={3}
-          spaceBetween={24}
-          slidesPerGroupSkip={3}
-          modules={[Navigation, Pagination]}
-          className="slides"
-        >
-          <div className=" flex flex-row">
-            {data?.map((card, indexCard) =>
-              variant === "img" ? (
-                <SwiperSlide key={indexCard}>
-                  <div className="w-full h-fit align-top items-top justify-center pb-6">
-                    <div className="w-full h-fit relative flex pb-6">
-                      <Aspect ratio="1/1">
-                        <img
-                          className="w-full h-full object-cover object-center"
-                          src={card?.imageUrl}
-                          alt="card-img"
-                        />
-                      </Aspect>
-                    </div>
-                  </div>
-                </SwiperSlide>
+    <section className="flex flex-col relative w-full my-6">
+      <section className="lg:w-[90%] md:w-[95%] sm:w-[90%] mx-auto">
+        <div ref={sliderRef} className="keen-slider ">
+          {data.map((card, i) => (
+            <section key={`card-item-${i}`}>
+              {variant === "card" ? (
+                <div className="keen-slider__slide h-full">
+                  <Card
+                    imageUrl={card?.imageUrl}
+                    title={card?.title}
+                    text={card?.text}
+                    subtitle={card?.subtitle}
+                    type="vertical"
+                    aspectRatio="2/1"
+                    link={card?.link}
+                  />
+                </div>
               ) : (
-                <SwiperSlide key={indexCard}>
-                  <div className="w-full h-full align-top items-top justify-center pb-6 flex ">
-                    <div className="w-full h-full relative flex pb-6 ">
-                      <Card
-                        imageUrl={card?.imageUrl}
-                        title={card?.title}
-                        text={card?.text}
-                        subtitle={card?.subtitle}
-                        type="vertical"
-                        aspectRatio="2/1"
-                        link={card?.link}
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-              )
+                <div className="keen-slider__slide">
+                  <Aspect ratio="1/1">
+                    <img
+                      className="w-full h-full object-cover object-center"
+                      src={card?.imageUrl}
+                      alt="card-img"
+                    />
+                  </Aspect>
+                </div>
+              )}
+            </section>
+          ))}
+        </div>
+      </section>
+      {loaded && instanceRef.current && (
+        <>
+          <div
+            className={cn(
+              "z-20 left-0 w-p:invisible w-t:invisible cursor-pointer",
+              stylesBaseControls
             )}
+          >
+            <span
+              className="material-icons"
+              onClick={(e) => {
+                instanceRef.current?.prev();
+              }}
+            >
+              arrow_back_ios
+            </span>
           </div>
-        </Swiper>
-      </div>
-      <div className="w-full h-fit absolute hidden lg:hidden md:flex ">
-        <Swiper
-          loop={true}
-          pagination={{
-            clickable: true,
-            horizontalClass: "ccIndicators",
-            bulletClass: "ccBullets",
-            bulletActiveClass: "ccBulletsActive",
-          }}
-          slidesPerView={2}
-          spaceBetween={24}
-          centeredSlides={true}
-          modules={[Pagination]}
-          className="slides"
-          watchSlidesProgress={true}
-        >
-          {data?.map((card, indexCard) =>
-            variant === "img" ? (
-              <SwiperSlide key={indexCard}>
-                <div className="w-full h-fit align-top items-top justify-center pb-6">
-                  <div className="w-full h-fit relative flex pb-6">
-                    <Aspect ratio="1/1">
-                      <img
-                        className="w-full h-full object-cover object-center"
-                        src={card?.imageUrl}
-                        alt="card-img"
-                      />
-                    </Aspect>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ) : (
-              <SwiperSlide key={indexCard}>
-                <div className="w-full h-fit align-top items-top justify-center pb-6 ">
-                  <div className="w-full h-fit relative flex pb-6">
-                    <Card
-                      imageUrl={card?.imageUrl}
-                      title={card?.title}
-                      text={card?.text}
-                      subtitle={card?.subtitle}
-                      type="vertical"
-                      aspectRatio="2/1"
-                      link={card?.link}
-                    />
-                  </div>
-                </div>
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
-      </div>
-      <div className="w-full h-fit absolute  md:hidden sm:flex px-10">
-        <Swiper
-          loop={true}
-          pagination={{
-            clickable: true,
-            horizontalClass: "ccIndicators",
-            bulletClass: "ccBullets",
-            bulletActiveClass: "ccBulletsActive",
-          }}
-          slidesPerView={1}
-          spaceBetween={32}
-          modules={[Pagination]}
-          className="slides"
-          watchSlidesProgress={true}
-        >
-          {data?.map((card, indexCard) =>
-            variant === "img" ? (
-              <SwiperSlide key={indexCard}>
-                <div className="w-full h-fit align-top items-top justify-center pb-6 ">
-                  <div className="w-full h-fit relative flex pb-6">
-                    <Aspect ratio="1/1">
-                      <img
-                        className="w-full h-full object-cover object-center"
-                        src={card?.imageUrl}
-                        alt="card-img"
-                      />
-                    </Aspect>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ) : (
-              <SwiperSlide key={indexCard}>
-                <div className="w-full h-fit align-top items-top justify-center pb-6 ">
-                  <div className="w-full h-fit relative flex pb-6">
-                    <Card
-                      imageUrl={card?.imageUrl}
-                      title={card?.title}
-                      text={card?.text}
-                      subtitle={card?.subtitle}
-                      type="vertical"
-                      aspectRatio="2/1"
-                      link={card?.link}
-                    />
-                  </div>
-                </div>
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
-      </div>
-    </div>
+          <div
+            className={cn(
+              "z-20 right-0 w-p:invisible w-t:invisible cursor-pointer",
+              stylesBaseControls
+            )}
+          >
+            <span
+              className="material-icons"
+              onClick={(e) => instanceRef.current?.next()}
+            >
+              arrow_forward_ios
+            </span>
+          </div>
+          <div className={cn("w-full flex justify-center gap-2 mt-6 dots")}>
+            {data.map((_, i) => (
+              <div
+                key={`bullet-item-${i}`}
+                onClick={() => activeBulletSlide(i)}
+                className={cn("h-4 bg-[#686868] rounded-full cursor-pointer", {
+                  "w-4": i !== currentSlide,
+                  "w-8": i === currentSlide,
+                })}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </section>
   );
 };
-Carrusel.propTypes = {
-  variant: PropTypes.oneOf("img", "card"),
-  data: PropTypes.array,
-};
-Carrusel.defaultProps = defaultValues;
-export default Carrusel;
+export default Carousel;

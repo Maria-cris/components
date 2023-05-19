@@ -41,14 +41,14 @@ var Extensions = function Extensions(_ref) {
       className: "group-hover:animate-bounce"
     })), type === "phone" ? /*#__PURE__*/(0, _jsxRuntime.jsxs)("span", {
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-        className: "md:hidden hover:underline cursor-pointer ",
+        className: "md:hidden  cursor-pointer ",
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)("a", {
           href: "tel:" + value,
           target: target,
           children: text
         })
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-        className: "hidden md:flex cursor-pointer hover:underline",
+        className: "hidden md:flex  ",
         children: text
       })]
     }) : type === "mail" ? /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {

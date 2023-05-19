@@ -43,7 +43,7 @@ const classesCard = cn(
   "flex flex-1",
   "relative",
   "rounded border border-neutral-300",
-  "overflow-hidden"
+  "overflow-hidden h-full"
 );
 
 const defaultValues = {

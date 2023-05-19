@@ -6,7 +6,6 @@ import { Navigation, Pagination } from "swiper";
 import Aspect from "../../atoms/Aspect/Aspect";
 import SliderContent from "../../molecules/SliderContent/SliderContent";
 import PropTypes from "prop-types";
-
 const sliderImageStyles = {
   dark: { filter: "brightness(0.5)" },
   light: { opacity: "0.5" },

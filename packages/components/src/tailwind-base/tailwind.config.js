@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
+
+const myComponentLibraryConfig = {
   theme: {
     fontFamily: {
       principal: ["Nunito Sans"],
@@ -56,5 +56,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };
+
+module.exports = plugin(({ addUtilities, addComponents, e, config }) => {
+  // Add your custom styles here
+}, myComponentLibraryConfig);
